@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <div class="welcome">
+                <h3>Matthew Summers</h3>
+                <h1>FULL-STACK WEB DEVELOPER</h1>
+            </div>
+            
+            <div class="row content">
+                <div class="col-2"></div>
+                <div class="col-6">
+                    <p class=" white"><span class="hello-span">Hello,</span> my name is Matthew, and I love to code. I began in July of 2021 when I enrolled in Coding Dojo. 
+                        I graduated in February 2022 from the Software Development with Python course with all honors.
+                        Since I graduated, I've been working as a freelance full-stack web developer.  
+                        I've learned a great many things during Coding Dojo and even more since I've graduated. I hope you enjoy my projects! Feel free to reach out.
+                    </p>
+                </div>
+                <div class="col-4 me">
+                    <img src="{% static 'media/images/placeholder.png' %}" alt="self-portrait" id="portrait">
+                </div>
+            </div>
+        </div>
+{% endblock %}
