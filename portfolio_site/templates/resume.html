@@ -1,15 +1,125 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section class="content-2">
-    <div class="text-center">
-        <div class="title-div">
-            <h1 class="title">Resume</h1>
+    <section class="padding-inline bgr3 border-top">
+        <h1 class="resume-name animate-texts">Matthew Summers</h1>
+        <h3 class="resume-job-title animate-texts"><span class="resume-job-title-span">Full-Stack Web and Software Developer</span></h3>
+        <h4 class="animate-texts">(573)-820-1557</h4>
+    </section>
+    <section class="padding-inline bgr2 text-white">
+        <div class="line bgr-white"></div>
+        <h1 class="resume-section-title resume-section-title-white">TOOLKIT</h1>
+        <div class="padding-inline-lg fs-200 line-height-200">
+            <ul class="inline-block job-skills" aria-label="Content goes here">
+                <li>Python</li><li>JavaScript</li><li>PHP</li><li>Django</li><li>JSON</li><li>APIs</li><li>MySQL</li><li>AWS Cloud Deployment</li><li>AJAX</li><li>jQuery</li>
+            </ul>
+            <ul class="inline-block job-skills">
+                <li>WordPress</li><li>Bootstrap</li><li>CSS3</li><li>HTML5</li><li>bcrypt</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MAMP</li><li style="opacity: 0;">f</li>
+            </ul>
         </div>
-    </div>
-    <h1>Matthew Summers</h1>
-    <h3>Full-Stack Web and Software Developer</h3>
-    <h4>(573)-820-1557</h4>
-    to do 
-</section>
+    </section>
+    <section class="padding-inline bgr">
+        <div class="line"></div>
+        <h1 class="resume-section-title">PROJECTS</h1>
+        <section class="padding-inline-lg">
+            <h4 class="resume-project-title resume-ticket-easy-title"><a href="https://www.ticket-easy.matthewsummers.dev" target="_blank">Ticket Easy</a></h4>
+            <p class="fs-200 bold-600 resume-project-desc">
+                A dynamic support ticket system built with Django to help businesses manage and resolve their internal issues as well as provide analytics for identifying problematic trends
+            </p>
+            <ul class="ul-styled">
+                <li>Designed to be dynamic and respond to the needs of the individual company</li>
+                <li>User-defined automations to diminish redundant actions</li>
+                <li>Ability to query database for tickets by ID, keyword(s), category, priority, status, sender, and dates
+                    and to render a new table for the searched data using AJAX.
+                </li>
+                <li>Skillful implementation of the Google Charts APIs (Pie, Bar, and Line) to graph and render results of user specific queries of the web application’s database using Python, Django, and JavaScript</li>
+                <li>Employed Bootstrap as well as custom CSS3 for the front-end design</li>
+                <li>Utilized Django Framework to streamline data management for creating, editing, and deleting of objects</li>
+                <li>Employed bcrypt for password security due to its slow hashing of strings and additional salting</li>
+            </ul>
+        </section>
+        <section class="padding-inline-lg">
+            <h4 class="resume-project-title resume-stream-bunny-title"><a href="https://www.stream-bunny.matthewsummers.dev" target="_blank">Stream Bunny</a></h4>
+            <p class="fs-200 bold-600 resume-project-desc">
+                A Django app to help users find streaming availability for films and TV series
+            </p>
+            <ul class="ul-styled">
+                <li>Coordinated the flow of a team spanning nearly 8,000 miles</li>
+                <li>Used GitHub for version control and to assist in communicating and collaborating with the team</li>
+                <li>Created objects from external API’s data to be saved to SQLite database for selective data management</li>
+                <li>Designed the layout and styling of the pages using Bootstrap for rapid development as well as vanilla CSS</li>
+                <li>Worked extensively with APIs (Cinemagoer, Movie of the Night)--querying them for their data</li>
+                <li>Developed AJAX and jQuery solutions for populating instantaneous results of API queries</li>
+            </ul>
+        </section>
+        <section class="padding-inline-lg">
+            <h4 class="resume-project-title resume-session-tracker-title"><a href="https://www.session-tracker.matthewsummers.dev" target="_blank">Session Tracker</a></h4>
+            <p class="fs-200 bold-600 resume-project-desc">
+                A tool to help businesses list their packages and offers and to help manage the redemption of a package's sessions
+            </p>
+            <ul class="ul-styled">
+                <li>Constructed an internal API to fetch and send data to browser using jQuery AJAX</li>
+                <li>Implementation of template tags to reduce redundancy of code (DRY)</li>
+                <li>Succinct usage of Django’s Model class</li>
+                <li>Utilized CkEditor to add blogging features to website</li>
+            </ul>
+        </section>
+    </section>
+    <section class="padding-inline bgr2 text-white">
+
+        <div class="line bgr-white"></div>
+        <h1 class="resume-section-title">WORK EXPERIENCE</h1>
+        <div class="padding-inline-lg">
+            <section>
+                <p class="fs-200 orange"><strong>Cornerstone Apartment Services Inc</strong>, Denver, CO - Website Developer and Maintenance</p>
+                <p class="bold-600">January 2022 - Present</p>
+                <ul class="ul-styled">
+                    <li>Responsible for creating and implementing new features and maintenance of company’s website</li>
+                    <li>Web developer for one of the largest apartments providers in Denver, CO</li>
+                    <li>Worked directly with management to solve issues in a timely manner</li>
+                    <li>Trusted to maintain own work schedule and deliver according to requests</li>
+                </ul>
+            </section>
+            <section>
+                <p class="fs-200 orange"><strong>Unilever</strong>, Sikeston, MO - Machine Operator</p>
+                <p class="bold-600">August 2019 - August 2021</p>
+                <ul class="ul-styled">
+                    <li>Part of a team which broke well-established records</li>
+                    <li>Increased uptime by successfully troubleshooting and introducing solutions for the performance of routine and emergency maintenance on machines</li>
+                    <li>Trained employees on best practices</li>
+                    <li>Improved work relations between employees during difficult and tense times</li>
+                </ul>
+            </section>
+            <section>
+                <p class="fs-200 orange"><strong>The Children’s Place</strong>, Fort Payne, AL -  E-commerce</p>
+                <p class="bold-600">February 2018 - July 2019</p>
+                <ul class="ul-styled">
+                    <li>Key member of a select team to restructure inventory</li>
+                    <li>Regularly exceeded the quota</li>
+                    <li>The “Go to” guy.  Known for always finding and delivering the solution</li>
+                    <li>Trained ≈ 100 employees on best practices, trouble-shooting, and other various job duties</li>
+                    <li>Trusted to work under little-to-no supervision</li>
+                </ul>
+            </section>
+        </div>
+    </section>
+    <section class="padding-inline bgr3">
+        <div class="line"></div>
+        <h2 class="resume-section-title">EDUCATION</h2>
+        <div class="padding-inline-lg">
+            <img style="width: 175px;" src="{% static 'media/images/dojo-logo.jpg' %}">
+            <br>
+            <br>
+            {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+            <p class="fs-200">July 2021 - February 2022</p>
+            <ul class="ul-styled">
+                <li>Certified Full Stack Web Developer</li>
+                <li>Certified Software Developer for Python programming language</li>
+                <li>Graduated with all honors</li>
+                <li>7 months (1500+ hours) of experience in Full Stack Software Development with Django and Python</li>
+            </ul>
+        </div>
+    </section>
+    {% comment %} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(252, 220, 0, 1);transform: ;msFilter:;"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg> {% endcomment %}
+
 {% endblock %}

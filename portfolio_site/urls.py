@@ -6,4 +6,5 @@ urlpatterns = [
     path('projects', views.projects),
     path('resume', views.resume),
     path('contact', views.contact),
+    # path('form', views.form),
 ]
