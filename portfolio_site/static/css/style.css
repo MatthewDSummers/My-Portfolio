@@ -758,9 +758,10 @@ nav{
     height: 100% !important;
 }
 
-.te-overlay-1::before, .te-overlay-2::before{
+.te-overlay-1::before, .te-overlay-2::before, .te-overlay-3::before, .te-overlay-4::before,
+.te-overlay-5::before, .te-overlay-6::before, .te-overlay-7::before, .te-overlay-8::before{
     padding: .4em 1em;
-    text-align: left;
+    text-align: center;
     font-size: 3.3rem;
     font-weight: 900;
     color: rgb(18, 15, 30);
@@ -768,10 +769,28 @@ nav{
 }
 
 .te-overlay-1::before{
-    content: "Custom automations";
+    content: "Manage tickets";
 }
 .te-overlay-2::before{
-    content: "Edit automations";
+    content: "Interactive table";
+}
+.te-overlay-3::before{
+    content: "Create tickets";
+}
+.te-overlay-4::before{
+    content: "Automation Maker";
+}
+.te-overlay-5::before{
+    content: "Manage automations";
+}
+.te-overlay-6::before{
+    content: "Canned Responses";
+}
+.te-overlay-7::before{
+    content: "In-house messaging";
+}
+.te-overlay-8::before{
+    content: "Analytics";
 }
 
 
