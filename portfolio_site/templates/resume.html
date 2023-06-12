@@ -10,11 +10,11 @@
         <div class="line bgr-white"></div>
         <h1 class="resume-section-title resume-section-title-white">TOOLKIT</h1>
         <div class="padding-inline-lg fs-200 line-height-200">
-            <ul class="inline-block job-skills" aria-label="Content goes here">
-                <li>Python</li><li>JavaScript</li><li>PHP</li><li>Django</li><li>JSON</li><li>APIs</li><li>MySQL</li><li>AWS Cloud Deployment</li><li>AJAX</li><li>jQuery</li>
+            <ul class="inline-block job-skills" aria-label="skills">
+                <li>Python</li><li>JavaScript</li><li>PHP</li><li>Django</li><li>JSON</li><li>APIs</li><li>MySQL</li><li>AWS Cloud Deployment</li><li>AJAX</li><li>jQuery</li><li>WordPress</li>
             </ul>
             <ul class="inline-block job-skills">
-                <li>WordPress</li><li>Bootstrap</li><li>CSS3</li><li>HTML5</li><li>bcrypt</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MAMP</li><li style="opacity: 0;">f</li>
+                <li>Bootstrap</li><li>CSS3</li><li>HTML5</li><li>bcrypt</li><li>Django signals</li><li>bleach</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MAMP</li><li style="opacity: 0;">f</li>
             </ul>
         </div>
     </section>
@@ -22,43 +22,63 @@
         <div class="line"></div>
         <h1 class="resume-section-title">PROJECTS</h1>
         <section class="padding-inline-lg">
-            <h4 class="resume-project-title resume-ticket-easy-title"><a href="https://www.ticket-easy.matthewsummers.dev" target="_blank">Ticket Easy</a></h4>
+            <h4 class="resume-project-title resume-ticket-easy-title"><a href="https://matthewsummers.dev/ticket-easy/" target="_blank">Ticket Easy</a></h4>
             <p class="fs-200 bold-600 resume-project-desc">
                 A dynamic support ticket system built with Django to help businesses manage and resolve their internal issues as well as provide analytics for identifying problematic trends
             </p>
             <ul class="ul-styled">
                 <li>Designed to be dynamic and respond to the needs of the individual company</li>
-                <li>User-defined automations to diminish redundant actions</li>
-                <li>Ability to query database for tickets by ID, keyword(s), category, priority, status, sender, and dates
+                <li>In addition to the core functionality, the project offers user-defined automations to diminish redundant actions</li>
+                <li>Utilizing Django <code>signals</code>, a robust event-driven mechanism, to seamlessly activate the automations based upon the user-defined event triggers, this ensures the project's real-time responsiveness, allowing for efficiency and precision of execution</li>
+                <li>Ability to query database for tickets by ID, keyword(s), category, priority, status, and dates
                     and to render a new table for the searched data using AJAX.
                 </li>
-                <li>Skillful implementation of the Google Charts APIs (Pie, Bar, and Line) to graph and render results of user specific queries of the web application’s database using Python, Django, and JavaScript</li>
+                <li>Sanitization of user input by <code>bleach</code> due to its ability to allow or disallow certain characters,    
+                    its surety of data integrity, protection against XSS attacks and code injection,
+                    as well as its data processing simplification. All in order to improve the user experience and safeguard this application.
+                <li>User-defined canned responses can be linked to custom automations in order to send (in-house) emails</li>
+                <li>Skillful implementation of the Google Charts APIs (Pie and Bar) to graph and render results of user specific queries of the web application’s database using Python, Django, and JavaScript</li>
                 <li>Employed Bootstrap as well as custom CSS3 for the front-end design</li>
                 <li>Utilized Django Framework to streamline data management for creating, editing, and deleting of objects</li>
                 <li>Employed bcrypt for password security due to its slow hashing of strings and additional salting</li>
             </ul>
         </section>
         <section class="padding-inline-lg">
-            <h4 class="resume-project-title resume-stream-bunny-title"><a href="https://www.stream-bunny.matthewsummers.dev" target="_blank">Stream Bunny</a></h4>
+            <h4 class="resume-project-title resume-concordance-title"><a href="https://matthewsummers.dev/concordance/" target="_blank">KJV Concordance</a></h4>
+            <p class="fs-200 bold-600 resume-project-desc">
+                A concordance of the King James Bible
+            </p>
+            <ul class="ul-styled">
+                <li>Utilized Python compiled regex patterns (<code>re.compile</code>) for concordance search function to optimize efficiency and due to the general flexibility of pattern matching offered by <code>re</code></li>
+                <li>Contains the Bible in JSON format due to JSON's portability, ease of integration and parsing, flexibility, and performance efficiency</li>
+                <li>Created a custom paginator for chapters as well as utilized the Django Paginator class for results</li>
+                <li>Search the entire Bible for specific word or phrase</li>
+                <li>Search a specific book of the Bible for specific word or phrase</li>
+                <li>Read the Bible</li>
+                <li>Ability to increase font size for easier reading. To reduce database queries and server load, this setting is saved to the client's local storage</li>
+            </ul>
+        </section>
+        <section class="padding-inline-lg">
+            <h4 class="resume-project-title resume-stream-bunny-title"><a href="https://matthewsummers.dev/stream-bunny/" target="_blank">Stream Bunny</a></h4>
             <p class="fs-200 bold-600 resume-project-desc">
                 A Django app to help users find streaming availability for films and TV series
             </p>
             <ul class="ul-styled">
                 <li>Coordinated the flow of a team spanning nearly 8,000 miles</li>
                 <li>Used GitHub for version control and to assist in communicating and collaborating with the team</li>
-                <li>Created objects from external API’s data to be saved to SQLite database for selective data management</li>
+                <li>Created objects from external API’s data to be saved to database for selective data processing</li>
                 <li>Designed the layout and styling of the pages using Bootstrap for rapid development as well as vanilla CSS</li>
                 <li>Worked extensively with APIs (Cinemagoer, Movie of the Night)--querying them for their data</li>
-                <li>Developed AJAX and jQuery solutions for populating instantaneous results of API queries</li>
+                <li>Developed AJAX and <code>jQuery</code> solutions for populating instantaneous results of API queries</li>
             </ul>
         </section>
         <section class="padding-inline-lg">
-            <h4 class="resume-project-title resume-session-tracker-title"><a href="https://www.session-tracker.matthewsummers.dev" target="_blank">Session Tracker</a></h4>
+            <h4 class="resume-project-title resume-session-tracker-title"><a href="https://matthewsummers.dev/session-tracker/" target="_blank">Session Tracker</a></h4>
             <p class="fs-200 bold-600 resume-project-desc">
                 A tool to help businesses list their packages and offers and to help manage the redemption of a package's sessions
             </p>
             <ul class="ul-styled">
-                <li>Constructed an internal API to fetch and send data to browser using jQuery AJAX</li>
+                <li>Constructed an internal API to fetch and send data to browser using <code>jQuery</code> AJAX</li>
                 <li>Implementation of template tags to reduce redundancy of code (DRY)</li>
                 <li>Succinct usage of Django’s Model class</li>
                 <li>Utilized CkEditor to add blogging features to website</li>
@@ -78,6 +98,8 @@
                     <li>Web developer for one of the largest apartments providers in Denver, CO</li>
                     <li>Worked directly with management to solve issues in a timely manner</li>
                     <li>Trusted to maintain own work schedule and deliver according to requests</li>
+                    <li>Created forms and setup the infrastructure to communicate with a third-party API for the scalable processing <br>
+                        and analyzation of data toward the funneling of new customers</li>
                 </ul>
             </section>
             <section>

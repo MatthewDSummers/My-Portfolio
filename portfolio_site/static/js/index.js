@@ -38,8 +38,8 @@ animateText.forEach(function (text) {
 const jobSkillsList = document.querySelectorAll('.job-skills');
 
 jobSkillsList.forEach(jobSkills => {
-  const jobSkillsDuplicate = jobSkills.cloneNode(true);
-  jobSkillsDuplicate.classList.remove('job-skills');
-  jobSkillsDuplicate.classList.add('job-skills-duplicate');
-  jobSkills.appendChild(jobSkillsDuplicate);
+    const jobSkillsDuplicate = jobSkills.cloneNode(true);
+    jobSkillsDuplicate.classList.remove('job-skills');
+    jobSkillsDuplicate.classList.add('job-skills-duplicate');
+    jobSkills.appendChild(jobSkillsDuplicate);
 });

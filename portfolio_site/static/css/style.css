@@ -15,7 +15,9 @@ ul{
 .ul-styled{
     list-style-type: circle;
 }
-
+.ul-styled li{
+    margin-block: .5em;
+}
 /* ===== Typography ===== */
 .font-assistant{
     font-family: 'Assistant', sans-serif;
@@ -154,17 +156,11 @@ ul{
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
-    /* grid-template-rows: repeat(auto-fit, minmax(700px, 1fr)); */
-    /* grid-gap: 6em; */
-    /* padding: 2em; */
-    /* margin: auto 10%; */
 }
 
     .grid-item {
         display: grid;
         grid-template-columns: 1fr;
-        /* border: 4px solid red; */
-        /* grid-template-rows: auto; */
         grid-gap: 3em;
     }
 
@@ -201,7 +197,7 @@ ul{
             height: 100%;
             /* background: linear-gradient(90deg, rgba(204,192,255,0.5) 12%, rgba(204,192,255,0.35) 84%); */
             background-color: rgba(204, 192, 255, 0.445); 
-          }
+        }
         .grid-item a:hover::before{
             opacity: 0;
             outline: 1px solid rgb(123, 123, 123);
@@ -668,6 +664,19 @@ nav{
         color:rgb(246, 231, 27);
         text-shadow: 1px 1px hsl(216, 3%, 33%);
     }
+.resume-concordance-title{
+    background-color:hsl(54, 94%, 69%);
+}
+    .resume-concordance-title a{
+        color: hsl(0, 0%, 0%);
+        text-shadow: 1px 1px hsl(48, 100%, 90%);
+        text-decoration: none;
+    }
+    .resume-concordance-title a:hover{
+        color:hsl(0, 0%, 30%);
+        text-shadow: 1px 1px hsl(48, 100%, 90%);
+    }
+
 .resume-stream-bunny-title{
     background-color: hsl(209, 100%, 55%);
 }
