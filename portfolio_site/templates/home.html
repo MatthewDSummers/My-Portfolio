@@ -5,27 +5,18 @@
                 <h3 id="name">Matthew Summers</h3>
                 <h1>FULL-STACK WEB DEVELOPER</h1>
             </div>
-            {% comment %} <form action="/form" method="GET">
-                <input name="searched" type="text">
-                <button type="submit">Submit</button>
-            </form>
-            {% for x in results %}
-                {{x.0}}
-                {{x.1}}
-                <br>
-                <br>
-            {% endfor %} {% endcomment %}
+
             <div class="row intro">
                 <div class="col-2"></div>
                 <div class="col-6">
-                    <p><span class="hello-span">Hello,</span> my name is Matthew, and I love to code. I began in July of 2021 when I enrolled in Coding Dojo. 
-                        I graduated in February 2022 from the Software Development with Python course with all honors.
-                        Since I graduated, I've been working as a freelance full-stack web developer.  
-                        I learned a great many things during Coding Dojo and even more now having real-world experience. I hope you enjoy my projects! Feel free to reach out.
+                    <p><span class="hello-span">Hello,</span> my name is Matthew. I love to code, and I love music. I began coding in 2021 when I enrolled in Coding Dojo. 
+                        I graduated in 2022 from the Software Development with Python course with all honors. In the course, we learned many things including Python, JavaScript, and full-stack development using Django.
+                        Since I graduated, I've been working as a full-stack web developer.
+                        I hope you enjoy my projects! Feel free to reach out.
                     </p>
                 </div>
                 <div class="col-4 me">
-                    <img src="{% static 'media/images/placeholder.png' %}" alt="self-portrait" id="portrait">
+                    <img src="{% static 'media/images/me.png' %}" alt="self-portrait" id="portrait">
                 </div>
             </div>
         </div>
@@ -34,7 +25,6 @@
             var text = document.querySelector(".welcome h1").innerHTML;
             document.querySelector(".welcome h1").innerHTML = "";
                 //var intervalId = setInterval(typeWriter, 50);
-            
 
             function typeWriter() {
                 if (i < text.length) {
@@ -48,11 +38,6 @@
             //window.onload = typeWriter;
 // or       
             typeWriter();
-
-    //wrap everything in this. it's jquery's dom ready !  ..! ...?? ..!! 
-            //document.addEventListener("DOMContentLoaded", typeWriter);
-
-
 
             const name = document.querySelector(".welcome h3").innerHTML;
             document.querySelector(".welcome h3").innerHTML = "";

@@ -263,7 +263,8 @@ body{
     /* outline: 1px solid red; */
     min-width: 100%;
     /* margin-top: -2.8em; */
-    padding-block: 10rem;
+    /* padding-block: 10rem; */
+    padding-block: 3rem;
     padding-inline: 2rem;
     /* justify-content: center; */
     background-color: rgb(244, 244, 244);
@@ -467,7 +468,7 @@ nav{
 
 /* Images  */
     #portrait{
-        width: 30em;
+        /* width: 30em; */
     }
 
 /* Footer  */
