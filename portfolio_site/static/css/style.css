@@ -213,6 +213,8 @@ body{
 }
 #container{
     height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     position: relative;
 }
 /* .wrapper{
@@ -250,14 +252,19 @@ body{
     margin-block: 3em;
 }
 .intro{
-    padding: 2em 2em 0 2em;
-    margin: 0 20px;
+    padding: 2em 2em 0 10%;
+    /* margin: 0 20px; */
     color: rgb(64, 64, 64);
+    /* border: 1px solid blue; */
+    /* position: relative; */
 }
 
     .intro p{
         font-size: 2rem;
         margin-top: 2em;
+    }
+    .portrait-div{
+        /* position: absolute; bottom:0px; right: 40px; */
     }
 .welcome{
     /* outline: 1px solid red; */
@@ -832,7 +839,8 @@ nav{
     .grid-item {
         /* border: 1px solid blue; */
         grid-template-columns: 1fr 2fr;
-        grid-column-start: 2;
+        grid-column-start: 1;
+        /* gap: 8em; */
     }
     .grid-item p {
         width: 100%;
