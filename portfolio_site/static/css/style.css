@@ -931,6 +931,10 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     #portrait{
         width: 22em;
     }
+    .portrait-div{
+        display: block;
+    }
+
     .intro p{
         font-size: 1.2rem;
         margin-top: 2em;
