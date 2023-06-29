@@ -979,6 +979,10 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     }
 
     /* Footer */
+    #footer-inner{
+        margin-bottom: 0;
+    }
+
     #mail svg{
         left: 40%;
     }
@@ -988,6 +992,8 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     #github svg{
         left: 60%;
     }
+
+
     /* Resume page */
     .resume-name span{
         font-size: 5rem;
