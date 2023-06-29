@@ -8,6 +8,22 @@
     padding: 0;
     font-family: Helvetica, sans-serif;
 }
+/* Containers  */
+/* html, body{
+    width: 100%;
+    height: 100%;
+} */
+body{
+    overflow-x: hidden;
+}
+#container{
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+    /* border: 99px solid blue; */
+}
 
 ul{
     list-style-type: none;
@@ -41,8 +57,8 @@ ul{
     font-weight: 600;
 }
 
-.orange{
-    color: hsl(39, 90%, 70%);
+.purple{
+    color: hsl(271, 33%, 56%);
 }
 .text-white{
     color: white;
@@ -104,12 +120,8 @@ ul{
     -5px 0 12px -3px rgba(169, 181, 196, 0.8);
 }
 
-.hello-span{
-    font-size: 6rem;
-    line-height: .2rem;
-    color: rgb(87, 158, 153);
-    color: rgb(70, 138, 134);
-}
+
+
 
 /* ====== Backgrounds ====== */
 .bgr-white{
@@ -123,7 +135,7 @@ ul{
 }
 .bgr2{
     /* background-color: hsl(0, 0%, 22%); */
-    background-color: hsl(0, 0%, 15%);
+    background-color: hsl(0, 0%, 12%);
 }
 .bgr3{
     background-color: hsl(58, 100%, 92%);
@@ -206,17 +218,7 @@ ul{
         .grid-item a:hover{
             transform: translateY(-10px);
         }
-/* Containers  */
-body{
-    overflow-x: hidden;
 
-}
-#container{
-    height: 100%;
-    min-height: 100vh;
-    min-width: 100vw;
-    position: relative;
-}
 /* .wrapper{
     border: 1px solid red;
     padding-bottom: 1em;
@@ -229,17 +231,15 @@ body{
 }
 /* PADDINGS  */
 .padding-inline{
-    padding: 1.4em 1em;
+    /* padding: 1.4em 1em; */
 }
 .padding-inline-lg{
     padding-inline: 2.2em;
 }
 .center-it{
-    /* border: 29px solid green; */
-    padding: 2em;
+    /* padding: 2em;
     display: flex;
-    /* justify-content: center; */
-    align-items: center;
+    align-items: center; */
 }
 .padding-block{
     padding-block: 3em;
@@ -249,7 +249,7 @@ body{
 }
 /* MARGINS */
 .margin-block{
-    margin-block: 3em;
+    margin-block: 1em;
 }
 .intro{
     padding: 2em 2em 0 10%;
@@ -260,12 +260,22 @@ body{
 }
 
     .intro p{
-        font-size: 2rem;
+        font-size: 1rem;
         margin-top: 2em;
+    }
+    .hello-span{
+        font-size: 3rem;
+        line-height: .2rem;
+        color: rgb(87, 158, 153);
+        color: rgb(70, 138, 134);
     }
     .portrait-div{
         /* position: absolute; bottom:0px; right: 40px; */
+        display: flex;
+        justify-content: center;
+        margin-left: 2em;
     }
+
 .welcome{
     /* outline: 1px solid red; */
     min-width: 100%;
@@ -278,10 +288,10 @@ body{
 }
     .welcome h1{
         /* visibility: hidden; */
-        font-size: 4rem;
+        font-size: 2rem;
         text-align: center;
         letter-spacing: .6rem;
-        line-height: 6rem;
+        line-height: 3rem;
         color: rgb(0, 158, 197);
         font-family: 'Cutive Mono', monospace;
         
@@ -342,7 +352,7 @@ body{
         /* border-radius: 30px 0 0 30px; */
         /* border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%; */
         text-shadow: 1px 2px 3px hsl(0, 0%, 30%);
-        width: 7em;
+        width: 5em;
         background-color: rgb(255, 247, 192);
         font-size: 2.75rem;
         cursor: pointer;
@@ -399,7 +409,7 @@ body{
     color: #aaa;
     /* float: right; */
     cursor: pointer;
-    font-size: 28px;
+    font-size: 48px;
     font-weight: bold;
     line-height: 1;
 }
@@ -475,36 +485,38 @@ nav{
 
 /* Images  */
     #portrait{
-        /* width: 30em; */
+        width: 18em;
     }
 
 /* Footer  */
 #footer{
-    position: absolute;
+    /* position: absolute; */
     bottom: 0px;
     padding-block: 4em;
     padding-inline: 1em;
     /* background-color: hsl(216, 12%, 8%); */
     background-color: hsl(0,0%,86%);
+    min-width: 100%;
+    font-size: 1.2rem;
+    color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: space-around;
+    position: relative;
 }
-    #footer{
-        min-width: 100%;
-        font-size: 1.2rem;
-        color: rgb(34, 34, 34);
-        display: flex;
-        justify-content: space-around;
-        position: relative;
+    #footer-inner{
+        margin-bottom: 1em;
     }
     #footer i{
         position: absolute;
         bottom: 1em;
     }
+
     #mail svg{
         fill: hsl(59, 100%, 88%);
         fill: hsl(192,100%,39%);
         position: absolute;
         top: 2em;
-        left: 40%;
+        left: 30%;
     }
     #linkedin svg{
         fill: hsl(210,89%,40%);
@@ -516,14 +528,15 @@ nav{
         fill: black;
         position: absolute;
         top: 2em;
-        left: 60%;
+        left: 70%;
     }
 
 
 /* ===== Project Page =====*/
 
 #visit-site{
-    color: black;
+    background-color: rgb(255, 234, 234);
+    color: rgb(31, 31, 31);
     display: block;
     font-size: 3.5rem;
     text-decoration: none;
@@ -547,6 +560,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* width: 100vw; */
 }
     #project-banner * {
         margin: .25em;
@@ -585,10 +599,14 @@ nav{
 
 /* ===== Resume Page ===== */
 
+
+.code-style{
+    color: rgb(112, 206, 112);
+}
 .resume-name span{
     font-family: 'Cutive Mono', monospace;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 2rem;
     /* color: hsl(272, 79%, 37%); */
     color: hsl(223,53%,39%);
 }
@@ -623,7 +641,7 @@ nav{
         margin-inline: 1em;
     }
 .resume-job-title span {
-    font-size: 1.9rem;
+    font-size: 1.2rem;
     display: inline-block;
     background-image: linear-gradient(to right, hsl(272, 93%, 51%), rgb(239, 114, 90) );
     text-shadow: 0 0 0px rgba(86, 86, 86, 0.5);
@@ -633,7 +651,7 @@ nav{
     /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); */
     display: inline-block;
     font-family: 'Assistant', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 900;
     letter-spacing: 2px;
     /* text-align: center; */
@@ -660,6 +678,11 @@ nav{
     .resume-project-title a{
         font-family: 'Montserrat', sans-serif;
     }
+
+.resume-portfolio-title{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
 .resume-ticket-easy-title{
     background-color:hsl(223, 52%, 39%);
 }
@@ -720,7 +743,9 @@ nav{
         color: hsl(0, 71%, 70%);
         text-shadow: 1px 1px hsl(0, 0%, 65%);
     
-        color: hsl(271, 33%, 56%);
+        /* color: hsl(271, 33%, 56%); */
+        color: hsl(39, 90%, 70%);
+
         text-shadow: 1px 1px hsl(0, 0%, 25%);
     
         letter-spacing: 1px;
@@ -746,9 +771,72 @@ nav{
 
 
 
+/* 
+.fade-in{
+    opacity: 0;
+    transition: opacity 140ms ease-in;
+}
+
+.fade-in.appear{
+    opacity: 1;
+} */
+
+.slide-in.left{
+    transform: translateX(-100%);
+}
+.slide-in.right{
+    transform: translateX(100%);
+}
+.slide-in.left.appear, .slide-in.right.appear{
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 400ms ease-in;
+}
+
+
+.left, .right{
+transition: 
+opacity 250ms ease-in,
+transform 400ms ease-in;
+opacity: 0;
+}
+/* 
+
+.left.appear, .right.appear{
+opacity: 1;
+transform: translateX(0);
+transition: transform 400ms ease-in;
+} */
+
+
+
+/* CONTACT PAGE  */
+
+.contact-bgr{
+/* background: url("/static/media/bali.jpg") 50% -700px no-repeat fixed; */
+display: flex; justify-content: center; align-items: center;
+background: url("/static/media/images/bali-lg.jpg") 50% no-repeat fixed;
+color: rgb(255, 229, 99);
+text-shadow: 1px 2px 9px black;
+background-size: cover;
+text-align: justify;
+}
+.contact-me a{
+color: rgb(255, 229, 99);
+font-size: 3rem;
+text-shadow: 1px 1px  9px rgb(0, 0, 0);
+}
+.contact-me a:hover{
+    color: rgb(240, 179, 255);
+}
+
+
 
 /* Mobile  */
 .mobile-hidden{
+    display: none;
+}
+.mobile-hidden-grid{
     display: none;
 }
 .mobile-project-description-overlay{
@@ -759,6 +847,8 @@ nav{
     content: "";
     color: white;
     font-family: 'Cutive Mono', monospace;
+    /* font-family: Helvetica, sans-serif;
+    font-weight: 300 !important; */
     text-shadow: 2px 3px 3px black;
     font-size: 4rem;
     text-align: center;
@@ -804,19 +894,109 @@ nav{
     content: "Canned Responses";
 }
 .te-overlay-7::before{
-    content: "In-house messaging";
+    content: "E-mail";
 }
 .te-overlay-8::before{
     content: "Analytics";
 }
 
-
+.d-width{
+    max-width: 100dvw;
+}
 
 /* ===== Media Queries ===== */
+
+@media (min-width: 700px) and (max-width: 767px) {
+
+    #portrait{
+        /* width: auto; */
+    }
+    .intro p{
+        font-size: 1.2rem;
+        margin-top: 2em;
+    }
+    .hello-span{
+        font-size: 4rem;
+    }
+    .resume-name span{
+        font-size: 4rem;
+    }
+    .resume-job-title span{
+        font-size: 1.7rem;
+    }
+}
+
+@media (min-width: 768px){
+
+    #portrait{
+        width: 22em;
+    }
+    .intro p{
+        font-size: 1.2rem;
+        margin-top: 2em;
+    }
+    .hello-span{
+        font-size: 4rem;
+    }
+    .resume-name span{
+        font-size: 4rem;
+    }
+    .resume-job-title span{
+        font-size: 1.7rem;
+    }
+    .resume-section-title{
+        font-size: 3rem;
+    }
+}
+
 @media (min-width: 1024px) {
+    /* General  */
+    .margin-block{
+        margin-block: 2em;
+    }
     .padding-inline{
         padding: 1.4em 7em;
     }
+
+
+    /* Home page  */
+    #portrait{
+        width: auto;
+    }
+
+    .welcome h1{
+        font-size: 4rem;
+        text-align: center;
+        letter-spacing: .6rem;
+        line-height: 6rem;
+    }
+
+    /* Footer */
+    #mail svg{
+        left: 40%;
+    }
+    #linkedin svg{
+        left: 50%;
+    }
+    #github svg{
+        left: 60%;
+    }
+    /* Resume page */
+    .resume-name span{
+        font-size: 5rem;
+    }
+    .resume-job-title span{
+        font-size: 1.9rem;
+    }
+    .intro p{
+        font-size: 1.4rem;
+        margin-top: 2em;
+    }
+
+
+
+    /* Projects  */
+
     .mobile-project-img{
         width: 620px !important;
         height: 400px !important;
@@ -826,6 +1006,9 @@ nav{
     }
     .mobile-hidden{
         display: block;
+    }
+    .mobile-hidden-grid{
+        display: grid;
     }
     .menu{
         display: block;
@@ -841,6 +1024,7 @@ nav{
         grid-template-columns: 1fr 2fr;
         grid-column-start: 1;
         /* gap: 8em; */
+
     }
     .grid-item p {
         width: 100%;
@@ -860,6 +1044,21 @@ nav{
         height: 400px;
       }
 }
+
+@media (min-width:1280px){
+
+    #portrait{
+        width: auto;
+    }
+    .intro p{
+        font-size: 2rem;
+        margin-top: 2em;
+    }
+    .hello-span{
+        font-size: 6rem;
+    }
+}
+
 @media (min-width: 1450px) {
     .grid-item {
 
@@ -876,67 +1075,6 @@ nav{
 
 
 
-
-
-
-/* 
-.fade-in{
-    opacity: 0;
-    transition: opacity 140ms ease-in;
-}
-
-.fade-in.appear{
-    opacity: 1;
-} */
-
-    .slide-in.left{
-        transform: translateX(-100%);
-    }
-    .slide-in.right{
-        transform: translateX(100%);
-    }
-    .slide-in.left.appear, .slide-in.right.appear{
-        opacity: 1;
-        transform: translateX(0);
-        transition: transform 400ms ease-in;
-    }
-
-
-.left, .right{
-    transition: 
-    opacity 250ms ease-in,
-    transform 400ms ease-in;
-    opacity: 0;
-}
-/* 
-
-.left.appear, .right.appear{
-    opacity: 1;
-    transform: translateX(0);
-    transition: transform 400ms ease-in;
-} */
-
-
-
-/* CONTACT PAGE  */
-
-.contact-bgr{
-    /* background: url("/static/media/bali.jpg") 50% -700px no-repeat fixed; */
-    display: flex; justify-content: center; align-items: center;
-    background: url("/static/media/images/bali-lg.jpg") 50% no-repeat fixed;
-    color: rgb(255, 229, 99);
-    text-shadow: 1px 2px 9px black;
-    background-size: cover;
-    text-align: justify;
-}
-.contact-me a{
-    color: rgb(255, 229, 99);
-    font-size: 3rem;
-    text-shadow: 1px 1px  9px rgb(0, 0, 0);
-}
-    .contact-me a:hover{
-        color: rgb(240, 179, 255);
-    }
 
 
 

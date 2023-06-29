@@ -10,9 +10,11 @@
                 <h1 class="title">Projects</h1>
             </div>
         </div> {% endcomment %}
-        <div class="grid">
-            <div class="grid-item padding-inline padding-block bgr">
-                <div>
+
+    <section class="d-width">
+        <div class="grid d-width">
+            <div class="grid-item padding-inline padding-block bgr d-width">
+                <div class="d-width">
                     <h1 class="bold-600 h1-bigger"><span class="fs-700">T</span>icket <span class="fs-700">E</span>asy</h1>
                     <p>
                         A support ticketing system built for dynamic usage and equipped with custom automations.
@@ -24,7 +26,7 @@
 
             </div>
 
-            <div class="grid-item padding-inline padding-block bgr2">
+            <div class="grid-item padding-inline padding-block bgr2 d-width">
                 <div class="txt-white">
                     <h1 class="bold-600 h1-bigger"><span class="fs-700">KJV</span> <span class="fs-700">C</span>oncordance</h1>
                     <p>
@@ -36,7 +38,7 @@
                 </a>
             </div>
 
-            <div class="grid-item padding-inline padding-block bgr3">
+            <div class="grid-item padding-inline padding-block bgr3 d-width">
                 <div>
                     <h1 class="bold-600 h1-bigger"><span class="fs-700">S</span>tream <span class="fs-700">B</span>unny</h1>
                     <p>
@@ -49,7 +51,7 @@
 
             </div>
 
-            <div class="grid-item padding-inline padding-block bgr1">
+            <div class="grid-item padding-inline padding-block bgr1 d-width">
                 <div>
                     <h1 class="bold-600 h1-bigger"><span class="fs-700">S</span>ession <span class="fs-700">T</span>racker</h1>
                     <p>
@@ -65,31 +67,32 @@
 
 <!-- =======   SINGLE PROJECT PAGE   ======= -->
 {% else %}
+<div class="d-width">
     <header id="project-banner" class="{{project}}">
         {% if title == "Stream Bunny" %}
             <img src="{% static 'media/images/logo-sb.png' %}">
         {% endif %}
-        <h1 class="title-{{project}}">{{title}}</h1>
+        <h1 class="title-{{project}}" id="project-title">{{title}}</h1>
     </header>
     <div class="text-center">
         <a href="{{url}}" id="visit-site">Visit Site</a>
     </div>
     {% if title == "Ticket Easy" %}
         <div id="project-main-img">
-            <img src = "{% static 'media/images/ticket_easy/main.jpg' %}">
+            <img src = "{% static 'media/images/ticket_easy/main.jpg' %}" class="mobile-hidden">
         </div>
         <div class="center-it">
             <section class="padding-inline fs-500">
-                <p>
+                <p class="mobile-hidden">
                     Ticket Easy is dynamic support ticket system built with Django to help businesses manage and resolve their internal issues as well as provide analytics for identifying problematic trends.
                 </p>
                 <div class="grid">
-                    <section class="slide-in right grid-item mobile-project-description-overlay margin-block te-overlay-1">
+                    <section class="slide-in right grid-item mobile-project-description-overlay margin-block te-overlay-1 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/ticket-all.png' %}">
                         <p class="mobile-hidden">Ticket management console for resolving, archiving, withholding, viewing, editing, and deleting tickets.</p>
                     </section>
 
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-2">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-2 mobile-hidden-grid">
                         <p class="mobile-hidden">Ability to query the database for tickets by ID, keyword(s), priority, status, category, assignment, or date</p>
                         <video width="600" height="450" controls>
                             <source src="{% static 'media/images/ticket_easy/project-images/demo.mov' %}" type="video/mp4">
@@ -98,32 +101,32 @@
                     </section>
 
 
-                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-3">
+                    <section class="slide-in right grid-item mobile-project-description-overlay margin-block te-overlay-3 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/ticket-new.png' %}">
                         <p class="mobile-hidden">Ticket creation form</p>
                     </section>
                     
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-4">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-4 d-width">
                         <p class="mobile-hidden">Create custom-defined automations to assist in the workflow</p>
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/bot-new.png' %}">
                     </section>
 
-                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-5">
+                    <section class="slide-in right grid-item mobile-project-description-overlay margin-block te-overlay-5 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/bot-all.png' %}">
                         <p class="mobile-hidden">Once saved, any aspect of an automation can still be edited</p>
                     </section>
 
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-6">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-6 d-width">
                         <p class="mobile-hidden">Create canned, template responses to integrate with custom automations</p>
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/canned-new.png' %}">
                     </section>
 
-                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-7">
+                    <section class="slide-in right grid-item mobile-project-description-overlay margin-block te-overlay-7 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/mail-all.png' %}">
                         <p class="mobile-hidden">Emailer for in-house communications</p>
                     </section>
 
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-8">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-8 d-width">
                         <p class="mobile-hidden">Analytics</p>
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/ticket_easy/project-images/analytics2.png' %}">
                     </section>
@@ -133,7 +136,7 @@
         </div>
     {% elif title == "Stream Bunny" %}
         <div id="project-main-img" class="bgr-coal">
-            <img src = "{% static 'media/images/stream_bunny/main.jpg' %}">
+            <img src = "{% static 'media/images/stream_bunny/main.jpg' %}" class="mobile-hidden">
         </div>
         <div class="center-it text-white bgr-coal">
             <section class="padding-inline fs-500">
@@ -141,22 +144,22 @@
                     Stream Bunny is a place where people can find what platforms to stream films or series. It also has a discussions page for each movie that has been liked by a user.
                 </p><br>
                 <div class="grid">
-                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-2">
+                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-2 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/stream_bunny/project-images/search.png' %}">
                         <p class="mobile-hidden">Search for films or series by title to see where they are streaming</p>
                     </section>
                     
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-1">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-1 d-width">
                         <p class="mobile-hidden">Each user has their own profile page to catalogue their favorite films or series</p>
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/stream_bunny/project-images/profile.png' %}">
                     </section>
 
-                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-2">
+                    <section class="slide-in right grid-item mobile-project-description-overlay te-overlay-2 d-width">
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/stream_bunny/project-images/top-movies.png' %}">
                         <p class="mobile-hidden">List of all the films or series that have been liked by users</p>
                     </section>
 
-                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-1">
+                    <section class="slide-in left grid-item mobile-project-description-overlay margin-block te-overlay-1 d-width">
                         <p class="mobile-hidden">Each film or series has its own discussion page where users can leave comments</p>
                         <img class="grid-image mobile-project-img" src="{% static 'media/images/stream_bunny/project-images/discussion.png' %}">
                     </section>
@@ -165,13 +168,14 @@
         </div>
     {% elif title == "Session Tracker" %}
         <div id="project-main-img">
-            <img src = "{% static 'media/images/session_tracker/main.jpg' %}">
+            <img src = "{% static 'media/images/session_tracker/main.jpg' %}" class="mobile-hidden">
         </div>
         <div class="text-center">
             <p>A tool to help businesses list their packages and offers and to help manage the redemption of a package's sessions.
                 <br>Ideal for services such as personal training, therapy, coaching, tutoring, lawn services, and other similar types of services.</p>
         </div>
     {% endif %}
+</div>
     <!-- maybe use IntersectionObserver -->
 {% endif %}
 <script src="{% static 'js/faders.js' %}"></script>
