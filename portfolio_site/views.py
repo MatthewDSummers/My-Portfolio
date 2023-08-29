@@ -49,6 +49,12 @@ def contact(request):
     }
     return render(request, "contact.html", context)
 
+def have_fun(request):
+    context = {
+        "have_fun":"active",
+        "title": "Have Fun"
+    }
+    return render(request, "games.html", context)
 # def form(request):
 #     x = request.GET["searched"]
 

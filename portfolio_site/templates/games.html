@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="game-container row bgr3">
+    <div id="left-game">
+    <h1 id="hangman-h1">Hangman</h1>
+        <div id="hangman-div" class="col-6 col-sm-12">
+            <div id="game-options">
+                <p id="error-difficulty">Please select a difficulty</p>
+                <input id="easy" class="difficulty" type="radio">
+                <label for="easy">Easy</label>
+                <input id="medium" class="difficulty" type="radio">
+                <label for="medium">Medium</label>
+                <input id="hard" class="difficulty" type="radio">
+                <label for="hard">Hard</label>
+
+                <select id="choices">
+                    <option>Select a category</option>
+                    <option value="People">People</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Countries">Countries</option>
+                    <option value="Colors">Colors</option>
+                    <option value="Musical Instruments">Musical Instruments</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </div>
+            <br>
+            <br>
+
+            <div class="pole"></div>
+
+            <div id="hangman-body">
+                <div id="head" class="piece 3"></div>
+                <div id="body" class="piece 4"></div>
+                <div id="arm-left" class="piece 5"></div>
+                <div id="arm-right" class="piece 6"></div>
+                <div id="leg-left" class="piece 7"></div>
+                <div id="leg-right" class="piece 8"></div>
+            </div>
+            <h1 id="victory-statement">You Win!</h1>
+
+            <div id="letter-spaces">
+                {% comment %} <div class="letter-lines"><p class="letter-lines-p"></p></div>
+                <div class="letter-lines"></div>
+                <div class="letter-lines"></div>
+                <div class="letter-lines"></div> {% endcomment %}
+            </div>
+            <div id="letter-options">
+                <div id="letter-options-inner-1"></div>
+                <div id="letter-options-inner-2"></div>
+                <div id="letter-options-inner-3"></div>
+            </div>
+            <input id="answer" type="hidden">
+            <p id="hint"></p>
+            <button id="hint-button" class="hidden game-button">Hint</button>
+        </div>
+    </div>
+    <div id="right-game"  class="col-6 col-sm-12">
+        <button id="get-joke" class="game-button">Tell A Joke</button>
+        <div id="joke-div" class="hidden">
+            <h3 id="joke-title">Jokes</h3>
+            <p id="setup"></p>
+            <br>
+            <h1 id="counter" class="hidden"></h1>
+            <br>
+            <button id="show-punchline" class="hidden game-button">Show Punchline</button>
+            <div id="punchline-div" class="hidden">
+                <p id="punchline-element"></p>
+            </div>
+            <button id="new-joke" class="hidden game-button">New Joke</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

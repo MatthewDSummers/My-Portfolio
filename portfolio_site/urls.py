@@ -6,5 +6,6 @@ urlpatterns = [
     path('projects', views.projects),
     path('resume', views.resume),
     path('contact', views.contact),
+    path('have-fun', views.have_fun),
     # path('form', views.form),
 ]

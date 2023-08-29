@@ -466,7 +466,11 @@ nav{
         color: hsl(192,100%,39%);
         border-bottom: 3px solid hsl(192,100%,39%);
     }
-        .active.home, .active.projects, .active.resume, .active.contact{
+    .have-fun{
+        color: hsl(295, 90%, 55%);
+        border-bottom: 3px solid hsl(295, 90%, 55%);
+    }
+        .active.home, .active.projects, .active.resume, .active.contact, .active.have-fun{
             font-weight: 900;
             color: hsl(176,32%,41%);
         }
@@ -482,7 +486,9 @@ nav{
         .active.contact{
             border-bottom: 5px solid hsl(192, 100%, 39%)7;
         }
-
+        .active.have-fun{
+            border-bottom: 5px solid hsl(295, 90%, 55%);
+        }
 /* Images  */
     #portrait{
         width: 18em;

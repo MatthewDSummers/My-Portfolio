@@ -1,0 +1,343 @@
+/* * {
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    min-height: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+} */
+
+/* main{
+    display: grid;
+    grid-template-areas:
+    "head head head"
+    "content content content"
+    "footer footer footer";
+    grid-template-rows: 10% auto 15%;
+} */
+
+/* header{
+    grid-area: head;
+    background-color: red;
+}
+
+article{
+    min-height: 100svh;
+    grid-area: content;
+}
+
+aside{
+    display: none;
+    background-color: rgb(65, 0, 53);
+}
+
+footer{
+    grid-area: footer;
+    background-color: green;
+} */
+
+/* @media (min-width: 1000px){
+
+    header{
+        background-color: rgb(28, 180, 190);
+    }
+    main{
+        grid-template-areas:
+        "head head head"
+        "side content content"
+        "footer footer footer";
+        grid-template-rows: 10% auto 15%;
+        grid-template-columns: auto minmax(0, 1fr);
+
+    }
+    aside{
+        display: grid;
+        grid-area: side;
+        width: 10em;
+    }
+} */
+
+.game-container{
+    padding: 1em 1em;
+    display: flex;
+}
+#left-game{
+    flex: 1;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+#right-game{
+    flex: 1;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+.pole {
+    width: 0.45em; /* Adjust as needed */
+    height: 20.5em; /* Adjust as needed */
+    background-color: black;
+    position: relative;
+  }
+  
+  /* .pole::after {
+    content: "";
+    position: absolute;
+    width: 0.2em; 
+    height: 4em;
+    background-color: black;
+    top: -2;
+    left: 8em;
+    transform-origin: bottom;
+  } */
+  
+  /* .pole::before {
+    content: "";
+    position: absolute;
+    width: 0.43em; 
+    height: 7.9em;
+    background-color: black;
+    top: -7.7em; 
+    left: 0;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+  } */
+
+  .pole-with-after::after {
+    content: "";
+    position: absolute;
+    width: 0.2em; /* Adjust as needed */
+    height: 4em; /* Adjust as needed */
+    background-color: black;
+    top: -2;
+    left: 8em;
+    /* transform: rotate(90deg); */
+    transform-origin: bottom;
+  }
+  .pole-with-before::before {
+    content: "";
+    position: absolute;
+    width: 0.43em; 
+    height: 7.9em;
+    background-color: black;
+    top: -7.7em; 
+    left: 0;
+    transform: rotate(90deg);
+    transform-origin: bottom;
+  }
+#hangman-div{
+    /* margin-left: 4.3em; */
+    margin-left: .8em;
+    /* margin-top:1em; */
+    position: relative;
+    /* border: 1px solid grey; */
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+#hangman-body{
+    position: absolute;
+    left: 14em;
+    top: 4em;
+}
+#head{
+    display: none;
+    position: absolute;
+    top: 2em;
+    right: 4em;
+    width: 3.5em;
+    height: 3.5em;
+    background-color: white;
+    border-radius: 100%;
+    border: 3px solid black;
+}
+#body{
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    top: 5.35em;
+    right: 5.65em;
+    height: 3.1em;
+}
+
+#arm-left{
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    transform: rotate(50deg);
+    top: 5.6em;
+    right: 6.9em;
+    height: 3em;
+}
+#arm-right{
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    transform: rotate(-50deg);
+    top: 5.48em;
+    right: 4.5em;
+    height: 3em;
+}
+#leg-left{
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    transform: rotate(20deg);
+    top: 8.1em;
+    right: 6.3em;
+    height: 4em;
+}
+#leg-right{
+    display: none;
+    border: 2px solid black;
+    position: absolute;
+    transform: rotate(-20deg);
+    top: 8.1em;
+    right: 4.9em;
+    height: 4em;
+}
+
+#victory-statement{
+    display: none;
+    color: blue;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#error-difficulty{
+    display: none;
+    color:red;
+}
+
+#letter-spaces{
+    /* border: 2px solid black; */
+    height: 4em;
+    text-align: center;
+}
+
+.letter-lines{
+    display: inline-block;
+    position: relative;
+    margin-inline: .2em;
+    border-bottom:2px solid black;
+    /* padding-bottom: 2em; */
+    height: 1.8em;
+    width: 1.4em;
+    /* border: 2px solid green; */
+    text-align: center;
+    /* vertical-align: bottom; */
+}
+
+.letter-lines-no-letter{
+    border-bottom: 0;
+    display: block;
+
+}
+
+.letter-lines-p{
+    display: none;
+    position: absolute;
+    bottom: -1em;
+    left: .3em;
+}
+
+
+#letter-options{
+    margin-top: 4em;
+}
+.letter-options-inner-div{
+    display: inline-block;
+}
+.letter-option{
+    cursor: pointer;
+    display: inline-block;
+    background-color: rgb(149, 149, 255);
+    color: rgb(0, 0, 0);
+    width: 1.5em;
+
+    margin: .2em;
+    border: 1px solid black;
+    padding: .2em .35em;
+
+    text-align: center;
+    text-shadow: 1px 1px 2px white;
+
+    box-shadow: 1px 1px black;
+}
+    .clicked-letter-right{
+        background-color: rgb(68, 255, 0);
+    }
+    .clicked-letter-wrong{
+        background-color: red;
+    }
+.show{
+    display: block !important;
+}
+.hide{
+    display: none !important;
+}
+
+#hangman-h1{
+    width: 8em;
+    padding: .3em 0;
+    color: rgb(118, 31, 0);
+    font-size: 4rem;
+    text-decoration: underline;
+    font-family: 'Assistant', sans-serif;
+}
+#get-joke{
+    background-color: rgb(121, 210, 255);
+    color: black;
+    font-size: 4rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+
+    /* border: 1px solid black; */
+}
+
+#joke-title{
+    width: 8em;
+    padding: .3em 0;
+    color: rgb(30, 30, 166);
+    font-size: 4rem;
+    text-decoration: underline;
+    font-family: 'Assistant', sans-serif;
+}
+#joke-div{
+    /* display: none; */
+    /* padding: 2em; */
+    /* padding: 1em 0; */
+
+}
+    #new-joke{
+        /* display: none; */
+    }
+    #joke-div p, h1{
+        /* color:white; */
+    }
+    #joke-div p{
+        font-size: 1.3rem;
+
+    }
+    #counter{
+        /* color: white; */
+    }
+
+
+    .hidden{
+        display: none;
+    }
+    .block{
+        display: block !important;
+    }
+
+    .game-button{
+        padding: .2em .5em;
+        /* margin: 1em 0; */
+        background-color: rgb(30, 30, 166);
+        color: yellow;
+        font-size: 1.5rem;
+        border-radius: 11px;
+    }
