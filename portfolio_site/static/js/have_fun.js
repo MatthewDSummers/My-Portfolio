@@ -6,7 +6,7 @@ const GUESS_WORDS = {
             {word: "ALBERT EINSTEIN", hint: "Famous physicist with wild hair"},
             {word: "JOHN LENNON", hint: "Considered to be the leader of The Beatles"}
         ],
-    
+
         "Fruits":[
             {word: "BANANA", hint: "A yellow fruit which monkeys like"},
             {word: "APPLE", hint: "This fruit famously fell on someone's head and led to a scientific revelation"},
@@ -445,3 +445,46 @@ function newJoke(target_element){
         }
     })
 }
+
+
+
+// function getJSONDataOnClick(element, url){
+//     return new Promise (async (resolve, reject) => {
+//         element.addEventListener("click", async function(event){
+//             if (event.target.tagName === "A"){
+//                 event.preventDefault();
+//             }
+
+//             try {
+//                 const response = await fetch(url);
+//                 if (!response.ok){
+//                     throw new Error("Network response not OK");
+//                 }
+//                 const data = await response.json();
+//                 resolve(data);
+
+//             }
+//             catch (error){
+//                 reject(error);
+//                 console.log('Fetch error:', error);
+//             }
+//         });
+
+
+//     });
+// }
+
+// // Example usage:
+// const myElement = document.getElementById("myElement");
+// const apiUrl = "https://www.example.com/api/data";
+// const fetchOnClick = getJSONDataOnClick(myElement, apiUrl);
+
+// fetchOnClick
+//     .then((data) => {
+//         console.log("Data: ", data);
+//         return data;
+//     })
+//     .catch((error) => {
+//         console.log("Error: ", error);
+//         return error;
+//     });
