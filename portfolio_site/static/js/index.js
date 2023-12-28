@@ -16,9 +16,14 @@ const animateText = document.querySelectorAll('.animate-texts');
 animateText.forEach(function (text) {
     const letters = text.textContent.split("");
     text.textContent = "";
+    if (text.classList.contains("phone-num-animate")){
+        var the_a = document.createElement("a");
+        var phone_num = "";
+    }
+
 
     letters.forEach(function (letter, i) {
-        const span = document.createElement("span");
+        span = document.createElement("span");
         span.classList.add("animate-text")
 
         if (letter === ' ') {
@@ -30,7 +35,21 @@ animateText.forEach(function (text) {
                 span.style.animationDelay = i / 35 + "s";
             }
         }
-        text.append(span);
+
+        if (text.classList.contains("phone-num-animate")){
+            phone_num += letter;
+            the_a.append(span)
+        }else{
+            text.append(span);
+        }
+
+        if (i === letters.length - 1 && text.classList.contains("phone-num-animate")){
+            text.append(the_a);
+            the_a.href = 'tel:' + phone_num;
+            the_a.style.color = "#7d4095";
+            the_a.style.textDecoration = "none"
+            the_a.style.textShadow = "1px 2px 3px #e6e200"
+        }
     });
 });
 

@@ -2,12 +2,14 @@
 {% load static %}
 {% block content %}
             <div class="welcome">
-                <h3 id="name">Matthew Summers</h3>
-                <h1>FULL-STACK WEB DEVELOPER</h1>
+                    <h3 id="name">Matthew Summers</h3>
+                    <h1>FULL-STACK WEB DEVELOPER</h1>
+                <div id="portrait-bust-div">
+                    <img src="{% static 'media/images/me-bust.png' %}" alt="self-portrait" id="portrait-bust">
+                </div>
             </div>
 
             <div class="row intro">
-                {% comment %} <div class="col-2"></div> {% endcomment %}
                 <div class="col-sm-12 col-md-6">
                     <p id="hello-p"><span class="hello-span">Hello,</span> my name is Matthew. I love to code, and I love music. I began coding in 2021 when I enrolled in Coding Dojo. 
                         I graduated in 2022 from the Software Development with Python course with all honors. In the course, we learned many things including Python, JavaScript, and full-stack development using Django.
@@ -16,12 +18,14 @@
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-4 portrait-div">
-                    <img src="{% static 'media/images/me.png' %}" alt="self-portrait" id="portrait">
+                    <img src="{% static 'media/images/me-alt-transformed.png' %}" alt="self-portrait" id="portrait">
                 </div>
             </div>
         </div>
         <script>
             var i = 0;
+            const portrait_bust = $("#portrait-bust-div");
+            console.log(portrait_bust)
             var text = document.querySelector(".welcome h1").innerHTML;
             document.querySelector(".welcome h1").innerHTML = "";
                 //var intervalId = setInterval(typeWriter, 50);
@@ -33,12 +37,18 @@
                     setTimeout(typeWriter, 40);
                 //    requestAnimationFrame(typeWriter);
                 }
+
+                //fade in portrait bust 
+                if (i == text.length){
+                    portrait_bust.fadeIn(1450)
+                }
             }
 
             //window.onload = typeWriter;
             typeWriter();
 
             const name = document.querySelector(".welcome h3").innerHTML;
+
             document.querySelector(".welcome h3").innerHTML = "";
             var j = 0;
             const typeName = () => {

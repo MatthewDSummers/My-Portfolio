@@ -1,3 +1,5 @@
+current_answer = null;
+
 const GUESS_WORDS = {
 
     "easy": {
@@ -181,7 +183,7 @@ const hint_button = document.getElementById("hint-button");
 const hint = document.getElementById("hint");
 
 
-function gameFlow(command){
+function gameFlow(command, win=false){
     if (command=="start"){
         hint_button.classList.add("show");
         letter_options_inner_1.innerHTML = "";
@@ -203,7 +205,13 @@ function gameFlow(command){
         pole.classList.remove("pole-with-after");
         pole.classList.remove("pole-with-before");
     }
-    if (command=="end"){
+
+    if (command=="end" && !win){
+        const answer_p = document.createElement("p");
+        answer_p.textContent = "Answer: " + current_answer;
+        letter_spaces_div.append(answer_p);
+        document.getElementById("game-options").classList.remove("hide");
+    }else if(command=="end"){
         document.getElementById("game-options").classList.remove("hide");
     }
 
@@ -219,7 +227,8 @@ function appendLetterOptions(i){
 function clickLetter(event) {
     const letter = event.target;
     const letter_value = letter.textContent;
-    const answer = document.getElementById("answer").value;
+
+    const answer = current_answer;
     const answer_no_spaces = answer.split(" ").join("");
 
     const answer_letters = document.querySelectorAll(".letter-lines-p");
@@ -227,27 +236,23 @@ function clickLetter(event) {
     const pieces = document.querySelectorAll('.piece');
 
 
-    console.log(letter_value, "letter value chosen");
-
-
-    console.log(answer, "the answer")
     if (answer.includes(letter_value)){
         letter.classList.add("clicked-letter-right");
         for (const char of answer_letters){
             if (char.textContent == letter_value){
                 char.classList.add("block");
                 right_answers += 1;
-                console.log(right_answers, "right answer")
-                console.log(answer.length, "answer lenght")
+                // console.log(right_answers, "right answer")
+                // console.log(answer.length, "answer lenght")
             }
             if (right_answers == answer_no_spaces.length){
                 victory_statement.textContent = "You Win!";
-                gameFlow("end");
+                gameFlow("end", win=true);
                 victory_statement.classList.add("block");
             }
 
         }
-        console.log("correct!")
+        // console.log("correct!")
 
     }else{
             letter.classList.add("clicked-letter-wrong");
@@ -264,7 +269,7 @@ function clickLetter(event) {
                     const pieceNumber = parseInt(piece.classList[1]); // get second class
                     if (pieceNumber == wrong_answers) {
                         piece.classList.add("block");
-                        console.log(piece)
+                        // console.log(piece)
                     }
                 });
             }
@@ -272,7 +277,7 @@ function clickLetter(event) {
             if (wrong_answers == 8){
                 victory_statement.textContent = "You Lose!";
                 victory_statement.classList.add("block");
-                gameFlow("end");
+                gameFlow("end", win=false);
             }
     }
 }
@@ -325,13 +330,13 @@ CHOICES.addEventListener("change", function(){
         var random_index = Math.floor(Math.random() * options.length);
         var random_word = options[random_index];
         
-        document.getElementById("answer").value = random_word.word;
-        console.log(random_word.hint, "hint")
+        current_answer = random_word.word;
+        // console.log(random_word.hint, "hint")
 
         giveHint(random_word);
 
         for (const letter of random_word.word){
-            console.log(letter)
+            // console.log(letter)
             if (letter == " "){
                 var letter_space = document.createElement("div");
                 letter_space.classList.add("letter-lines-no-letter");
@@ -409,7 +414,7 @@ function countDownJoke(counter, punchline, count){
 
 joke_button.addEventListener("click", function(e){
     newJoke(e.target);
-    console.log(e.target)
+    // console.log(e.target)
 });
 new_joke.addEventListener("click", function(e){
     // punchline_element.style.display = "none";
@@ -438,9 +443,9 @@ function newJoke(target_element){
         dataType: "json",
         success: function(data){
             setup.textContent = data.setup;
-            console.log(data)
+            // console.log(data)
             var punch = data.punchline;
-            console.log(punch)
+            // console.log(punch)
             countDownJoke(counter, punch, 3);
         }
     })

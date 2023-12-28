@@ -44,6 +44,9 @@ ul{
 .fs-200{
     font-size: 1.25rem;
 }
+.fs-300{
+    font-size: 1.65rem;
+}
 .fs-500{
     font-size: 2rem;
 }
@@ -57,7 +60,13 @@ ul{
     font-weight: 600;
 }
 
+.black{
+    color: rgb(37, 37, 37);
+}
 .purple{
+    color: hsl(271, 41%, 45%);
+}
+.purple-lte{
     color: hsl(271, 33%, 56%);
 }
 .text-white{
@@ -231,7 +240,7 @@ ul{
 }
 /* PADDINGS  */
 .padding-inline{
-    /* padding: 1.4em 1em; */
+    padding: 1.4em 1em;
 }
 .padding-inline-lg{
     padding-inline: 2.2em;
@@ -269,12 +278,11 @@ ul{
         color: rgb(87, 158, 153);
         color: rgb(70, 138, 134);
     }
-    .portrait-div{
-        /* position: absolute; bottom:0px; right: 40px; */
+    /* .portrait-div{
         display: flex;
         justify-content: center;
         margin-left: 2em;
-    }
+    } */
 
 .welcome{
     /* outline: 1px solid red; */
@@ -321,7 +329,7 @@ ul{
 .modal-menu{
     display: none; 
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100%;
@@ -489,10 +497,7 @@ nav{
         .active.have-fun{
             border-bottom: 5px solid hsl(295, 90%, 55%);
         }
-/* Images  */
-    #portrait{
-        width: 18em;
-    }
+
 
 /* Footer  */
 #footer{
@@ -605,10 +610,23 @@ nav{
 
 /* ===== Resume Page ===== */
 
+.job-header{
+    line-height: 1.8em;
+}
 
 .code-style{
     color: rgb(112, 206, 112);
 }
+
+.resume-top{
+    position: relative;
+}
+    .me-alt{
+        position: absolute;
+        top: 0px; right:0px;
+        width: 230px; height: 230px;
+    }
+
 .resume-name span{
     font-family: 'Cutive Mono', monospace;
     font-weight: 900;
@@ -657,7 +675,7 @@ nav{
     /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); */
     display: inline-block;
     font-family: 'Assistant', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
     letter-spacing: 2px;
     /* text-align: center; */
@@ -683,19 +701,20 @@ nav{
 }
     .resume-project-title a{
         font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
     }
 
 .resume-portfolio-title{
     background-color: rgb(255, 255, 255);
     color: black;
 }
+
 .resume-ticket-easy-title{
     background-color:hsl(223, 52%, 39%);
 }
     .resume-ticket-easy-title a{
         color: hsl(57, 74%, 70%);
         text-shadow: 1px 1px hsl(223, 52%, 59%);
-        text-decoration: none;
     }
     .resume-ticket-easy-title a:hover{
         color:rgb(246, 231, 27);
@@ -707,7 +726,6 @@ nav{
     .resume-concordance-title a{
         color: hsl(0, 0%, 0%);
         text-shadow: 1px 1px hsl(48, 100%, 90%);
-        text-decoration: none;
     }
     .resume-concordance-title a:hover{
         color:hsl(0, 0%, 30%);
@@ -720,7 +738,6 @@ nav{
     .resume-stream-bunny-title a{
         color: hsl(0, 0%, 0%);
         text-shadow: 1px 1px hsl(209, 100%, 75%);
-        text-decoration: none;
     }
     .resume-stream-bunny-title a:hover{
         color:rgb(246, 231, 27);
@@ -733,7 +750,6 @@ nav{
     .resume-session-tracker-title a{
         color: hsl(62,100%,81%);
         text-shadow: 1px 1px hsl(277, 34%, 53%);
-        text-decoration: none;
     }
     .resume-session-tracker-title a:hover{
         color:hsl(56, 99%, 64%);
@@ -910,13 +926,77 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     max-width: 100dvw;
 }
 
-/* ===== Media Queries ===== */
 
+/* Images  */
+#portrait{
+    width: 40em;
+    padding-right: 2em;
+    /* height: 30em; */
+    /* float: right; */
+    /* display: inline-block; */
+}
+
+
+
+/* ===== Media Queries ===== */
+/* @media (max-width: 1024px){
+    .me-alt{
+        width: 206px; height: 206px;
+    }
+}
+@media (max-width: 700px){
+    .me-alt{
+        display: none;
+    }
+} */
+
+
+@media (max-width: 767px) {
+    /* hide original, larger portrait */
+    .portrait-div{
+        display: none;
+    }
+
+    /* re-adjust style for the new portrait bust  */
+    .welcome{
+        padding: 1em 1em 0 1em;
+        /* display: relative; */
+        z-index: 1;
+        position: relative;
+    }
+        /* job title  */
+        .welcome h1{
+            color: hsl(82, 100%, 49%);
+            /* border-radius: 20px; */
+            text-shadow: 2px 2px 4px rgb(46, 47, 95), 1px 1px black;
+            font-weight: 700;
+        }
+        .welcome h3{
+            text-shadow: 2px 2px 4px rgb(46, 47, 95), 1px 1px black;
+            color: rgb(0, 158, 197);
+        }
+        #portrait-bust-div{
+            opacity: .80;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            z-index: -1;
+            display: none;
+            /*  ^ change with JS to fadeIn() after the name appears  */
+        }
+            #portrait-bust{
+                width: 13em;
+                height: 10em;
+            }
+        .hello-span{
+            color: hsl(176, 33%, 31%);
+        }
+}
 @media (min-width: 700px) and (max-width: 767px) {
 
-    #portrait{
-        /* width: auto; */
-    }
+    /* #portrait{
+        width: auto;
+    } */
     .intro p{
         font-size: 1.2rem;
         margin-top: 2em;
@@ -929,18 +1009,25 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     }
     .resume-job-title span{
         font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px){
+    .resume-section-title{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 728px) and (max-width: 767px){
+    .welcome{
+        min-height: 17vh;
     }
 }
 
 @media (min-width: 768px){
-
-    #portrait{
-        width: 22em;
+    #portrait-bust{
+        display: none;
     }
-    .portrait-div{
-        display: block;
-    }
-
     .intro p{
         font-size: 1.2rem;
         margin-top: 2em;
@@ -954,11 +1041,28 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     .resume-job-title span{
         font-size: 1.7rem;
     }
-    .resume-section-title{
-        font-size: 3rem;
+    .portrait-div{
+        display: block;
     }
 }
+@media (min-width: 768px) and (max-width: 1023px){
+    #portrait{
+        width: 38em !important;
+        /* width: 28em; */
+    }
 
+}
+
+    @media (min-width: 742px){
+        .mobile-only-job-heading{
+            display: none;
+        }
+    }
+    @media (max-width: 794px){
+        .desktop-only-job-heading{
+            display: none;
+        }
+    }
 @media (min-width: 1024px) {
     /* General  */
     .margin-block{
@@ -970,9 +1074,9 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
 
 
     /* Home page  */
-    #portrait{
+    /* #portrait{
         width: auto;
-    }
+    } */
     .portrait-div{
         margin: 0;
     }
@@ -1061,20 +1165,30 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
     .grid-item a::before {
         width: 620px;
         height: 400px;
-      }
+    }
 }
 
 @media (min-width:1280px){
 
     #portrait{
-        width: auto;
+        width: 48em !important;
     }
     .intro p{
         font-size: 2rem;
-        margin-top: 2em;
     }
-    .hello-span{
-        font-size: 6rem;
+
+    
+    .ul-styled{
+        font-size: 1.1rem;
+    }
+    .tenure{
+        font-size: 1.2rem;
+    }
+    .fs-200{
+        font-size: 1.4rem;
+    }
+    .fs-300{
+        font-size: 1.8rem;
     }
 }
 
@@ -1083,17 +1197,3 @@ text-shadow: 1px 1px  9px rgb(0, 0, 0);
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

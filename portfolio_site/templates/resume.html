@@ -4,7 +4,9 @@
     <section class="padding-inline bgr3 border-top resume-top">
         <h1 class="resume-name animate-texts">Matthew Summers</h1>
         <h3 class="resume-job-title animate-texts"><span class="resume-job-title-span">Full-Stack Web and Software Developer</span></h3>
-        <h4 class="animate-texts">(573)-820-1557</h4>
+        {% comment %} <h4 class="animate-texts">(573)-820-1557</h4> {% endcomment %}
+        <h4 class="animate-texts phone-num-animate"><a class="anchor-no-style font-assistant" href="tel:+60 1-9620-8890">+60 1-9620-8890</a></h4>
+
     </section>
     <section class="padding-inline bgr2 text-white">
         <div class="line bgr-white"></div>
@@ -23,22 +25,40 @@
         <div class="line"></div>
         <h1 class="resume-section-title">WORK EXPERIENCE</h1>
         <div class="padding-inline-lg">
-            <section>
-                <p class="fs-200 purple"><strong>Cornerstone Apartment Services Inc</strong>, Denver, CO - Freelance Website Developer and Maintenance Services</p>
-                <p class="bold-600">January 2022 - Present</p>
+            <section class="padding-block-sm">
+                <p>
+                    <span class="fs-300 purple">
+                        <strong>Cornerstone Apartment Services<span class="desktop-only-job-heading">, Inc</span></strong>
+                    <span>
+                    <br class="mobile-only-job-heading">
+                    <span class="fs-200 purple-lte">- Denver, Colorado, USA</span> 
+                    <span class="fs-200 black">
+                        <br> Freelance Website Developer and Maintenance Services
+                    </span>
+                </p>
+                <p class="bold-600 tenure">January 2022 - Present</p>
                 <ul class="ul-styled">
                     <li>Responsible for creating and implementing new features and maintenance of company’s PHP based website</li>
                     <li>Created forms and setup the infrastructure to communicate with a third-party API for the scalable processing <br>
                         and analyzation of data toward the funneling of new customers</li>
                     <li>Web developer for one of the largest apartments providers in Denver, CO</li>
-                    <li>Worked directly with management to solve issues in a timely manner</li>
+                    <li>Works directly with management to solve issues in a timely manner</li>
+                    <li>Writes and maintains own technical documentation</li>
                     <li>Trusted to maintain own work schedule and deliver according to requests</li>
-                    
                 </ul>
             </section>
-            <section>
-                <p class="fs-200 purple"><strong>Unilever</strong>, Sikeston, MO - Machine Operator</p>
-                <p class="bold-600">August 2019 - August 2021</p>
+            <section class="padding-block-sm">
+                <p>
+                    <span class="fs-300 purple">
+                        <strong>Unilever</strong>
+                    <span>
+                    <br class="mobile-only-job-heading">
+                    <span class="fs-200 purple-lte">- Sikeston, Missouri, USA</span> 
+                    <span class="fs-200 black">
+                        <br>Machine Operator II
+                    </span>
+                </p>
+                <p class="bold-600 tenure">August 2019 - August 2021</p>
                 <ul class="ul-styled">
                     <li>Part of a team which broke well-established records</li>
                     <li>Increased uptime by successfully troubleshooting and introducing solutions for the performance of routine and emergency maintenance on machines</li>
@@ -46,9 +66,18 @@
                     <li>Improved work relations between employees during difficult and tense times</li>
                 </ul>
             </section>
-            <section>
-                <p class="fs-200 purple"><strong>The Children’s Place</strong>, Fort Payne, AL -  E-commerce</p>
-                <p class="bold-600">February 2018 - July 2019</p>
+            <section class="padding-block-sm">
+                <p>
+                    <span class="fs-300 purple">
+                        <strong>The Children’s Place</strong>
+                    <span>
+                    <br class="mobile-only-job-heading">
+                    <span class="fs-200 purple-lte">- Fort Payne, AL, USA</span> 
+                    <span class="fs-200 black">
+                        <br>E-Commerce
+                    </span>
+                </p>
+                <p class="bold-600 tenure">February 2018 - July 2019</p>
                 <ul class="ul-styled">
                     <li>Key member of a select team to restructure inventory</li>
                     <li>Regularly exceeded the quota</li>
@@ -63,7 +92,7 @@
         <div class="line bgr-white"></div>
         <h1 class="resume-section-title">PROJECTS</h1>
 
-        <section class="padding-inline-lg">
+        <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-ticket-easy-title"><a href="https://matthewsummers.dev/ticket-easy/" target="_blank">Ticket Easy</a></h4> &nbsp;<span>[Jan - March '22; March - May '23]</span>
             <p class="fs-200 bold-600 resume-project-desc">
                 A dynamic support ticket system built with Django to help businesses manage and resolve their internal issues as well as provide analytics for identifying problematic trends
@@ -80,7 +109,7 @@
                 <li>Employed <code class="code-style">bcrypt</code> for password security due to its slow hashing of strings and additional salting</li>
             </ul>
         </section>
-        <section class="padding-inline-lg">
+        <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-concordance-title"><a href="https://matthewsummers.dev/concordance/" target="_blank">KJV Concordance</a></h4> &nbsp;<span>[Jan '23]</span>
             <p class="fs-200 bold-600 resume-project-desc">
                 A concordance of the King James Bible
@@ -93,7 +122,7 @@
                 <li>Ability to increase font size for easier reading. To reduce database queries and server load, this setting is saved to the client's local storage</li>
             </ul>
         </section>
-        <section class="padding-inline-lg">
+        <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-stream-bunny-title"><a href="https://matthewsummers.dev/stream-bunny/" target="_blank">Stream Bunny</a></h4> &nbsp;<span>[Jan - Feb '22]</span>
             <p class="fs-200 bold-600 resume-project-desc">
                 A Django project to help users find streaming availability for films and TV series
@@ -106,7 +135,7 @@
                 <li>Developed AJAX and <code class="code-style">jQuery</code> solutions for populating instantaneous results of API queries</li>
             </ul>
         </section>
-        <section class="padding-inline-lg">
+        <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-session-tracker-title"><a href="https://matthewsummers.dev/session-tracker/" target="_blank">Session Tracker</a></h4> &nbsp;<span>[September - November '22]</span>
             <p class="fs-200 bold-600 resume-project-desc">
                 A tool to help businesses list their packages and offers and to help manage the redemption of a package's sessions
@@ -118,8 +147,8 @@
                 <li>Utilized <code class="code-style">django-ckeditor</code> to add blogging features to website</li>
             </ul>
         </section>
-        <section class="padding-inline-lg">
-            <h4 class="resume-project-title resume-portfolio-title">This Portfolio Site</h4> &nbsp;<span>[Jan '23; May - June '23]</span>
+        <section class="padding-inline-lg" style="padding-top: .8em;">
+            <h4 class="resume-project-title resume-portfolio-title"><a href="/">This Portfolio Site</a></h4> &nbsp;<span>[2023: Jan; May - June; Dec]</span>
             <ul class="ul-styled">
                 <li>Created using Django, Python, JavaScript, HTML5, and CSS3</li>
             </ul>
