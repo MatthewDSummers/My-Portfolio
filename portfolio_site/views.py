@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import os
 import json
 import re
@@ -30,9 +30,22 @@ def projects(request):
             context["title"] = "Session Tracker"
             context["project"] = "session-tracker"
             context["url"] = "/session-tracker/"
+        elif request.GET["title"] == "my-moogle":
+            context["title"] = "My Moogle"
+            context["project"] = "my-moogle"
+            context["url"] = "/my-moogle/"
+
+            if request.GET.get('game'):
+                game_parameter = request.GET.get('game')
+            else:
+                game_parameter = "non"
+            context["game_parameter"] = game_parameter
+
     else:
         context["title"] = "Projects"
 
+    if context["title"] == "My Moogle":
+        return render(request, "final-fantasy.html", context)
     return render(request, "projects.html", context)
 
 def resume(request):

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/final-fantasy.css' %}"%>
+{% endblock %}
+
+{% block content %}
+<div id="ff-container">
+    <div class="ff-number-container">
+        {% for i in "123456789_1_3_5" %}
+            {% if forloop.counter !=  14 and forloop.counter != 11 %}
+                <div class="ff-number-div ff-number-div-{{forloop.counter}}">
+                    <h2 class="ff-trigger" data-game-parameter="{{forloop.counter}}">{{forloop.counter}}</h2>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <div class="ff-number-div ff-number-div-be">
+            <h2 class="ff-trigger" data-game-parameter="Final Fantasy BE">BE</h2>
+        </div>
+    </div>
+    <div class="ff-main-logo">
+        <img src="{% static 'media/images/ff/ff-logo-main-bg.png' %}">
+    </div>
+    <div class="ff-link">
+        <h2 class="ff-selection">Select a Final Fantasy title</h2>
+        <div id="ff-game-links-div">
+        </div>
+        <span class="spinner hidden"></span>
+    </div>
+    <div class="ff-search">
+        <h4>Search Wikipedia for a character</h4><br>
+    </div>
+    <div class="ff-search">
+        <input type="text" id="ff-search-bar">
+    </div>
+
+
+    <div id="ff-data" class="row" data-game-parameter="{{game_parameter}}"></div>
+</div>
+<p style="color: black; font-size: .7rem; margin: 1em">This page is a fan production. The content is not sponsored or endorsed by Square Enix.<br>
+    All Square Enix property names are the intellectual property of Square Enix and copyrighted: © Square Enix
+</p>
+{% endblock %}
+
+{% block deferred_scripts %}
+    <script src="{% static 'js/final-fantasy.js' %}"></script>
+{% endblock %}

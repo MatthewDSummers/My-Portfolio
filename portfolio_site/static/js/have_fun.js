@@ -450,3 +450,4 @@ function newJoke(target_element){
         }
     })
 }
+

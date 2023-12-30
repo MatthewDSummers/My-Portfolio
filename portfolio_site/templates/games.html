@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block stylesheets %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/have_fun.css' %}"%>
+{% endblock %}
+
 {% block content %}
 
 <div class="game-container row bgr3">
@@ -73,5 +78,8 @@
         </div>
     </div>
 </div>
+{% endblock %}
 
+{% block deferred_scripts %}
+    <script src="{% static 'js/have_fun.js' %}"></script>
 {% endblock %}
