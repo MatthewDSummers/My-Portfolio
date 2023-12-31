@@ -1,4 +1,10 @@
+import * as ff_utils from "./final-fantasy-utils.js";
+
 document.addEventListener("DOMContentLoaded", function(){
+
+
+
+
     const ff_header = document.querySelector(".ff-number-container");
     const ff_selection = document.querySelector(".ff-selection");
     const char_divs = document.getElementById("ff-data");
@@ -8,17 +14,29 @@ document.addEventListener("DOMContentLoaded", function(){
     var spinner = $(".spinner");
     var game_parameter = char_divs.getAttribute("data-game-parameter");
 
+    var ff_search_bar =  $('#ff-search-bar');
+
+    ff_search_bar.keypress(function(event) {
+        let wiki_search_input = $('#ff-search-bar').val();
+        if (event.which === 13) {
+            let search_wiki = ffAjax(wiki_search_input);
+            if (search_wiki){
+                searchWikipedia();
+            }
+        }
+    });
+
     // when user selects a game from the number options
     ff_trigger.forEach(function(trigger){
         trigger.addEventListener("click", function(){
-            which_game = trigger.getAttribute("data-game-parameter")
+            var which_game = trigger.getAttribute("data-game-parameter")
             console.log(which_game, "the game")
-            final_fantasy_ajax(which_game)
+            ffAjax(which_game)
         })
     });
 
     // for desc div 
-    function hide_show_gradient_on_scroll (ele) {
+    function scrollGradient (ele) {
         // if user scroll is at the top AND if the element's (desc P's) height is heigher than its parent div
         if (ele.scrollTop === 0 && ele.scrollHeight > ele.clientHeight) {
             ele.classList.remove('hide-scroll-indicator');
@@ -27,35 +45,28 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    // used for wikipedia link 
-    GAME_NAMES = {
-        "1": "Final_Fantasy_(video_game)",
-        "2": "Final_Fantasy_II",
-        "3": "Final_Fantasy_III",
-        "4": "Final_Fantasy_IV",
-        "5": "Final_Fantasy_V",
-        "6": "Final_Fantasy_VI",
-        "7": "Final_Fantasy_VII",
-        "8": "Final_Fantasy_VIII",
-        "9": "Final_Fantasy_IX",
-        "10": "Final_Fantasy_X",
-        "12": "Final_Fantasy_XII",
-        "13": "Final_Fantasy_XIII",
-        "15": "Final_Fantasy_XV",
-        "Final Fantasy BE": "Final_Fantasy_Brave_Exvius",
-    }
+    function ffAjax(game_parameter){
 
-    function final_fantasy_ajax(game_parameter){
+        const num_for_reference = game_parameter;
+
         // gus is also known as guy 
-        if(game_parameter == "gus" || game_parameter == "Gus"){
+        if(game_parameter.toLowerCase() == "gus"){
             game_parameter = "guy";
+        }
+        // steiner is also known as Adelbert
+        if(game_parameter.toLowerCase() == "steiner"){
+            game_parameter = "Adelbert";
         }
 
         char_divs.innerHTML = "";
         ff_game_links_div.innerHTML = "";
-        let wiki_game_name = GAME_NAMES[game_parameter];
+        let wiki_game_name = ff_utils.GAME_NAMES[game_parameter];
 
-        include_only = null;
+        // setup for the character list. sort by importance 
+        ff_utils.setSeriesKey(game_parameter);
+
+        let include_only = null;
+        let list_in_order_of_char_importance = ff_utils.REORDERED_CHAR_NAMES[game_parameter];
 
         if(game_parameter == "1"){
             game_parameter = "Final Fantasy"
@@ -74,13 +85,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         if(wiki_game_name){
             param = `origin=${game_parameter}`;
+            // we got a GAME from the API, clear the search bar
+            ff_search_bar.val("");
         }else{
+            // searching all titles for chars
             param = `name=${game_parameter}`;
         }
         var successful_results = false;
 
 
-        game_url = `https://www.moogleapi.com/api/v1/characters/search?${param}`
+        let game_url = `https://www.moogleapi.com/api/v1/characters/search?${param}`
         console.log(game_url, "hjo")
         var ff_ajax = $.ajax({
             url: game_url,
@@ -92,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 spinner.css("display", "block");
             },
             success: function(data){
-                filtered_results = [];
+                let filtered_results = [];
                 console.log(data)
                 // get characters from every game, then filter through for current main number entry
                     // ex: Need FFX and FFX2 characters
@@ -107,10 +121,15 @@ document.addEventListener("DOMContentLoaded", function(){
                     }
                     data = filtered_results;
                 }
-                
 
                 if(data.length > 0){
-                    for (const char of data){
+                    // function sort_ff_names(a, b) {
+                    //     return list_in_order_of_char_importance.indexOf(a.name) - list_in_order_of_char_importance.indexOf(b.name);
+                    // }
+                    var new_resulting_list = data.slice().sort(ff_utils.sortFFNames);
+                    console.log(new_resulting_list, "THE NEW LIST");
+    
+                    for (const char of new_resulting_list){
                         // character div [only for chars with img]
                         if (char.pictures && char.pictures.length > 0){
                             let char_div = document.createElement("div");
@@ -118,6 +137,11 @@ document.addEventListener("DOMContentLoaded", function(){
     
                             // portraits
                             if ("url" in char.pictures[0]){
+
+                                if (char.name == "Adelbert"){
+                                    char.name = "Steiner";
+                                }
+
                                 successful_results = true;
                                 let img_url = char.pictures[0]["url"];
                                 let char_img = document.createElement("img");
@@ -132,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
                             char_details_div.classList.add("char-details-div");
     
                             // form char desc from keys not in IGNORE
-                            IGNORE = ["pictures", "stats", "japaneseName", "id"];
+                            let IGNORE = ["pictures", "stats", "japaneseName", "id"];
                             for (const key in char){
                                 if (!IGNORE.includes(key)){
     
@@ -147,33 +171,38 @@ document.addEventListener("DOMContentLoaded", function(){
                                     }else{
                                         let desc_div = document.createElement("div");
                                         desc_div.classList.add("char-desc-div");
-    
+
+                                        // if no description for char
+                                        if(char[key] == null){
+                                            desc_item.textContent = "Description: No available description at this time.";
+                                        }
+
                                         desc_div.appendChild(desc_item)
-    
+
                                         char_div.appendChild(desc_div);
-    
+
                                         desc_div.addEventListener('scroll', function () {
-                                            hide_show_gradient_on_scroll(desc_div);
+                                            scrollGradient(desc_div);
                                         });
                                     }
                                     char_div.appendChild(char_details_div)
                                 }
                             }
                             char_divs.appendChild(char_div)
-    
                         }
                     }
                 }
- 
             },
             complete: function () {
                 // spinner.addClass('hidden');
                 spinner.css("display", "none");
                 console.log(successful_results, " is it ttrue?")
                 if(successful_results){
+                    ff_utils.performLegalities(num_for_reference);
+
                     if (wiki_game_name){
                         let wiki_url = `https://en.wikipedia.org/wiki/${wiki_game_name}`;
-                        create_wiki_link(wiki_url, wiki_game_name.replace(/_/g, ' '));
+                        createWikiLink(wiki_url, wiki_game_name.replace(/_/g, ' '));
                     }else{
                         searchWikipedia();
                     }
@@ -192,11 +221,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // load a game by the url if present
     if (game_parameter && game_parameter !== "non"){
-        final_fantasy_ajax(game_parameter)
+        ffAjax(game_parameter)
     }
 
 
-    function create_wiki_link(wiki_url, title){
+    function createWikiLink(wiki_url, title){
 
     let ff_page_link = document.createElement("a");
         ff_page_link.target = '_blank';
@@ -217,26 +246,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-    const ff_search_bar =  $('#ff-search-bar');
-
-    // function individual_search(input){
-    //     if (input){
-    //         char_divs.innerHTML = "";
-    //         ff_game_links_div.innerHTML = "";
-    //         searchWikipedia();
-    //     }
-    // }
-
-    ff_search_bar.keypress(function(event) {
-        let wiki_search_input = $('#ff-search-bar').val();
-        if (event.which === 13) {
-            let search_wiki = final_fantasy_ajax(wiki_search_input);
-            if (search_wiki){
-                searchWikipedia();
-            }
-        }
-    });
-
     function searchWikipedia() {
         const user_search = $('#ff-game-links-div');
         var wiki_search_input = $('#ff-search-bar').val();
@@ -245,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (wiki_search_input == "Gus" || wiki_search_input == "gus"){
             wiki_search_input = "Guy";
         }
+
         modified_search = null;
 
         if (!wiki_search_input.includes("Final Fantasy")){
@@ -292,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                         ff_selection.style.display = "none";
                         const retrieved_wiki_url = `https://en.wikipedia.org/wiki/${encodeURIComponent(result.title)}`;
-                        create_wiki_link(retrieved_wiki_url, result.title)
+                        createWikiLink(retrieved_wiki_url, result.title)
                     } else {
                         console.log('No results found.');
                     }
@@ -303,9 +313,4 @@ document.addEventListener("DOMContentLoaded", function(){
             });
         }
     }
-
-
-})
-
-
-
+});

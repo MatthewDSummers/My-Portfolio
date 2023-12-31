@@ -38,11 +38,15 @@
 
     <div id="ff-data" class="row" data-game-parameter="{{game_parameter}}"></div>
 </div>
-<p style="color: black; font-size: .7rem; margin: 1em">This page is a fan production. The content is not sponsored or endorsed by Square Enix.<br>
-    All Square Enix property names are the intellectual property of Square Enix and copyrighted: © Square Enix
-</p>
+<div id="material-usage-guidelines-div">
+    <p class="usage-policy" id="my-statement"><b>This page is a non-profit fan production. The content is not sponsored or endorsed by Square Enix.</b><br>
+        FINAL FANTASY, SQUARE ENIX and the SQUARE ENIX logo are trademarks or registered trademarks of Square Enix Holdings Co., Ltd. <br>
+        All trademarks, registered trademarks or system names are the property of their respective owners.<br>
+        All Square Enix media and property names are the intellectual property of Square Enix and copyrighted: <br>© Square Enix
+    </p>
+</div>
 {% endblock %}
 
 {% block deferred_scripts %}
-    <script src="{% static 'js/final-fantasy.js' %}"></script>
+    <script  type="module" src="{% static 'js/final-fantasy.js' %}"></script>
 {% endblock %}

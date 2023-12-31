@@ -157,6 +157,24 @@
     .ff-search-bar{
         padding: .3em .8em;
     }
+
+#material-usage-guidelines-div{
+    padding: .3em .5em;
+    font-size: .675rem;
+}
+#material-usage-guidelines-div > :first-child{
+    margin-bottom: 1em;
+}
+
+#material-usage-guidelines-div > :only-child {
+    margin: 0; /* Remove the margin if there is only one child */
+}
+
+.usage_policy{
+    color: black;
+    font-size: .7rem;
+    margin-top: 2em !important;
+}
 @media (max-width: 579px) {
     .ff-number-container, .ff-link {
         max-width: 80vw;
