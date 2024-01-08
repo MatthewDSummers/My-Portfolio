@@ -41,6 +41,12 @@ def projects(request):
                 game_parameter = "non"
             context["game_parameter"] = game_parameter
 
+        elif request.GET["title"] == "star-ocean":
+            context["title"] = "Starry Ocean"
+            context["project"] = "star-ocean"
+            context["url"] = "/star-ocean/"
+            return render(request, "star-ocean.html", context)
+
     else:
         context["title"] = "Projects"
 
@@ -68,6 +74,8 @@ def have_fun(request):
         "title": "Have Fun"
     }
     return render(request, "games.html", context)
+
+
 # def form(request):
 #     x = request.GET["searched"]
 

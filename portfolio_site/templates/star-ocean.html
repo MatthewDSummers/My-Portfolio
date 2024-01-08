@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheets %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/star-ocean.css' %}"%>
+{% endblock %}
+
+{% block content %}
+<div id="star-ocean-container">
+    <div class="row mx-auto w-75">
+        <h1 class="font-baskerville text-white so-txt-shadow">Select a title</h1>
+        <div class="so-series-trigger-div col-sm-12 col-md-6 col-lg-6">
+            <img id="star-ocean-one-button" class="so-series-trigger" data-series="1" src="{% static '/media/images/star_ocean/star_ocean_one/snes/so1_icon.jpg' %}">
+        </div>
+        <div class="so-series-trigger-div col-sm-12 col-md-6 col-lg-6">
+            <img id="star-ocean-two-button" class="so-series-trigger" data-series="2" src="{% static '/media/images/star_ocean/star_ocean_two/s02_icon.jpg' %}">
+        </div>
+    </div>
+
+    <div id="so-search-div" class="mx-auto w-75">
+        <h3 class="font-baskerville yellow-dark so-txt-shadow">Star Ocean character search</h3>
+        <input type="text" id="star-ocean-search-bar" placeholder="Search Star Ocean">
+        <button id="star-ocean-search-bar-btn">Search</button>
+    </div>
+
+    <div id="star-ocean-series-div" class="row"></div>
+
+    <div id="so-search-error-div" class="mx-auto w-50">
+        <p id="so-search-error-p" class="yellow">Nothing found for </p>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block deferred_scripts %}
+<script src="{% static 'js/star-ocean.js' %}"></script>
+{% endblock %}
