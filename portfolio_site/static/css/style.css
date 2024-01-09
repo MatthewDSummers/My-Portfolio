@@ -73,6 +73,9 @@ ul {
     font-size: 7rem;
 }
 
+.no-bold{
+    font-weight: normal;
+}
 .bold-600 {
     font-weight: 600;
 }
@@ -708,6 +711,14 @@ nav a.projects:not(.active):hover {
 
 /* ===== Resume Page ===== */
 
+.education-inner-heading{
+    justify-content: center;
+}
+    .education-inner-heading img{
+        height: 120px;
+        width: 240px;
+    }
+
 .job-header {
     line-height: 1.8em;
 }
@@ -809,71 +820,101 @@ nav a.projects:not(.active):hover {
     border-radius: 7px;
 }
 
-.resume-project-title a {
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-}
+    .resume-project-title a {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+    }
 
-.resume-portfolio-title {
-    background-color: rgb(255, 255, 255);
-    color: black;
-}
+    .resume-portfolio-title {
+        background-color: rgb(255, 255, 255);
+        color: black;
+    }
 
 .resume-ticket-easy-title {
     background-color: hsl(223, 52%, 39%);
 }
 
-.resume-ticket-easy-title a {
-    color: hsl(57, 74%, 70%);
-    text-shadow: 1px 1px hsl(223, 52%, 59%);
-}
+    .resume-ticket-easy-title a {
+        color: hsl(57, 74%, 70%);
+        text-shadow: 1px 1px hsl(223, 52%, 59%);
+    }
 
-.resume-ticket-easy-title a:hover {
-    color: rgb(246, 231, 27);
-    text-shadow: 1px 1px hsl(216, 3%, 33%);
-}
+    .resume-ticket-easy-title a:hover {
+        color: rgb(246, 231, 27);
+        text-shadow: 1px 1px hsl(216, 3%, 33%);
+    }
 
 .resume-concordance-title {
     background-color: hsl(54, 94%, 69%);
 }
 
-.resume-concordance-title a {
-    color: hsl(0, 0%, 0%);
-    text-shadow: 1px 1px hsl(48, 100%, 90%);
-}
+    .resume-concordance-title a {
+        color: hsl(0, 0%, 0%);
+        text-shadow: 1px 1px hsl(48, 100%, 90%);
+    }
 
-.resume-concordance-title a:hover {
-    color: hsl(0, 0%, 30%);
-    text-shadow: 1px 1px hsl(48, 100%, 90%);
-}
+    .resume-concordance-title a:hover {
+        color: hsl(0, 0%, 30%);
+        text-shadow: 1px 1px hsl(48, 100%, 90%);
+    }
 
 .resume-stream-bunny-title {
     background-color: hsl(209, 100%, 55%);
 }
 
-.resume-stream-bunny-title a {
-    color: hsl(0, 0%, 0%);
-    text-shadow: 1px 1px hsl(209, 100%, 75%);
-}
+    .resume-stream-bunny-title a {
+        color: hsl(0, 0%, 0%);
+        text-shadow: 1px 1px hsl(209, 100%, 75%);
+    }
 
-.resume-stream-bunny-title a:hover {
-    color: rgb(246, 231, 27);
-    text-shadow: 1px 1px hsl(216, 3%, 33%);
-}
+    .resume-stream-bunny-title a:hover {
+        color: rgb(246, 231, 27);
+        text-shadow: 1px 1px hsl(216, 3%, 33%);
+    }
 
 .resume-session-tracker-title {
     background-color: hsl(277, 34%, 33%);
 }
 
-.resume-session-tracker-title a {
-    color: hsl(62, 100%, 81%);
-    text-shadow: 1px 1px hsl(277, 34%, 53%);
+    .resume-session-tracker-title a {
+        color: hsl(62, 100%, 81%);
+        text-shadow: 1px 1px hsl(277, 34%, 53%);
+    }
+
+    .resume-session-tracker-title a:hover {
+        color: hsl(56, 99%, 64%);
+        text-shadow: 1px 1px hsl(216, 3%, 33%);
+    }
+
+.resume-starry-ocean-title {
+    background-color:hsl(209, 69%, 37%);
 }
 
-.resume-session-tracker-title a:hover {
+    .resume-starry-ocean-title a {
+        color: hsl(179, 100%, 91%);
+        text-shadow: 1px 1px hsl(203, 79%, 46%);
+    }
+
+    .resume-starry-ocean-title a:hover {
+        color: hsl(56, 99%, 64%);
+        text-shadow: 1px 1px hsl(216, 3%, 33%);
+    }
+
+.resume-my-moogle-title {
+    background-color: hsl(0, 98%, 44%);
+}
+
+.resume-my-moogle-title a {
+    color: hsl(191, 100%, 97%);
+    text-shadow: 1px 1px hsl(246, 34%, 53%);
+}
+
+.resume-my-moogle-title a:hover {
     color: hsl(56, 99%, 64%);
     text-shadow: 1px 1px hsl(216, 3%, 33%);
 }
+
+
 
 .resume-project-desc {
     font-family: 'Cutive Mono', monospace;
@@ -1219,6 +1260,14 @@ transition: transform 400ms ease-in;
     .mobile-only-job-heading {
         display: none;
     }
+    .education-inner-heading{
+        display: flex;
+        align-items: space-between;
+        justify-content: left;
+    }
+        .education-inner-heading p{
+            margin-left: 1.5em;
+        }
 }
 
 @media (max-width: 794px) {
@@ -1362,10 +1411,18 @@ transition: transform 400ms ease-in;
         font-size: 1.1rem;
     }
 
+    .ul-columns{
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        /* list-style-type: none; */
+    }
     .tenure {
         font-size: 1.2rem;
     }
-
+    .fs-110{
+        font-size: 1.1rem;
+    }
     .fs-200 {
         font-size: 1.4rem;
     }
