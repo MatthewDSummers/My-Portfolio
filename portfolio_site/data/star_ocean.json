@@ -4,7 +4,7 @@
         "CHARACTERS":{
             "Roddick Farrence":{
                 "Name": "Roddick Farrence",
-                "Description": "Roddick Farrence (ラティクス・ファーレンス, Ratikusu Fārensu, lit. Ratix Farrence) is the main protagonist of the first Star Ocean, as well as its remake Star Ocean: First Departure. In the Japanese version, he is affectionately called Rati (ラティ?) by his friends. A young Fellpool from Roak, Roddick guards his hometown alongside his childhood friends, Millie Chliette and Dorne Murtough, until a mysterious plague threatens their peaceful lives.",
+                "Description": "Roddick Farrence (ラティクス・ファーレンス, Ratikusu Fārensu, lit. Ratix Farrence) is the main protagonist of the first Star Ocean, as well as its remake Star Ocean: First Departure. In the Japanese version, he is affectionately called Rati (ラティ) by his friends. A young Fellpool from Roak, Roddick guards his hometown alongside his childhood friends, Millie Chliette and Dorne Murtough, until a mysterious plague threatens their peaceful lives.",
                 "Race": "Fellpool",
                 "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
                 "Birthday": "January 14th, 327 S.D.",
@@ -169,7 +169,7 @@
             },
             "Erys Jerand":{
                 "Name": "Erys Jerand",
-                "Description": "Erys Jerand (エリス・ジェランド, Erisu Jerando, lit. Eris Jerand), also known by her title of Deathwing (死の翼, Shi no Tsubasa?), is a minor character in the first Star Ocean, and made playable only in its remake Star Ocean: First Departure. She is a Featherfolk and the sister of Ioshua Jerand.",
+                "Description": "Erys Jerand (エリス・ジェランド, Erisu Jerando, lit. Eris Jerand), also known by her title of Deathwing (死の翼, Shi no Tsubasa), is a minor character in the first Star Ocean, and made playable only in its remake Star Ocean: First Departure. She is a Featherfolk and the sister of Ioshua Jerand.",
                 "Race": "Featherfolk",
                 "Place of origin": "Roak",
                 "Birthday": "September 6, S.D. 29",
@@ -203,9 +203,9 @@
         "CHARACTERS":{
             "Claude C. Kenny": {
                 "Name": "Claude C. Kenny",
-                "Description": "Claude C. Kenny (クロード・Ｃ・ケニー, Kurōdo C. Kenī?, lit. Crawd C. Kenny) is the son of the famous Admiral Ronyx J. Kenny, a main character from the original Star Ocean. Although Claude has the ability and talent to be an officer, he lives in the shadow of his father. Generally a nice guy, Claude is passionate about what he thinks is right. Claude is one of the two protagonists of Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere, alongside Rena Lanford. His surname was originally translated as Kenni in The Second Story.",
+                "Description": "Claude C. Kenny (クロード・Ｃ・ケニー, Kurōdo C. Kenī, lit. Crawd C. Kenny) is the son of the famous Admiral Ronyx J. Kenny, a main character from the original Star Ocean. Although Claude has the ability and talent to be an officer, he lives in the shadow of his father. Generally a nice guy, Claude is passionate about what he thinks is right. Claude is one of the two protagonists of Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere, alongside Rena Lanford. His surname was originally translated as Kenni in The Second Story.",
                 "Race": "Earthling",
-                "Place of origin": "Earth",
+                "Place of origin": "Planet Earth",
                 "Birthday": "January 23, S.D. 347",
                 "Age": ["19"],
                 "Weapon":  "Sword",
@@ -218,9 +218,7 @@
             },
             "Rena Lanford": {
                 "Name": "Rena Lanford",
-                "Description": "Rena Lanford (レナ・ランフォード, Rena Ranfōdo?, lit. Rena Lanford) is one of the two protagonists of Star Ocean: The Second Story, its enhanced port Second Evolution and remake The Second Story R, and its sequel Blue Sphere, alongside Claude C. Kenny. Blessed with healing abilities that no one else on Expel possesses, she longs to discover who she actually is, knowing that her parents are not her biological ones.",
-                "Race": "Expellian",
-                "Place of origin": "Expel",
+                "Description": "Rena Lanford (レナ・ランフォード, Rena Ranfōdo, lit. Rena Lanford) is one of the two protagonists of Star Ocean: The Second Story, its enhanced port Second Evolution and remake The Second Story R, and its sequel Blue Sphere, alongside Claude C. Kenny. Blessed with healing abilities that no one else on Expel possesses, she longs to discover who she actually is, knowing that her parents are not her biological ones.",
                 "Birthday": "May 13, S.D. 349",
                 "Age": ["17"],
                 "Weapon":  "Cestus",
@@ -233,9 +231,9 @@
             },
             "Dias Flac": {
                 "Name": "Dias Flac",
-                "Description": "Dias Flac (ディアス・フラック, Diasu Furakku?, lit. Dias Flac) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A powerful swordsman, he travels the planet of Expel in search of strength after his family's death.",
+                "Description": "Dias Flac (ディアス・フラック, Diasu Furakku, lit. Dias Flac) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A powerful swordsman, he travels the planet of Expel in search of strength after his family's death.",
                 "Race": "Expellian",
-                "Place of origin": "Expel",
+                "Place of origin": "Arlia, Planet Expel",
                 "Birthday": "August 5, S.D. 341",
                 "Age": ["25"],
                 "Weapon":  "Sword",
@@ -246,9 +244,39 @@
                 "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
                 "Series": "2"
             },
+            "Bowman Jeane": {
+                "Name": "Bowman Jeane",
+                "Description": "Bowman Jeane (ボーマン・ジーン, Bōman Jīn?) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. Once a talented researcher in the field of symbological weaponry and professor at Lacuer Academy, he now runs a pharmacy with his wife Ninay in the town of Linga. He is acquainted with Leon's parents.",
+                "Race": "Expellian",
+                "Place of origin": "Planet Expel",
+                "Birthday": "December 30, S.D. 339",
+                "Age": ["27"],
+                "Weapon":  "Cestus",
+                "Height": "175 cm",
+                "Weight": "78kg",
+                "Affiliation": ["Lacuer Academy (formerly)"],
+                "Occupation": ["Scientist (formerly)", "Pharmacist"],
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
+            "Leon D.S. Gehste": {
+                "Name": "Leon D.S. Gehste",
+                "Description": "Leon D.S. Gehste (レオン・D・S・ゲーステ, Reon D S Gēsute, lit. Leon D. S. Geeste) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A symbologist who can cast powerful spells that even well-trained adults cannot, his talents for symbological weapons research are invaluable and he makes sure everyone knows it.",
+                "Race": "Expellian",
+                "Place of origin": "Lacuer, Planet Expel",
+                "Birthday": "November 25, S.D. 354",
+                "Age": ["12"],
+                "Weapon":  "Tome",
+                "Height": "135cm",
+                "Weight": "36kg",
+                "Affiliation": [],
+                "Occupation": "Professor",
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
             "Ashton Anchors": {
                 "Name": "Ashton Anchors",
-                "Description": "Ashton Anchors (アシュトン・アンカース, Ashuton Ankāsu?, lit. Ashton Anchors) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere. Ashton is an unlucky swordsman haunted by a double-headed dragon that merged with his body, called Creepy and Weepy (Gyoro and Ururun in The Second Story), in an accident caused by meeting Claude C. Kenny and Rena Lanford.",
+                "Description": "Ashton Anchors (アシュトン・アンカース, Ashuton Ankāsu, lit. Ashton Anchors) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere. Ashton is an unlucky swordsman haunted by a double-headed dragon that merged with his body, called Creepy and Weepy (Gyoro and Ururun in The Second Story), in an accident caused by meeting Claude C. Kenny and Rena Lanford.",
                 "Race": "Expellian",
                 "Place of origin": "Expel",
                 "Birthday": "September 28, S.D. 346",

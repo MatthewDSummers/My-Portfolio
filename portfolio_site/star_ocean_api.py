@@ -35,39 +35,43 @@ def star_ocean_chars_list(request):
             # STAR OCEAN ONE
             if name in "roddick" or name in "raddix" or name in "ratix" or name in "farrence":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Roddick Farrence"]
-            elif name in "millie" or name in "chliette":
+            elif name in "milli chliette":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Millie Chliette"]
-            elif name in "dorne" or name in "murtough":
+            elif name in "dorn murtough":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Dorn Murtough"]
             elif name in "ronyx":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Ronyx J. Kenny"]
-            elif name in "ilia" or name in "silvestri":
+            elif name in "ilia silvestri":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Ilia Silvestri"]
-            elif name in "cyuss" or name in "warren":
+            elif name in "cyuss warren":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Cyuss Warren"]
-            elif name in "phia" or name in "melle":
+            elif name in "phia melle":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Phia Melle"]
-            elif name in "ashlay" or name in "bernbeldt":
+            elif name in "ashlay bernbeldt":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Ashlay Bernbeldt"]
-            elif name in "ioshua" or name in "jerand":
+            elif name in "ioshua jerand":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Ioshua Jerand"]
-            elif name in "mavelle" or name in "froesson":
+            elif name in "mavelle froesson":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Mavelle Froesson"]
-            elif name in "t'nique" or name in "tnique" or name in "arcana":
+            elif name in "t'nique arcana" or name in "tnique arcana":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["T'nique Arcana"]
             elif name in "erys":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Erys Jerand"]
-            elif name in "welch" or name in "vineyard":
+            elif name in "welch vineyard":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Welch Vineyard"]
             
             # STAR OCEAN 2
-            elif name in "claude" or name in "crawde" or name in "kenny":
+            elif name in "claude kenny" or name in "crawde kenny":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Claude C. Kenny"]
-            elif name in "rena" or name in "lanford":
+            elif name in "rena landford":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Rena Lanford"]
-            elif name in "dias" or name in "flac":
+            elif name in "dias flac":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Dias Flac"]
-            elif name in "ashton" or name in "anchors":
+            elif name in "bowman jeane":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Bowman Jeane"]
+            elif name in "leon d.s. gehste" or name in "leon ds gehste":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Leon D.S. Gehste"]
+            elif name in "ashton anchors":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Ashton Anchors"]
 
     if not series and not name:
