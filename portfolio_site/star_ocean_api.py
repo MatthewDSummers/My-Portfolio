@@ -73,6 +73,8 @@ def star_ocean_chars_list(request):
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Leon D.S. Gehste"]
             elif name in "ashton anchors":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Ashton Anchors"]
+            elif name in "precis neumann":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Precis F. Neumann"]
 
     if not series and not name:
         combined_chars = {**STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"], **STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]}
