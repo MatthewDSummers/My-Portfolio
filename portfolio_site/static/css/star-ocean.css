@@ -139,37 +139,37 @@
     }
 }
 
-.so1-game-label, .so1-fdr-char-logo{
-    position: relative;
-}
-
-.so1-game-label{
-    background-color: white;
-}
-
 .so1-game-label, .so-fdr-game-label{
+    position: relative;
     font-family: 'Libre Baskerville', serif;
 }
-
-.so1-game-label::after{
-    content: ' Star Ocean (SNES) ';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius:9px 0 0 0px;
-    padding: 1em;
-    background-color: rgba(200, 192, 192, 0.646);
-}
-.so-fdr-game-label::after {
-    content: 'Star Ocean: First Departure R';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    border-radius:9px 0 0 0px;
-    padding: 1em;
-    background-color: rgba(255, 246, 122, 0.73);
-}
-
+    /* .so1-game-label::after{
+        content: ' Star Ocean (SNES) ';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius:9px 0 0 0px;
+        padding: 1em;
+        background-color: rgba(200, 192, 192, 0.646);
+    } */
+    .so-fdr-game-label::after, .so1-game-label::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius:9px 0 0 0px;
+        padding: 1em;
+    }
+    .so-fdr-game-label::after{
+        content: 'Star Ocean: First Departure R';
+        background-color: hsla(56, 100%, 74%, 0.73);
+    }
+    .so1-game-label::after{
+        content: ' Star Ocean (SNES) ';
+        /* background-color: hsla(238, 89%, 59%, 0.73); */
+        background: linear-gradient(hsla(209, 76%, 41%, 0.777), hsla(21, 55%, 54%, 0.777));
+        color: white;
+    }
 .carousel-control-prev-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgba(194, 182, 14, 0.852)' viewBox='0 0 12 12'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
