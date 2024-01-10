@@ -11,16 +11,18 @@ def star_ocean_chars_list(request):
     series = request.GET.get("series")
     name = request.GET.get("name")
     characters = {}
-    if series and not name:
-        if series == "1":
-            characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]
-            print(characters)
-        elif series == "2":
-            characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]
-        else:
-            characters = HttpResponseNotFound("Nothing found for that query")
 
-    if name:
+    if series:
+        if series == "1":
+            series = "STAR_OCEAN_ONE"
+        elif series == "2":
+            series = "STAR_OCEAN_TWO"
+        characters = STAR_OCEAN_CHARACTERS[series]["CHARACTERS"]
+
+    if series and name:
+        characters = characters.get(name)
+
+    if name and not series:
         # direct lookups
         if STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"].get(name):
             characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"].get(name)
@@ -30,6 +32,7 @@ def star_ocean_chars_list(request):
             # non-exact name lookups
             name = name.lower()
 
+            # STAR OCEAN ONE
             if name in "roddick" or name in "raddix" or name in "ratix" or name in "farrence":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Roddick Farrence"]
             elif name in "millie" or name in "chliette":
@@ -57,11 +60,18 @@ def star_ocean_chars_list(request):
             elif name in "welch" or name in "vineyard":
                 characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"]["Welch Vineyard"]
             
+            # STAR OCEAN 2
+            elif name in "claude" or name in "crawde" or name in "kenny":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Claude C. Kenny"]
+            elif name in "rena" or name in "lanford":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Rena Lanford"]
+            elif name in "dias" or name in "flac":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Dias Flac"]
+            elif name in "ashton" or name in "anchors":
+                characters = STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]["Ashton Anchors"]
 
     if not series and not name:
         combined_chars = {**STAR_OCEAN_CHARACTERS["STAR_OCEAN_ONE"]["CHARACTERS"], **STAR_OCEAN_CHARACTERS["STAR_OCEAN_TWO"]["CHARACTERS"]}
         characters = combined_chars
 
     return JsonResponse(characters) if characters else HttpResponseNotFound({"error": "Nothing found for that query"})
-    # else:
-    #     return HttpResponseNotFound("Nothing found for that query")

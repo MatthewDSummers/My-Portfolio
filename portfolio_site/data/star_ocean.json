@@ -14,7 +14,8 @@
                 "Weight": "68 kg",
                 "Affiliation": ["Kratus Defense Force"],
                 "Occupation": "Guard",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Millie Chliette":{
                 "Name": "Millie Chliette",
@@ -28,7 +29,8 @@
                 "Weight": "46 kg",
                 "Affiliation": ["Kratus Defense Force"],
                 "Occupation": "Guard",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Dorn Murtough":{
                 "Name": "Dorne Murtough",
@@ -42,7 +44,8 @@
                 "Weight": "75 kg",
                 "Affiliation": ["Kratus Defense Force"],
                 "Occupation": "Guard",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Ronyx J. Kenny":{
                 "Name": "Ronyx J. Kenny",
@@ -56,7 +59,8 @@
                 "Weight": "64 kg",
                 "Affiliation": ["Pangalactic Federation", "Calnus crew", "FSS-6004C Calnus crew"],
                 "Occupation": "Military Officer",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Ilia Silvestri":{
                 "Name": "Ilia Silvestri",
@@ -70,7 +74,8 @@
                 "Weight": "48 kg",
                 "Affiliation": ["Pangalactic Federation", "Calnus crew"],
                 "Occupation": "Science Officer",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Cyuss Warren":{
                 "Name": "Cyuss Warren",
@@ -84,7 +89,8 @@
                 "Weight": "90 kg",
                 "Affiliation": ["Astral Knights (formerly)"],
                 "Occupation": "Knight (formerly)",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Phia Melle":{
                 "Name": "Phia Melle",
@@ -98,7 +104,8 @@
                 "Weight": "50 kg",
                 "Affiliation": ["Astral Knight Corps"],
                 "Occupation": "Knight",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Ashlay Bernbeldt":{
                 "Name": "Ashlay Bernbeldt",
@@ -112,7 +119,8 @@
                 "Weight": "87 kg",
                 "Affiliation": [""],
                 "Occupation": "Mercenary (formerly)",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Ioshua Jerand":{
                 "Name": "Ioshua Jerand",
@@ -126,7 +134,8 @@
                 "Weight": "56 kg",
                 "Affiliation": [""],
                 "Occupation": "",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Mavelle Froesson":{
                 "Name": "Mavelle Froesson",
@@ -140,7 +149,8 @@
                 "Weight": "42 kg",
                 "Affiliation": [""],
                 "Occupation": "Vessel",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "T'nique Arcana":{
                 "Name": "T'nique Arcana",
@@ -154,7 +164,8 @@
                 "Weight": "63 kg",
                 "Affiliation": [""],
                 "Occupation": "Martial Artist",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":true},
+                "Series": "1"
             },
             "Erys Jerand":{
                 "Name": "Erys Jerand",
@@ -168,7 +179,8 @@
                 "Weight": "42 kg",
                 "Affiliation": [""],
                 "Occupation": "Assassin (formerly)",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":false}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":false},
+                "Series": "1"
             },
             "Welch Vineyard":{
                 "Name": "Welch Vineyard",
@@ -182,14 +194,75 @@
                 "Weight": "45 kg",
                 "Affiliation": ["Craftsman's Guild (SO3)", "Space Reconnaissance Force (SO4)"],
                 "Occupation": "Inventor",
-                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":false}
+                "Image": {"Star Ocean: First Departure R": "", "Star Ocean 1":false},
+                "Series": "1"
             }
         }
     }, 
     "STAR_OCEAN_TWO":{
         "CHARACTERS":{
-            "Claude Kenny": {
-                "Status": "In Development"
+            "Claude C. Kenny": {
+                "Name": "Claude C. Kenny",
+                "Description": "Claude C. Kenny (クロード・Ｃ・ケニー, Kurōdo C. Kenī?, lit. Crawd C. Kenny) is the son of the famous Admiral Ronyx J. Kenny, a main character from the original Star Ocean. Although Claude has the ability and talent to be an officer, he lives in the shadow of his father. Generally a nice guy, Claude is passionate about what he thinks is right. Claude is one of the two protagonists of Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere, alongside Rena Lanford. His surname was originally translated as Kenni in The Second Story.",
+                "Race": "Earthling",
+                "Place of origin": "Earth",
+                "Birthday": "January 23, S.D. 347",
+                "Age": ["19"],
+                "Weapon":  "Sword",
+                "Height": "175cm",
+                "Weight": "68kg",
+                "Affiliation": ["Pangalactic Federation", "FSS-6004C Calnus crew"],
+                "Occupation": "Military officer",
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
+            "Rena Lanford": {
+                "Name": "Rena Lanford",
+                "Description": "Rena Lanford (レナ・ランフォード, Rena Ranfōdo?, lit. Rena Lanford) is one of the two protagonists of Star Ocean: The Second Story, its enhanced port Second Evolution and remake The Second Story R, and its sequel Blue Sphere, alongside Claude C. Kenny. Blessed with healing abilities that no one else on Expel possesses, she longs to discover who she actually is, knowing that her parents are not her biological ones.",
+                "Race": "Expellian",
+                "Place of origin": "Expel",
+                "Birthday": "May 13, S.D. 349",
+                "Age": ["17"],
+                "Weapon":  "Cestus",
+                "Height": "161cm",
+                "Weight": "45kg",
+                "Affiliation": [],
+                "Occupation": "Student",
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
+            "Dias Flac": {
+                "Name": "Dias Flac",
+                "Description": "Dias Flac (ディアス・フラック, Diasu Furakku?, lit. Dias Flac) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A powerful swordsman, he travels the planet of Expel in search of strength after his family's death.",
+                "Race": "Expellian",
+                "Place of origin": "Expel",
+                "Birthday": "August 5, S.D. 341",
+                "Age": ["25"],
+                "Weapon":  "Sword",
+                "Height": "192cm",
+                "Weight": "82kg",
+                "Affiliation": [],
+                "Occupation": "Mercenary",
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
+            "Ashton Anchors": {
+                "Name": "Ashton Anchors",
+                "Description": "Ashton Anchors (アシュトン・アンカース, Ashuton Ankāsu?, lit. Ashton Anchors) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere. Ashton is an unlucky swordsman haunted by a double-headed dragon that merged with his body, called Creepy and Weepy (Gyoro and Ururun in The Second Story), in an accident caused by meeting Claude C. Kenny and Rena Lanford.",
+                "Race": "Expellian",
+                "Place of origin": "Expel",
+                "Birthday": "September 28, S.D. 346",
+                "Age": ["20"],
+                "Weapon":  "Twin Swords",
+                "Height": "180 cm",
+                "Weight": "80kg (dragons included)",
+                "Affiliation": [],
+                "Occupation": "Mercenary",
+                "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true},
+                "Series": "2"
+            },
+            "Placeholder": {
+                "Developer Note": "This page is still in development"
             }
         }
     }

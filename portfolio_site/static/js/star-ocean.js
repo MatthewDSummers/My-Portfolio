@@ -1,7 +1,5 @@
 // star ocean search bar
 const star_ocean_search_bar = $("#star-ocean-search-bar");
-// const so_one = $("#so_one")
-// const so_two = $("#so_two")
 
 // star ocean series triggers
 const so_series_trigger = $(".so-series-trigger-div");
@@ -62,7 +60,7 @@ const so_search_error_p = $("#so-search-error-p");
             call_star_ocean(series = null, char = search_param)
             .then(function(character) {
                 if (character){
-                    console.log(character, "char")
+                    // console.log(character, "char")
                     if (single_result){
                         star_ocean_char_data(character, single_result=true);
                     }else{
@@ -79,7 +77,7 @@ const so_search_error_p = $("#so-search-error-p");
         }
     }
 
-// CREATE CHAR HTML FOR API DATA 
+// CREATE CHAR HTML FROM API DATA 
     // Populate char data 
     var img_count = 0;
 
@@ -95,16 +93,16 @@ const so_search_error_p = $("#so-search-error-p");
 
         let char_name = null;
         let desc_div = null;
-        var carousel = null;
-        let carousel_inner = null;
-        let carousel_remainder = null; 
+        // var carousel = null;
+        // let carousel_inner = null;
+        // let carousel_remainder = null; 
 
         for (const prop in character) {
             if (character.hasOwnProperty(prop)) {
                 // console.log(`${prop}: ${character[prop]}`);
                 if (prop == "Name"){
                     char_name = character[prop];
-                    console.log(char_name, "9999")
+                    // console.log(char_name, "char name")
                 }
                 if (prop !== "Image" ){
                     let character_html_details = $(`<p class="so-char-key"><span class="bold-900 yellow-dark">${prop}:</span> <span class="yellow">${character[prop]}</span></p>`);
@@ -122,12 +120,13 @@ const so_search_error_p = $("#so-search-error-p");
                     }
                 }else{
                     img_count++
+
                     var image_details = {
                         "img_count": img_count,
                         "char_name": char_name,
                         "character_html_div": character_html_div,
                         "character": character,
-                        "single_result": single_result
+                        "single_result": single_result,
                     }
                     createStarOceanImages(image_details)
                 }
@@ -145,25 +144,39 @@ const so_search_error_p = $("#so-search-error-p");
         let character_html_div = image_details["character_html_div"]
         let character = image_details["character"]
         let single_result = image_details["single_result"]
+        let series_number = character["Series"]
 
-        let img_url = "/static/media/images/star_ocean/star_ocean_one/first_departure_r/" + char_name + ".webp";
-        let so_one_img_url = "/static/media/images/star_ocean/star_ocean_one/snes/" + char_name + ".webp";
-        let the_image = null;
-        let star_ocean_one_img = null;
+        
+        let remake_url = null;
+        let original_url = null;
+
+        if (series_number== "1"){
+            remake_url = "/static/media/images/star_ocean/star_ocean_one/first_departure_r/" + char_name + ".webp";
+            original_url = "/static/media/images/star_ocean/star_ocean_one/snes/" + char_name + ".webp";
+        }else{
+            remake_url = "/static/media/images/star_ocean/star_ocean_two/R/" + char_name + ".webp";
+            original_url = "/static/media/images/star_ocean/star_ocean_two/PS1/" + char_name + ".webp";
+        }
+
+        let remake_img = null;
+        let original_image = null;
 
         if (single_result){
-            the_image = $(`
-                <div class="carousel-item active so-fdr-game-label">
-                    <img src="${img_url}" class="d-block " style="width:350px; height: 450px;">
+            remake_img = $(`
+                <div class="carousel-item active single-result">
+                    <img src="${remake_url}" class="d-block">
                 </div>`);
 
         }else{
-            console.log(img_count)
-            the_image = $(`
-                <div class="carousel-item active so-fdr-game-label">
-                    <img src="${img_url}" class="d-block " style="width:250px; height: 450px;">
+            // console.log(img_count)
+            remake_img = $(`
+                <div class="carousel-item active">
+                    <img src="${remake_url}" class="d-block">
                 </div>`);
         }
+
+        series_number == "1" ? remake_img.addClass("so-fdr-game-label") : remake_img.addClass("so2-R-game-label")
+
         carousel = $(`<div id="star_ocean_char_img-${img_count}" class="carousel slide"></div>`);
         carousel.carousel(options ={
             interval: false,
@@ -181,24 +194,27 @@ const so_search_error_p = $("#so-search-error-p");
                 <span class="visually-hidden">Next</span>
             </button>`);
 
-        carousel_inner.append(the_image);
+        carousel_inner.append(remake_img);
 
-        if (character.Image["Star Ocean 1"]){
-            if (character.Image["Star Ocean 1"]){
+        let image_key = null;
+        series_number == "1" ? image_key = "Star Ocean 1": image_key = "Star Ocean: The Second Story"
 
-                if (single_result){
-                    star_ocean_one_img = $(`
-                    <div class="carousel-item so1-game-label">
-                        <img src="${so_one_img_url}" class="d-block " style="width:410px; height: 450px;">
-                    </div>`)
-                }else{
-                    star_ocean_one_img = $(`
-                    <div class="carousel-item so1-game-label">
-                        <img src="${so_one_img_url}" class="d-block " style="width:310px; height: 450px;">
-                    </div>`)
-                }
+        // console.log(image_key, "IMAGE KEY")
+        if (character.Image[image_key]){
+            if (single_result){
+                original_image = $(`
+                <div class="carousel-item single-result">
+                    <img src="${original_url}" class="d-block">
+                </div>`)
+            }else{
+                original_image = $(`
+                <div class="carousel-item">
+                    <img src="${original_url}" class="d-block">
+                </div>`)
             }
-            carousel_inner.append(star_ocean_one_img);
+
+            series_number == "1" ? original_image.addClass("so1-game-label") : original_image.addClass("so2-game-label")
+            carousel_inner.append(original_image);
         }else{
             carousel_remainder.addClass("hidden");
         }
@@ -211,7 +227,7 @@ const so_search_error_p = $("#so-search-error-p");
 // EVENTS 
     // show result for searched char (on search btn click)
     $(document).on("click", "#star-ocean-search-bar-btn", function(){
-        search_star_ocean()
+        search_star_ocean(single_result=true)
     })
 
     // show result for searched char (on enter)
@@ -231,23 +247,16 @@ const so_search_error_p = $("#so-search-error-p");
         let its_trigger = $(this).find(".so-series-trigger");
         let search_param = its_trigger.data("series");
 
-        console.log(search_param, "search param")
+        // console.log(search_param, "search param")
         
         call_star_ocean(series = search_param)
         .then(function(characters) {
             let char_keys = characters;
             for (const key in char_keys) {
                 if (char_keys.hasOwnProperty(key)) {
-                    console.log(`Character: ${key}`);
+                    // console.log(`Character: ${key}`);
                     const character = char_keys[key];
-
-                    if(search_param == "2"){
-                        // for layout purposes only (single it's a single result "In Development")
-                        star_ocean_char_data(character, single_result=true);
-                    }else{
-                        star_ocean_char_data(character);
-                    }
-                    console.log("----------------------");
+                    star_ocean_char_data(character, single_result=false);
                 }
             }
         })
@@ -289,17 +298,3 @@ const so_search_error_p = $("#so-search-error-p");
     }
 
 
-    // "Ashton Anchors": {
-    //     "Name": "Ashton Anchors",
-    //     "Description": "Ashton Anchors (アシュトン・アンカース, Ashuton Ankāsu?, lit. Ashton Anchors) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere. Ashton is an unlucky swordsman haunted by a double-headed dragon that merged with his body, called Creepy and Weepy (Gyoro and Ururun in The Second Story), in an accident caused by meeting Claude C. Kenny and Rena Lanford.",
-    //     "Race": "Expellian",
-    //     "Place of origin": "Expel",
-    //     "Birthday": "September 28, S.D. 346",
-    //     "Age": ["20 (SO2/SE/SO2R)", "22 (SOBS)"],
-    //     "Weapon":  "Twin Swords",
-    //     "Height": "180 cm",
-    //     "Weight": "80kg (dragons included)",
-    //     "Affiliation": [],
-    //     "Occupation": "Mercenary",
-    //     "Image": {"Star Ocean: The Second Story R": true, "Star Ocean: The Second Story":true}
-    // }
