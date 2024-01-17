@@ -1,0 +1,1014 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block stylesheets %}
+    <link rel='stylesheet' type='text/css' href="{% static 'css/star-ocean.css' %}"%>
+{% endblock %}
+
+{% block content %}
+<div id="docs-container">
+
+    {% if title == "Documentation" %}
+
+    <form method="GET" action="/docs/starry-ocean">
+        <input class="form-control" class="docs-button" type="submit" value="Starry Ocean API Documentation">
+    </form>
+
+    {% elif title == "Starry Ocean API Documentation" %}
+            <h1>Starry Ocean API Documentation</h1>
+
+            <hr>
+
+            <h5 class="bold-900 margin-bottom-sm">The Starry Ocean API allows you to search for characters from the following Star Ocean games:</h5>
+            
+            <h6 class="fs-110 bold-900">Star Ocean 1</h6>
+            <ul>
+                <li>Star Ocean First Departure R (PS4, Nintendo Switch)</li>
+                <li>Star Ocean: Fantastic Space Odyssey (SNES)</li>
+            </ul>
+            
+            <h6 class="fs-110 bold-900">Star Ocean 2</h6>
+            <ul>
+                <li>Star Ocean: The Second Story (Playstation)</li>
+                <li>Star Ocean: The Second Story R (Nintendo Switch, PlayStation 5, PlayStation 4, Microsoft Windows)</li>
+            </ul>
+
+            <hr>
+
+            <h3 id="endpoints" class="bold-900">Endpoints</h3>
+            <ul class="endpoints-list">
+                <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-series-chars"><code>starry-ocean/series/{series_number}</code></li>
+                <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-direct-lookup"><code>starry-ocean/series/{series_number}/characters/{character_name}</code></li>
+                <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-single-char"><code>starry-ocean/characters/{character_name}</code></li>
+                <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-all-chars"><code>starry-ocean/characters/all</code></li>
+            </ul>
+            <h3 id="endpoints" class="bold-900">Errors</h3>
+            <ul class="endpoints-list">
+                <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-errors"><code>Errors</code></li>
+            </ul>
+            <hr>
+            <h3 class="bold-900">Data Type</h3>
+            <p>JSON</p>
+            <hr>
+
+            <section id="scroll-to-series-chars" class="docs-section">
+                <button class="scroll-to back-to-top" data-scroll="endpoints"></button><span class="fs-80 scroll-to" data-scroll="endpoints">&nbsp;Back to Top</span><br><br>
+                <h6>
+                    <code class="code-style-paths  fs-110">starry-ocean/series/{series_number}</code>
+                </h6>
+                <p>Retrieve all characters from the specified Star Ocean series.
+                    <br>
+                    <span class="fs-80">
+                        Calls for either Star Ocean 1 game will be handled simply by one endpoint: <i> /starry-ocean/series/1 </i>
+                        <br>
+                        Likewise for Star Ocean 2: <i> /starry-ocean/series/2 </i>
+                    </span>
+                </p>
+
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li class="margin-bottom-sm">
+                        <code class="code-style-params fs-110">{series_number}</code>
+                    </li>
+                    
+                    <li>Expected values: '1' or '2'</li>
+                    <li>Example usage: /starry-ocean/series/1</li>
+                </ul>
+
+
+<div class="docs-example-response">
+<pre>
+{
+    "Roddick Farrence": {
+        "Name": "Roddick Farrence",
+        "Description": "Roddick Farrence (ラティクス・ファーレンス, Ratikusu Fārensu, lit. Ratix Farrence) is the main protagonist of the first Star Ocean, as well as its remake Star Ocean: First Departure. In the Japanese version, he is affectionately called Rati (ラティ) by his friends. A young Fellpool from Roak, Roddick guards his hometown alongside his childhood friends, Millie Chliette and Dorne Murtough, until a mysterious plague threatens their peaceful lives.",
+        "Race": "Fellpool",
+        "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+        "Birthday": "January 14th, 327 S.D.",
+        "Age": [
+            "19"
+        ],
+        "Weapon": "Sword",
+        "Height": "174 cm",
+        "Weight": "68 kg",
+        "Affiliation": [
+            "Kratus Defense Force"
+        ],
+        "Occupation": "Guard",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Millie Chliette": {
+        "Name": "Millie Chliette",
+        "Description": "Millie Chliette (ミリー・キリート, Mirī Kirīto, lit. Milly Kiliet) is one of the main characters of the first Star Ocean, as well as its remake, Star Ocean: First Departure. A young Fellpool, she is the daughter of Martoth Chliette, the hometown's healer, and as such, she is proficient in healing symbology herself. She is childhood friends with Roddick Farrence and Dorne Murtough.",
+        "Race": "Fellpool",
+        "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+        "Birthday": "July 15th, 328 S.D.",
+        "Age": [
+            "18"
+        ],
+        "Weapon": "Rod",
+        "Height": "164 cm",
+        "Weight": "46 kg",
+        "Affiliation": [
+            "Kratus Defense Force"
+        ],
+        "Occupation": "Guard",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Dorn Murtough": {
+        "Name": "Dorne Murtough",
+        "Description": "Dorne Murtough (ドーン・マルトー, Dōn Marutō, lit. Dorn Marto) is a major character of the first Star Ocean, as well as its remake Star Ocean: First Departure. He is Roddick Farrence and Millie Chliette's childhood friend, hailing from the same village.",
+        "Race": "Fellpool",
+        "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+        "Birthday": "May 10, S.D. 327",
+        "Age": [
+            "19"
+        ],
+        "Weapon": "Sword",
+        "Height": "181 cm",
+        "Weight": "75 kg",
+        "Affiliation": [
+            "Kratus Defense Force"
+        ],
+        "Occupation": "Guard",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Ronyx J. Kenny": {
+        "Name": "Ronyx J. Kenny",
+        "Description": "Ronyx J. Kenny (ロニキス・Ｊ・ケニー, Ronikisu J. Kenī, lit. Ronyxis J. Kenny) is one of the main characters of Star Ocean and its remake First Departure, and reappears in Star Ocean: The Second Story and its remakes Second Evolution and The Second Story R. He is the captain of the ship Calnus, and arrives on Roak with his first officer, Ilia Silvestri, in order to save the inhabitants from a mysterious plague. Ronyx later becomes the father of Claude C. Kenny.",
+        "Race": "Human",
+        "Place of origin": "Earth",
+        "Birthday": "January 31, S.D. 308",
+        "Age": [
+            "38 (SO1/FD)",
+            "58 (SO2/SE/SO2R)"
+        ],
+        "Weapon": "Bow",
+        "Height": "179 cm",
+        "Weight": "64 kg",
+        "Affiliation": [
+            "Pangalactic Federation",
+            "Calnus crew",
+            "FSS-6004C Calnus crew"
+        ],
+        "Occupation": "Military Officer",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Ilia Silvestri": {
+        "Name": "Ilia Silvestri",
+        "Description": "Ilia Silvestri (イリア・シルベストリ, Iria Shirubesutori, lit. Iria Silvestoli) is one of the main characters of Star Ocean, as well as its remake Star Ocean: First Departure. Ilia is Head Science Officer of the starship Calnus, and Captain Ronyx J. Kenny's subordinate and right-hand woman.",
+        "Race": "Human",
+        "Place of origin": "Earth",
+        "Birthday": "June 1st, 323 S.D.",
+        "Age": [
+            "23"
+        ],
+        "Weapon": "Fist",
+        "Height": "171 cm",
+        "Weight": "48 kg",
+        "Affiliation": [
+            "Pangalactic Federation",
+            "Calnus crew"
+        ],
+        "Occupation": "Science Officer",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Cyuss Warren": {
+        "Name": "Cyuss Warren",
+        "Description": "Cyuss Warren (シウス・ウォーレン, Shiusu Wōren, lit. Cius Warren) is a main character in the first Star Ocean, as well as its remake Star Ocean: First Departure. A combative former Knight of Astral, he wanders the land training to become a swordsman of legend.",
+        "Race": "Highlander",
+        "Place of origin": "Astral Kingdom, Planet Roak",
+        "Birthday": "November 8th, 26 S.D.",
+        "Age": [
+            "20 (SO1)",
+            "23 (SO1FD)"
+        ],
+        "Weapon": "Doublehanded Sword",
+        "Height": "190 cm",
+        "Weight": "90 kg",
+        "Affiliation": [
+            "Astral Knights (formerly)"
+        ],
+        "Occupation": "Knight (formerly)",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Phia Melle": {
+        "Name": "Phia Melle",
+        "Description": "Phia Melle (フィア・メル, Fia Meru, lit. Fear Mell) is a playable character in the original Star Ocean and its remake, Star Ocean: First Departure. A young Highlander, Phia is the captain of the Astral Knight Corps and adoptive sister of Cyuss Warren.",
+        "Race": "Highlander",
+        "Place of origin": "Astral Kingdom, Planet Roak",
+        "Birthday": "April 19th, 26 S.D.",
+        "Age": [
+            "20 (SO1)",
+            "21 (SO1FD)"
+        ],
+        "Weapon": "Hisho-ken Sword",
+        "Height": "173 cm",
+        "Weight": "50 kg",
+        "Affiliation": [
+            "Astral Knight Corps"
+        ],
+        "Occupation": "Knight",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Ashlay Bernbeldt": {
+        "Name": "Ashlay Bernbeldt",
+        "Description": "Ashlay Bernbeldt (アシュレイ・バーンベルト, Ashurei Bānberuto, lit. Ashlay Barnbelt) is a playable character in the original Star Ocean, and its remake Star Ocean: First Departure. A veteran of the Demonic Wars, Ashlay is a famous swordsman in the world of Roak and a master of the Edarl sword style.",
+        "Race": "Highlander",
+        "Place of origin": "Astral Kingdom, Planet Roak",
+        "Birthday": "May 23, 2076 A.D.",
+        "Age": [
+            "21 (SO4)",
+            "57 (SO1/FD)"
+        ],
+        "Weapon": "Sword",
+        "Height": "188 cm",
+        "Weight": "87 kg",
+        "Affiliation": [
+            ""
+        ],
+        "Occupation": "Mercenary (formerly)",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Ioshua Jerand": {
+        "Name": "Ioshua Jerand",
+        "Description": "Ioshua Jerand (ヨシュア・ジェランド, Yoshua Jerando, lit. Joshua Jerand) is one of the main characters of the first Star Ocean, as well as its remake Star Ocean: First Departure. He is on a search for his sister, having been separated from her when their parents were killed by the Crimson Shield.",
+        "Race": "Featherfolk",
+        "Place of origin": "Silvalant",
+        "Birthday": "November 12, S.D. 26",
+        "Age": [
+            "20"
+        ],
+        "Weapon": "Rod",
+        "Height": "172 cm",
+        "Weight": "56 kg",
+        "Affiliation": [
+            ""
+        ],
+        "Occupation": "",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Mavelle Froesson": {
+        "Name": "Mavelle Froesson",
+        "Description": "Mavelle Froesson (マーヴェル・フローズン, Māveru Furōzun, lit. Marvel Frozen, also spelled 'Flozen') is one of the main characters of the first Star Ocean as well as its remake, Star Ocean: First Departure. A mysterious woman who wields orbs in battle, she seeks revenge on the Crimson Shield for killing her parents.",
+        "Race": "Muah",
+        "Place of origin": "Roak",
+        "Birthday": "March 5, S.D. 27",
+        "Age": [
+            "19"
+        ],
+        "Weapon": "Raven Orb",
+        "Height": "164 cm",
+        "Weight": "42 kg",
+        "Affiliation": [
+            ""
+        ],
+        "Occupation": "Vessel",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "T'nique Arcana": {
+        "Name": "T'nique Arcana",
+        "Description": "T'nique Arcana (ティニーク・アルカナ, Tinīku Arukana, lit. Tinek Arukena) is an optional playable character in the original Star Ocean and its remake Star Ocean: First Departure. A very positive and eager young man, he seeks to become a master martial artist.",
+        "Race": "Lesser Fellpool",
+        "Place of origin": "Silvalant",
+        "Birthday": "October 10, S.D. 28",
+        "Age": [
+            "18"
+        ],
+        "Weapon": "Quarterstaff",
+        "Height": "172 cm",
+        "Weight": "63 kg",
+        "Affiliation": [
+            ""
+        ],
+        "Occupation": "Martial Artist",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": true
+        },
+        "Series": "1"
+    },
+    "Erys Jerand": {
+        "Name": "Erys Jerand",
+        "Description": "Erys Jerand (エリス・ジェランド, Erisu Jerando, lit. Eris Jerand), also known by her title of Deathwing (死の翼, Shi no Tsubasa), is a minor character in the first Star Ocean, and made playable only in its remake Star Ocean: First Departure. She is a Featherfolk and the sister of Ioshua Jerand.",
+        "Race": "Featherfolk",
+        "Place of origin": "Roak",
+        "Birthday": "September 6, S.D. 29",
+        "Age": [
+            "17"
+        ],
+        "Weapon": "Rod",
+        "Height": "156 cm",
+        "Weight": "42 kg",
+        "Affiliation": [
+            ""
+        ],
+        "Occupation": "Assassin (formerly)",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": false
+        },
+        "Series": "1"
+    },
+    "Welch Vineyard": {
+        "Name": "Welch Vineyard",
+        "Description": "Welch Vineyard (ウェルチ・ビンヤード, Weruchi Binyādo) is a mysterious recurring character in the Star Ocean series, first appearing in Star Ocean: Till the End of Time and every installment of the series since then. A cheerful inventor, she is connected to the Item Creation system, but also appears as a playable character in several games.",
+        "Race": "Featherfolk",
+        "Place of origin": "Roak",
+        "Birthday": "???",
+        "Age": [
+            "???"
+        ],
+        "Weapon": "Handy Stick",
+        "Height": "157 cm",
+        "Weight": "45 kg",
+        "Affiliation": [
+            "Craftsman's Guild (SO3)",
+            "Space Reconnaissance Force (SO4)"
+        ],
+        "Occupation": "Inventor",
+        "Image": {
+            "Star Ocean: First Departure R": "",
+            "Star Ocean 1": false
+        },
+        "Series": "1"
+    }
+}
+</pre>
+</div>
+
+            </section>
+
+
+
+            <section id="scroll-to-direct-lookup" class="docs-section">
+                <button class="scroll-to back-to-top" data-scroll="endpoints"></button><span class="fs-80 scroll-to" data-scroll="endpoints">&nbsp;Back to Top</span><br><br>
+                <h6>
+                    <code class="code-style-paths  fs-110">starry-ocean/series/{series_number}/characters/{character_name}</code>
+                </h6>
+                <p>Direct look-up to retrieve a specific character from a specific series.</p>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li class="margin-bottom-sm">
+                        <code class="code-style-params fs-110">{series_number}</code>
+                    </li>
+                    
+                    <li class="margin-bottom-large">Expected values: '1' or '2'</li>
+                    <li class="margin-bottom-sm">
+                        <code class="code-style-params fs-110">{character_name}</code>
+                    </li>
+                    
+                    <li>Example value: 'Cyuss Warren'</li>
+                    <li>Example usage: /starry-ocean/series/1/characters/Cyuss Warren</li>
+                </ul>
+<div class="docs-example-response">
+<pre>
+{
+    "Name": "Cyuss Warren",
+    "Description": "Cyuss Warren (シウス・ウォーレン, Shiusu Wōren, lit. Cius Warren) is a main character in the first Star Ocean, as well as its remake Star Ocean: First Departure. A combative former Knight of Astral, he wanders the land training to become a swordsman of legend.",
+    "Race": "Highlander",
+    "Place of origin": "Astral Kingdom, Planet Roak",
+    "Birthday": "November 8th, 26 S.D.",
+    "Age": [
+        "20 (SO1)",
+        "23 (SO1FD)"
+    ],
+    "Weapon": "Doublehanded Sword",
+    "Height": "190 cm",
+    "Weight": "90 kg",
+    "Affiliation": [
+        "Astral Knights (formerly)"
+    ],
+    "Occupation": "Knight (formerly)",
+    "Image": {
+        "Star Ocean: First Departure R": "",
+        "Star Ocean 1": true
+    },
+    "Series": "1"
+}
+</pre>
+</div>
+            </section>
+
+
+
+
+            <section id="scroll-to-single-char" class="docs-section">
+                <button class="scroll-to back-to-top" data-scroll="endpoints"></button><span class="fs-80 scroll-to" data-scroll="endpoints">&nbsp;Back to Top</span><br><br>
+                <h6>
+                    <code class="code-style-paths  fs-110">starry-ocean/characters/{character_name}</code>
+                </h6>
+                <p>Retrieve a single character by providing a partial or exact character name.</p>
+                <p><strong>Parameters:</strong></p>
+                <ul>
+                    <li class="margin-bottom-sm">
+                        <code class="code-style-params fs-110">{character_name}</code>
+                    </li>
+                    
+                    <li>Example value: 'Rena'</li>
+                    <li>Example usage: /starry-ocean/characters/Rena</li>
+                </ul>
+
+<div class="docs-example-response">
+<pre>
+{
+    "Name": "Rena Lanford",
+    "Description": "Rena Lanford (レナ・ランフォード, Rena Ranfōdo, lit. Rena Lanford) is one of the two protagonists of Star Ocean: The Second Story, its enhanced port Second Evolution and remake The Second Story R, and its sequel Blue Sphere, alongside Claude C. Kenny. Blessed with healing abilities that no one else on Expel possesses, she longs to discover who she actually is, knowing that her parents are not her biological ones.",
+    "Birthday": "May 13, S.D. 349",
+    "Age": [
+        "17"
+    ],
+    "Weapon": "Cestus",
+    "Height": "161cm",
+    "Weight": "45kg",
+    "Affiliation": [],
+    "Occupation": "Student",
+    "Image": {
+        "Star Ocean: The Second Story R": true,
+        "Star Ocean: The Second Story": true
+    },
+    "Series": "2"
+}
+</pre>
+</div>
+            </section>
+
+
+
+
+            <section id="scroll-to-all-chars" class="docs-section">
+                <button class="scroll-to back-to-top" data-scroll="endpoints"></button><span class="fs-80 scroll-to" data-scroll="endpoints">&nbsp;Back to Top</span><br><br>
+                <h6>
+                    <code class="code-style-paths  fs-110">starry-ocean/characters/all</code>
+                </h6>
+                <p>Retrieve all characters from Star Ocean 1 and Star Ocean 2.</p>
+
+<div class="docs-example-response">
+<pre>
+{
+    "STAR_OCEAN_ONE": {
+        "CHARACTERS": {
+            "Roddick Farrence": {
+                "Name": "Roddick Farrence",
+                "Description": "Roddick Farrence (ラティクス・ファーレンス, Ratikusu Fārensu, lit. Ratix Farrence) is the main protagonist of the first Star Ocean, as well as its remake Star Ocean: First Departure. In the Japanese version, he is affectionately called Rati (ラティ) by his friends. A young Fellpool from Roak, Roddick guards his hometown alongside his childhood friends, Millie Chliette and Dorne Murtough, until a mysterious plague threatens their peaceful lives.",
+                "Race": "Fellpool",
+                "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+                "Birthday": "January 14th, 327 S.D.",
+                "Age": [
+                    "19"
+                ],
+                "Weapon": "Sword",
+                "Height": "174 cm",
+                "Weight": "68 kg",
+                "Affiliation": [
+                    "Kratus Defense Force"
+                ],
+                "Occupation": "Guard",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Millie Chliette": {
+                "Name": "Millie Chliette",
+                "Description": "Millie Chliette (ミリー・キリート, Mirī Kirīto, lit. Milly Kiliet) is one of the main characters of the first Star Ocean, as well as its remake, Star Ocean: First Departure. A young Fellpool, she is the daughter of Martoth Chliette, the hometown's healer, and as such, she is proficient in healing symbology herself. She is childhood friends with Roddick Farrence and Dorne Murtough.",
+                "Race": "Fellpool",
+                "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+                "Birthday": "July 15th, 328 S.D.",
+                "Age": [
+                    "18"
+                ],
+                "Weapon": "Rod",
+                "Height": "164 cm",
+                "Weight": "46 kg",
+                "Affiliation": [
+                    "Kratus Defense Force"
+                ],
+                "Occupation": "Guard",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Dorn Murtough": {
+                "Name": "Dorne Murtough",
+                "Description": "Dorne Murtough (ドーン・マルトー, Dōn Marutō, lit. Dorn Marto) is a major character of the first Star Ocean, as well as its remake Star Ocean: First Departure. He is Roddick Farrence and Millie Chliette's childhood friend, hailing from the same village.",
+                "Race": "Fellpool",
+                "Place of origin": "Border town of Kratus, Kingdom of Muah, Planet Roak",
+                "Birthday": "May 10, S.D. 327",
+                "Age": [
+                    "19"
+                ],
+                "Weapon": "Sword",
+                "Height": "181 cm",
+                "Weight": "75 kg",
+                "Affiliation": [
+                    "Kratus Defense Force"
+                ],
+                "Occupation": "Guard",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Ronyx J. Kenny": {
+                "Name": "Ronyx J. Kenny",
+                "Description": "Ronyx J. Kenny (ロニキス・Ｊ・ケニー, Ronikisu J. Kenī, lit. Ronyxis J. Kenny) is one of the main characters of Star Ocean and its remake First Departure, and reappears in Star Ocean: The Second Story and its remakes Second Evolution and The Second Story R. He is the captain of the ship Calnus, and arrives on Roak with his first officer, Ilia Silvestri, in order to save the inhabitants from a mysterious plague. Ronyx later becomes the father of Claude C. Kenny.",
+                "Race": "Human",
+                "Place of origin": "Earth",
+                "Birthday": "January 31, S.D. 308",
+                "Age": [
+                    "38 (SO1/FD)",
+                    "58 (SO2/SE/SO2R)"
+                ],
+                "Weapon": "Bow",
+                "Height": "179 cm",
+                "Weight": "64 kg",
+                "Affiliation": [
+                    "Pangalactic Federation",
+                    "Calnus crew",
+                    "FSS-6004C Calnus crew"
+                ],
+                "Occupation": "Military Officer",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Ilia Silvestri": {
+                "Name": "Ilia Silvestri",
+                "Description": "Ilia Silvestri (イリア・シルベストリ, Iria Shirubesutori, lit. Iria Silvestoli) is one of the main characters of Star Ocean, as well as its remake Star Ocean: First Departure. Ilia is Head Science Officer of the starship Calnus, and Captain Ronyx J. Kenny's subordinate and right-hand woman.",
+                "Race": "Human",
+                "Place of origin": "Earth",
+                "Birthday": "June 1st, 323 S.D.",
+                "Age": [
+                    "23"
+                ],
+                "Weapon": "Fist",
+                "Height": "171 cm",
+                "Weight": "48 kg",
+                "Affiliation": [
+                    "Pangalactic Federation",
+                    "Calnus crew"
+                ],
+                "Occupation": "Science Officer",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Cyuss Warren": {
+                "Name": "Cyuss Warren",
+                "Description": "Cyuss Warren (シウス・ウォーレン, Shiusu Wōren, lit. Cius Warren) is a main character in the first Star Ocean, as well as its remake Star Ocean: First Departure. A combative former Knight of Astral, he wanders the land training to become a swordsman of legend.",
+                "Race": "Highlander",
+                "Place of origin": "Astral Kingdom, Planet Roak",
+                "Birthday": "November 8th, 26 S.D.",
+                "Age": [
+                    "20 (SO1)",
+                    "23 (SO1FD)"
+                ],
+                "Weapon": "Doublehanded Sword",
+                "Height": "190 cm",
+                "Weight": "90 kg",
+                "Affiliation": [
+                    "Astral Knights (formerly)"
+                ],
+                "Occupation": "Knight (formerly)",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Phia Melle": {
+                "Name": "Phia Melle",
+                "Description": "Phia Melle (フィア・メル, Fia Meru, lit. Fear Mell) is a playable character in the original Star Ocean and its remake, Star Ocean: First Departure. A young Highlander, Phia is the captain of the Astral Knight Corps and adoptive sister of Cyuss Warren.",
+                "Race": "Highlander",
+                "Place of origin": "Astral Kingdom, Planet Roak",
+                "Birthday": "April 19th, 26 S.D.",
+                "Age": [
+                    "20 (SO1)",
+                    "21 (SO1FD)"
+                ],
+                "Weapon": "Hisho-ken Sword",
+                "Height": "173 cm",
+                "Weight": "50 kg",
+                "Affiliation": [
+                    "Astral Knight Corps"
+                ],
+                "Occupation": "Knight",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Ashlay Bernbeldt": {
+                "Name": "Ashlay Bernbeldt",
+                "Description": "Ashlay Bernbeldt (アシュレイ・バーンベルト, Ashurei Bānberuto, lit. Ashlay Barnbelt) is a playable character in the original Star Ocean, and its remake Star Ocean: First Departure. A veteran of the Demonic Wars, Ashlay is a famous swordsman in the world of Roak and a master of the Edarl sword style.",
+                "Race": "Highlander",
+                "Place of origin": "Astral Kingdom, Planet Roak",
+                "Birthday": "May 23, 2076 A.D.",
+                "Age": [
+                    "21 (SO4)",
+                    "57 (SO1/FD)"
+                ],
+                "Weapon": "Sword",
+                "Height": "188 cm",
+                "Weight": "87 kg",
+                "Affiliation": [
+                    ""
+                ],
+                "Occupation": "Mercenary (formerly)",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Ioshua Jerand": {
+                "Name": "Ioshua Jerand",
+                "Description": "Ioshua Jerand (ヨシュア・ジェランド, Yoshua Jerando, lit. Joshua Jerand) is one of the main characters of the first Star Ocean, as well as its remake Star Ocean: First Departure. He is on a search for his sister, having been separated from her when their parents were killed by the Crimson Shield.",
+                "Race": "Featherfolk",
+                "Place of origin": "Silvalant",
+                "Birthday": "November 12, S.D. 26",
+                "Age": [
+                    "20"
+                ],
+                "Weapon": "Rod",
+                "Height": "172 cm",
+                "Weight": "56 kg",
+                "Affiliation": [
+                    ""
+                ],
+                "Occupation": "",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Mavelle Froesson": {
+                "Name": "Mavelle Froesson",
+                "Description": "Mavelle Froesson (マーヴェル・フローズン, Māveru Furōzun, lit. Marvel Frozen, also spelled 'Flozen') is one of the main characters of the first Star Ocean as well as its remake, Star Ocean: First Departure. A mysterious woman who wields orbs in battle, she seeks revenge on the Crimson Shield for killing her parents.",
+                "Race": "Muah",
+                "Place of origin": "Roak",
+                "Birthday": "March 5, S.D. 27",
+                "Age": [
+                    "19"
+                ],
+                "Weapon": "Raven Orb",
+                "Height": "164 cm",
+                "Weight": "42 kg",
+                "Affiliation": [
+                    ""
+                ],
+                "Occupation": "Vessel",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "T'nique Arcana": {
+                "Name": "T'nique Arcana",
+                "Description": "T'nique Arcana (ティニーク・アルカナ, Tinīku Arukana, lit. Tinek Arukena) is an optional playable character in the original Star Ocean and its remake Star Ocean: First Departure. A very positive and eager young man, he seeks to become a master martial artist.",
+                "Race": "Lesser Fellpool",
+                "Place of origin": "Silvalant",
+                "Birthday": "October 10, S.D. 28",
+                "Age": [
+                    "18"
+                ],
+                "Weapon": "Quarterstaff",
+                "Height": "172 cm",
+                "Weight": "63 kg",
+                "Affiliation": [
+                    ""
+                ],
+                "Occupation": "Martial Artist",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": true
+                },
+                "Series": "1"
+            },
+            "Erys Jerand": {
+                "Name": "Erys Jerand",
+                "Description": "Erys Jerand (エリス・ジェランド, Erisu Jerando, lit. Eris Jerand), also known by her title of Deathwing (死の翼, Shi no Tsubasa), is a minor character in the first Star Ocean, and made playable only in its remake Star Ocean: First Departure. She is a Featherfolk and the sister of Ioshua Jerand.",
+                "Race": "Featherfolk",
+                "Place of origin": "Roak",
+                "Birthday": "September 6, S.D. 29",
+                "Age": [
+                    "17"
+                ],
+                "Weapon": "Rod",
+                "Height": "156 cm",
+                "Weight": "42 kg",
+                "Affiliation": [
+                    ""
+                ],
+                "Occupation": "Assassin (formerly)",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": false
+                },
+                "Series": "1"
+            },
+            "Welch Vineyard": {
+                "Name": "Welch Vineyard",
+                "Description": "Welch Vineyard (ウェルチ・ビンヤード, Weruchi Binyādo) is a mysterious recurring character in the Star Ocean series, first appearing in Star Ocean: Till the End of Time and every installment of the series since then. A cheerful inventor, she is connected to the Item Creation system, but also appears as a playable character in several games.",
+                "Race": "Featherfolk",
+                "Place of origin": "Roak",
+                "Birthday": "???",
+                "Age": [
+                    "???"
+                ],
+                "Weapon": "Handy Stick",
+                "Height": "157 cm",
+                "Weight": "45 kg",
+                "Affiliation": [
+                    "Craftsman's Guild (SO3)",
+                    "Space Reconnaissance Force (SO4)"
+                ],
+                "Occupation": "Inventor",
+                "Image": {
+                    "Star Ocean: First Departure R": "",
+                    "Star Ocean 1": false
+                },
+                "Series": "1"
+            }
+        }
+    },
+    "STAR_OCEAN_TWO": {
+        "CHARACTERS": {
+            "Claude C. Kenny": {
+                "Name": "Claude C. Kenny",
+                "Description": "Claude C. Kenny (クロード・Ｃ・ケニー, Kurōdo C. Kenī, lit. Crawd C. Kenny) is the son of the famous Admiral Ronyx J. Kenny, a main character from the original Star Ocean. Although Claude has the ability and talent to be an officer, he lives in the shadow of his father. Generally a nice guy, Claude is passionate about what he thinks is right. Claude is one of the two protagonists of Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere, alongside Rena Lanford. His surname was originally translated as Kenni in The Second Story.",
+                "Race": "Earthling",
+                "Place of origin": "Planet Earth",
+                "Birthday": "January 23, S.D. 347",
+                "Age": [
+                    "19"
+                ],
+                "Weapon": "Sword",
+                "Height": "175cm",
+                "Weight": "68kg",
+                "Affiliation": [
+                    "Pangalactic Federation",
+                    "FSS-6004C Calnus crew"
+                ],
+                "Occupation": "Military officer",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Rena Lanford": {
+                "Name": "Rena Lanford",
+                "Description": "Rena Lanford (レナ・ランフォード, Rena Ranfōdo, lit. Rena Lanford) is one of the two protagonists of Star Ocean: The Second Story, its enhanced port Second Evolution and remake The Second Story R, and its sequel Blue Sphere, alongside Claude C. Kenny. Blessed with healing abilities that no one else on Expel possesses, she longs to discover who she actually is, knowing that her parents are not her biological ones.",
+                "Birthday": "May 13, S.D. 349",
+                "Age": [
+                    "17"
+                ],
+                "Weapon": "Cestus",
+                "Height": "161cm",
+                "Weight": "45kg",
+                "Affiliation": [],
+                "Occupation": "Student",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Dias Flac": {
+                "Name": "Dias Flac",
+                "Description": "Dias Flac (ディアス・フラック, Diasu Furakku, lit. Dias Flac) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A powerful swordsman, he travels the planet of Expel in search of strength after his family's death.",
+                "Race": "Expellian",
+                "Place of origin": "Arlia, Planet Expel",
+                "Birthday": "August 5, S.D. 341",
+                "Age": [
+                    "25"
+                ],
+                "Weapon": "Sword",
+                "Height": "192cm",
+                "Weight": "82kg",
+                "Affiliation": [],
+                "Occupation": "Mercenary",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Bowman Jeane": {
+                "Name": "Bowman Jeane",
+                "Description": "Bowman Jeane (ボーマン・ジーン, Bōman Jīn) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. Once a talented researcher in the field of symbological weaponry and professor at Lacuer Academy, he now runs a pharmacy with his wife Ninay in the town of Linga. He is acquainted with Leon's parents.",
+                "Race": "Expellian",
+                "Place of origin": "Planet Expel",
+                "Birthday": "December 30, S.D. 339",
+                "Age": [
+                    "27"
+                ],
+                "Weapon": "Cestus",
+                "Height": "175 cm",
+                "Weight": "78kg",
+                "Affiliation": [
+                    "Lacuer Academy (formerly)"
+                ],
+                "Occupation": [
+                    "Scientist (formerly)",
+                    "Pharmacist"
+                ],
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Leon D.S. Gehste": {
+                "Name": "Leon D.S. Gehste",
+                "Description": "Leon D.S. Gehste (レオン・D・S・ゲーステ, Reon D S Gēsute, lit. Leon D. S. Geeste) is one of the main characters from Star Ocean: The Second Story, its remakes Second Evolution and The Second Story R, and its sequel Blue Sphere. A symbologist who can cast powerful spells that even well-trained adults cannot, his talents for symbological weapons research are invaluable and he makes sure everyone knows it.",
+                "Race": "Expellian",
+                "Place of origin": "Lacuer, Planet Expel",
+                "Birthday": "November 25, S.D. 354",
+                "Age": [
+                    "12"
+                ],
+                "Weapon": "Tome",
+                "Height": "135cm",
+                "Weight": "36kg",
+                "Affiliation": [],
+                "Occupation": "Professor",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Ashton Anchors": {
+                "Name": "Ashton Anchors",
+                "Description": "Ashton Anchors (アシュトン・アンカース, Ashuton Ankāsu, lit. Ashton Anchors) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake, The Second Story R, and its sequel Blue Sphere. Ashton is an unlucky swordsman haunted by a double-headed dragon that merged with his body, called Creepy and Weepy (Gyoro and Ururun in The Second Story), in an accident caused by meeting Claude C. Kenny and Rena Lanford.",
+                "Race": "Expellian",
+                "Place of origin": "Planet Expel",
+                "Birthday": "September 28, S.D. 346",
+                "Age": [
+                    "20"
+                ],
+                "Weapon": "Twin Swords",
+                "Height": "180 cm",
+                "Weight": "80kg (dragons included)",
+                "Affiliation": [],
+                "Occupation": "Mercenary",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Precis F. Neumann": {
+                "Name": "Precis F. Neumann",
+                "Description": "Precis F. Neumann (プリシス・F・ノイマン, Purishisu F Noiman, lit. Precis F Neumann) is one of the main characters from Star Ocean: The Second Story, its enhanced port, Second Evolution, its remake The Second Story R, and its sequel Blue Sphere. The daughter of a mechanical researcher in the town of Linga, she has inherited her father's interest for machinery. Her greatest invention to date is a robot she named Robbie that can transform and is effective in battle.",
+                "Race": "Expellian",
+                "Place of origin": "Planet Expel",
+                "Birthday": "February 29, S.D. 350",
+                "Age": [
+                    "16"
+                ],
+                "Weapon": "Mechanical Arms",
+                "Height": "155 cm",
+                "Weight": "43kg",
+                "Affiliation": [],
+                "Occupation": "Inventor",
+                "Image": {
+                    "Star Ocean: The Second Story R": true,
+                    "Star Ocean: The Second Story": true
+                },
+                "Series": "2"
+            },
+            "Placeholder": {
+                "Developer Note": "This page is still in development"
+            }
+        }
+    }
+}
+</pre>
+</div>
+            </section>
+
+
+
+
+            <section id="scroll-to-errors" class="docs-section">
+                <button class="scroll-to back-to-top" data-scroll="endpoints"></button><span class="fs-80 scroll-to" data-scroll="endpoints">&nbsp;Back to Top</span><br><br>
+                <h6>
+                    <code class="code-style-paths  fs-110">Errors</code>
+                </h6>
+
+                <p><strong>All errors will return appropriate HTTP response codes accompanied by the following JSON error object.</strong></p>
+
+<p><strong>Example error call</strong></p>
+<div class="docs-example-response">
+<pre>
+function call_the_api(){
+    $.ajax({
+        url:"https://matthewsummers.dev/starry-ocean/characters",
+        method: "GET",
+        dataType: "json",
+        success: function(data){
+            console.log("Success", data)
+        },
+        error: function (xhr, status, error) {
+
+            // GENERIC ERROR RESPONSE 
+            console.error("XHR Status:", xhr.status);
+            console.error("Status:", status);
+            console.error("Error:", error);
+
+            // DETAILED ERROR RESPONSE
+            var error_data = JSON.parse(xhr.responseText);
+            console.log("Error data:", error_data);
+        }
+    });
+}
+call_the_api()
+</pre>
+</div>
+
+<br>
+
+<p><strong>Example error response</strong></p>
+<pre>
+XHR Status: 400
+Status: error
+Error: Bad Request
+Error data:
+</pre>
+<div class="docs-example-response">
+<pre>
+{
+    "error_data": {
+        "code": 400,
+        "message": "Bad Request",
+        "details": "Please provide a character name"
+    }
+}
+</pre>
+</div>
+            </section>
+
+    {% endif %}
+</div>  <!-- end container  -->
+
+{% endblock %}
+
+
+
+{% block deferred_scripts %}
+    <script src="{% static 'js/docs.js' %}"></script>
+{% endblock %}

@@ -17,34 +17,57 @@ const so_search_error_p = $("#so-search-error-p");
     // call API 
     function call_star_ocean(series=null, char=null){
         return new Promise(function(resolve, reject){
-            var url = "/star-ocean/chars";
+            var url = "/starry-ocean";
+            // var url = "https://www.matthewsummers.dev/starry-ocean";
+            let remainder = null;
 
             if (series){
-                series = `series=${series}`;
+                remainder = `/series/${series}`;
             }
             else if (char){
-                char = `name=${char}`
+                remainder = `/characters/${char}`
             }
 
-            if (series && char){
-                url += `?${series} + & ${char}`;
-            }
-            else if (series && !char){
-                url += "?" + series;
-            }
-            else if(char && !series){
-                url += "?" + char;
+            if (series || char){
+                url += remainder
             }
 
+            // var url = "/starry-ocean/characters/";
+
+            // var url = "https://www.matthewsummers.dev/starry-ocean/all";
+
+            // url = "/starry-ocean/series/2s"
+            // if (series && char){
+            //     url += `?${series} + & ${char}`;
+            // }
+            // else if (series && !char){
+            //     url += "?" + series;
+            // }
+            // else if(char && !series){
+            //     url += "?" + char;
+            // }
             $.ajax({
                 url: url,
                 method: "GET",
                 dataType: "json",
                 success: function(data){
+
+                    console.log("Success", data)
                     resolve(data);
                 },
-                error: function (error) {
+                error: function (xhr, status, error) {
+                    console.error("XHR Status:", xhr.status);
+                    console.error("Status:", status);
                     console.error("Error:", error);
+
+                    try {
+                        // custom error data from Python
+                        var errorData = JSON.parse(xhr.responseText);
+                        console.log("Error Data:", errorData);
+                    } catch (e) {
+                        console.warn("Unable to parse error data as JSON.");
+                    }
+                    
                     reject(error);
                 }
             });
@@ -298,3 +321,32 @@ const so_search_error_p = $("#so-search-error-p");
     }
 
 
+
+// function call_the_api(){
+//     $.ajax({
+//         // url:"https://matthewsummers.dev/starry-ocean/characters",
+//         url:"/starry-ocean/characters",
+//         method: "GET",
+//         dataType: "json",
+//         success: function(data){
+
+//             console.log("Success", data)
+//         },
+//         error: function (xhr, status, error) {
+//             console.error("XHR Status:", xhr.status);
+//             console.error("Status:", status);
+//             console.error("Error:", error);
+
+//             // The detailed error response
+//             try {
+//                 // custom error data from Python
+//                 var errorData = JSON.parse(xhr.responseText);
+//                 console.log("Error Data:", errorData);
+//             } catch (e) {
+//                 console.warn("Unable to parse error data as JSON.");
+//             }
+            
+//         }
+//     });
+// }
+// call_the_api()

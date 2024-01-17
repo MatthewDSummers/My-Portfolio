@@ -98,7 +98,9 @@ ul {
 .text-white {
     color: white;
 }
-
+.yellow{
+    color: rgb(255, 255, 148);
+}
 .anchor-no-style {
     text-decoration: none;
 }
@@ -236,12 +238,12 @@ ul {
     width: 100%;
 }
 
-.grid-item a {
+.grid-item .a-logo {
     position: relative;
     transition: transform 0.1s ease-in-out;
 }
 
-.grid-item a::before {
+.grid-item .a-logo::before {
     border-radius: 10px;
     content: "Click to See";
     color: white;
@@ -258,13 +260,13 @@ ul {
     background-color: rgba(204, 192, 255, 0.445);
 }
 
-.grid-item a:hover::before {
+.grid-item .a-logo:hover::before {
     opacity: 0;
     outline: 1px solid rgb(123, 123, 123);
     /* opacity: .9; */
 }
 
-.grid-item a:hover {
+.grid-item .a-logo:hover {
     transform: translateY(-10px);
 }
 
@@ -554,6 +556,12 @@ nav a.projects:not(.active):hover {
     border-bottom: 3px solid hsl(295, 90%, 55%);
 }
 
+.docs-nav {
+    color: hsl(233, 90%, 55%);
+    border-bottom: 3px solid hsl(228, 100%, 48%);
+}
+
+.active.docs-nav,
 .active.home,
 .active.projects,
 .active.resume,
@@ -581,6 +589,10 @@ nav a.projects:not(.active):hover {
 
 .active.have-fun {
     border-bottom: 5px solid hsl(295, 90%, 55%);
+}
+
+.active.docs-nav{
+    border-bottom: 5px solid hsl(228, 100%, 48%);
 }
 
 
@@ -1385,12 +1397,12 @@ transition: transform 400ms ease-in;
         height: 400px;
     }
 
-    .grid-item a {
+    .grid-item .a-logo {
         width: 620px;
         height: 400px;
     }
 
-    .grid-item a::before {
+    .grid-item .a-logo::before {
         width: 620px;
         height: 400px;
     }

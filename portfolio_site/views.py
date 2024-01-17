@@ -41,7 +41,7 @@ def projects(request):
                 game_parameter = "non"
             context["game_parameter"] = game_parameter
 
-        elif request.GET["title"] == "star-ocean":
+        elif request.GET["title"] == "starry-ocean":
             context["title"] = "Starry Ocean"
             context["project"] = "star-ocean"
             context["url"] = "/star-ocean/"
@@ -96,3 +96,16 @@ def have_fun(request):
 #             print("\n")
 #     context = {"results": results}
 #     return render(request, "home.html", context)
+
+def doc_view(request, title):
+    if not title:
+        title = "Documentation"
+    elif title == "starry-ocean":
+        title = "Starry Ocean API Documentation"
+
+    context = {
+        "docs_nav":"active",
+        "title": title,
+    }
+    return render(request, "docs.html", context)
+

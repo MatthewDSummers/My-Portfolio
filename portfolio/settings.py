@@ -35,12 +35,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'portfolio_site'
+    'portfolio_site',
+    'rest_framework',
+    # 'corsheaders'
 ]
+
+# CORS_ALLOWED_ORIGINS = [
+#     'https://www.matthewsummers.dev/star-ocean',
+#     'https://matthewsummers.dev'
+# ]
+
+
+# CORS_ALLOWED_PATHS = [
+#     '/star-ocean/',
+#     '/star-ocean/chars/',
+#     # other paths...
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

@@ -1,7 +1,6 @@
 from django.urls import path, re_path
-
+from .star_ocean_api import GetChar, GetAllChars, GetCharsBySeries, getBySeriesAndName
 from . import views
-from . import star_ocean_api as star_ocean
 
 urlpatterns = [
     path('', views.home),
@@ -9,9 +8,12 @@ urlpatterns = [
     path('resume', views.resume),
     path('contact', views.contact),
     path('have-fun', views.have_fun),
-    # re_path(r'^star-ocean/(?P<series>\w+)/(?P<name>\w+)/$', star_ocean.star_ocean_chars_list, name="star-ocean-chars"),
-    # re_path(r'^star-ocean/(?P<series>\w+)/(?P<name>[\w\-?]+)/$', star_ocean.star_ocean_chars_list, name="star-ocean-chars")
-    # path('form', views.form),
-    path('star-ocean', views.projects, name="star-ocean-page"),
-    path('star-ocean/chars', star_ocean.star_ocean_chars_list, name="star-ocean-chars")
-]
+
+    re_path(r'^docs/(?P<title>.*)$', views.doc_view, name="docs"),
+    # path('starry-ocean/characters/<str:name>', GetChar.as_view(), name="get-chars"),
+    # path('starry-ocean/characters/all', GetAllChars.as_view(), name="get-all-chars"),
+    re_path(r'^starry-ocean/characters/(?P<name>.*)$', GetChar.as_view(), name="get-chars"),
+
+    path('starry-ocean/series/<str:series>', GetCharsBySeries.as_view(), name="get-chars-by-series"),
+    path('starry-ocean/series/<str:series>/characters/<str:name>', getBySeriesAndName.as_view(), name="get-by-series-and-name")
+] 
