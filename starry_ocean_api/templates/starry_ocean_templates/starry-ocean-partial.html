@@ -1,18 +1,12 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block stylesheets %}
-    <link rel='stylesheet' type='text/css' href="{% static 'css/star-ocean.css' %}"%>
-{% endblock %}
-
-{% block content %}
 <div id="star-ocean-container">
     <div class="row mx-auto w-75">
         <h1 class="font-baskerville text-white so-txt-shadow">Select a title</h1>
         <div class="so-series-trigger-div col-sm-12 col-md-6 col-lg-6">
-            <img id="star-ocean-one-button" class="so-series-trigger" data-series="1" src="{% static '/media/images/star_ocean/star_ocean_one/snes/so1_icon.jpg' %}">
+            <img id="star-ocean-one-button" class="so-series-trigger" data-series="1" src="{% static '/star_ocean_static/media/images/star_ocean/star_ocean_one/snes/so1_icon.jpg' %}">
         </div>
         <div class="so-series-trigger-div col-sm-12 col-md-6 col-lg-6">
-            <img id="star-ocean-two-button" class="so-series-trigger" data-series="2" src="{% static '/media/images/star_ocean/star_ocean_two/s02_icon.jpg' %}">
+            <img id="star-ocean-two-button" class="so-series-trigger" data-series="2" src="{% static '/star_ocean_static/media/images/star_ocean/star_ocean_two/s02_icon.jpg' %}">
         </div>
     </div>
 
@@ -29,8 +23,14 @@
     </div>
 
 </div>
-{% endblock %}
+<div id="copyright" class="so-txt-shadow">
+    <p class="yellow">This page is a non-profit fan production. The content is not sponsored or endorsed by Square Enix.
+        <br>
+        All Square Enix media and property names are the intellectual property of Square Enix and copyrighted:
+        <br>
+        © Square Enix
+    </p>
+    <p id="copyright-p"></p>
+</div>
 
-{% block deferred_scripts %}
-    <script src="{% static 'js/star-ocean.js' %}"></script>
-{% endblock %}
+<script src="{% static '/star_ocean_static/js/index.js' %}"></script>

@@ -3,6 +3,9 @@
 
 {% block content %}
 
+<div id="projects-page-container">
+
+
 <!-- =======   ALL PROJECTS PAGE   ======= -->
 {% if not single %}
         {% comment %} <div class="text-center padding-inline bgfr">
@@ -70,13 +73,14 @@
                         <p class="txt-white">
                             My personal, meticulously crafted public-facing RESTful API. Leveraging the Django REST Framework and designed with a class-based view approach for seamless data retrieval. It serves as a compendium of Star Ocean (© Square Enix) characters.
                         <br>
-                            <a href="/docs/starry-ocean" target="_blank" class="yellow">See docs</a>
+                            <a href="/starry-ocean/docs" target="_blank" class="yellow">See docs</a>
                         </p>
                     </p>
                 </div>
 
-                <a class="a-logo" href="/projects?title=starry-ocean" style="background-color: white">
-                        <img class="grid-image" src="{% static 'media/images/star_ocean/star-ocean-project-logo-3.png' %}" >
+                <a id="starry-ocean-trigger" class="a-logo placeholder-div-trigger" href="#" style="background-color: white">
+                {% comment %} <a class="a-logo" href="/projects?title=starry-ocean" style="background-color: white"> {% endcomment %}
+                        <img class="grid-image" src="{% static '/star_ocean_static/media/images/star_ocean/star-ocean-project-logo-3.png' %}" >
                 </a>
             </div>
 
@@ -206,6 +210,11 @@
     {% endif %}
 </div>
     <!-- maybe use IntersectionObserver -->
+
+
 {% endif %}
+
 <script src="{% static 'js/faders.js' %}"></script>
+
+</div> <!-- end project page container -->
 {% endblock %}

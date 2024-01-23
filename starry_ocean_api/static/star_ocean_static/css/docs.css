@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Libre+Baskerville&display=swap');
+
+
+
+/* DOCS */
+
+pre {
+    border: none !important;
+}
+
+ul{
+    font-size: 1.2rem !important;
+}
+
+.bold-900 {
+    font-weight: 900;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+code {
+    color: #b80e69;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+#docs-container {
+    min-height: 75vh;
+    background-color: hsl(63, 100%, 97%);
+    background-color: hsl(63, 100%, 97%);
+    border-top: 1px solid rgb(191, 191, 189);
+    padding: 2em;
+    font-family: 'Libre Baskerville', serif !important;
+}
+
+.docs-section {
+    background-color: hsl(206, 100%, 97%);
+    margin: 2em 0;
+    border: 1px solid rgb(191, 191, 189);
+    padding: 1em;
+    /* color: rgb(218, 218, 218); */
+    /* width: 75%; */
+}
+
+.docs-section ul {
+    font-size: .85rem;
+}
+
+.docs-example-response {
+    margin-bottom: 1em;
+    max-height: 80vh;
+    overflow-y: scroll;
+    background-color: rgb(247, 247, 247);
+    color: black;
+
+    border: 1px solid rgb(191, 191, 189);
+    padding: 1em 0 .51em .3em;
+}
+
+/* utils */
+.margin-bottom-sm {
+    margin-bottom: 1em;
+}
+
+.margin-bottom-large {
+    margin-bottom: 2em;
+}
+
+.fs-110 {
+    font-size: 1.1rem;
+}
+
+.fs-80 {
+    font-size: .8em;
+}
+
+/* font colors  */
+.code-style-paths {
+    color: rgb(184, 14, 105);
+    text-shadow: 1px 1px 47px rgb(205, 14, 14);
+}
+
+.code-style-params {
+    color: rgb(19, 14, 184);
+    text-shadow: 1px 1px 35px rgb(97, 76, 191);
+}
+
+.scroll-to {
+    cursor: pointer;
+}
+
+.scroll-to:hover {
+    text-shadow: 1px 1px 3px rgb(255, 191, 191);
+}
+
+.back-to-top {
+    background: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+}
+
+.param-type {
+    color: rgb(99, 99, 99);
+    margin-left: 1em;
+}
+
+.param-requirement {
+    color: rgb(176, 0, 0);
+    margin-left: 1em;
+}

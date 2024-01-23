@@ -1,5 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Libre+Baskerville&display=swap');
+
+
 .w75-sm-w50-lg {
     width: 75%;
+}
+
+.text-white{
+    color: white;
 }
 
 .yellow{
@@ -16,9 +24,11 @@
     text-shadow: 2px 2px 1px rgb(73, 76, 176);
 }
 #star-ocean-container{
+    /* position: relative; */
     padding: .5em 1em;
-    min-height: 80vh; 
-    background-image: url('/static/media/images/star_ocean/earth-bg.jpg');
+    /* min-height: 80vh;  */
+    min-height: 100vh; 
+    background-image: url('/static/star_ocean_static/media/images/star_ocean/earth-bg.jpg');
     background-size: cover;
     background-position: center top;
     background-position: center center;
@@ -26,6 +36,16 @@
     background-position-y: -85px; 
 
 }
+
+#copyright{
+    /* position: absolute;
+    bottom: 0; */
+    /* background-color: rgba(84, 84, 84, 0.345);
+    background-color: red; */
+    background-color: black;
+    padding: 1em;
+}
+
 .so-char-div{
     /* border: 1px solid rgb(231, 149, 149); */
     padding: 1em;
@@ -227,76 +247,8 @@
     border-radius: 9px 9px 0 0px;
 }
 
-/* DOCS */
+/* utility */
 
-#docs-container{
-    min-height: 75vh;
-    background-color: hsl(63, 100%, 97%);
-    border-top: 1px solid rgb(191, 191, 189);
-    padding: 2em;
-    font-family: 'Libre Baskerville', serif;
-}
-.docs-section{
-    background-color: hsl(206, 100%, 97%);
-    margin: 2em 0;
-    border: 1px solid rgb(191, 191, 189);
-    padding: 1em;
-    /* color: rgb(218, 218, 218); */
-    /* width: 75%; */
-}
-    .docs-section ul{
-        font-size: .85rem;
-    }
-
-.docs-example-response{
-    max-height: 80vh;
-    overflow-y: scroll;
-    background-color: rgb(247, 247, 247);
-    color: black;
-
-    border: 1px solid rgb(191, 191, 189);
-    padding: 1em 0 1em .3em;
-}
-
-/* utils */
-.margin-bottom-sm{
-    margin-bottom: 1em;
-}
-.margin-bottom-large{
-    margin-bottom: 2em;
-}
-.fs-110{
-    font-size: 1.1rem;
-}
-.fs-80{
-    font-size: .8rem;
-}
-
-/* font colors  */
-.code-style-paths{
-    color: rgb(184, 14, 105);
-    text-shadow: 1px 1px 47px rgb(205, 14, 14);
-}
-
-    .code-style-params{
-        color: rgb(19, 14, 184);
-        text-shadow: 1px 1px 35px rgb(97, 76, 191);
-    }
-
-.scroll-to{
-    cursor: pointer;
-}
-    .scroll-to:hover{
-        text-shadow: 1px 1px 3px rgb(255, 191, 191);
-    }
-
-.back-to-top{
-    background: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M6 4h12v2H6zm5 10v6h2v-6h5l-6-6-6 6z"></path></svg>');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    border: none;
-    outline: none;
+.hidden{
+    display: none !important;
 }

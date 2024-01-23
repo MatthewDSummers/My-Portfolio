@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 import os
 import json
 import re
@@ -41,11 +42,11 @@ def projects(request):
                 game_parameter = "non"
             context["game_parameter"] = game_parameter
 
-        elif request.GET["title"] == "starry-ocean":
-            context["title"] = "Starry Ocean"
-            context["project"] = "star-ocean"
-            context["url"] = "/star-ocean/"
-            return render(request, "star-ocean.html", context)
+        # elif request.GET["title"] == "starry-ocean":
+        #     context["title"] = "Starry Ocean"
+        #     context["project"] = "star-ocean"
+        #     context["url"] = "/star-ocean/"
+        #     return render(request, "star-ocean.html", context)
 
     else:
         context["title"] = "Projects"
@@ -76,30 +77,10 @@ def have_fun(request):
     return render(request, "games.html", context)
 
 
-# def form(request):
-#     x = request.GET["searched"]
-
-#     script_dir = os.path.dirname(__file__)
-
-#     file_path = os.path.join(script_dir, 'KJV.json')
-
-#     with open(file_path, 'r') as f:
-#         data = json.load(f)
-#         results = []
-#         for word in data:
-#             if x in  re.findall(r'\b\w+\b', word[u'verse']):
-#                 word[u'verse'] = word[u'verse'].replace(x, x.upper())
-#                 results.append((word[u'name'], word[u'verse']))
-#         for x in results:
-#             print(x[0])
-#             print(x[1])
-#             print("\n")
-#     context = {"results": results}
-#     return render(request, "home.html", context)
-
 def doc_view(request, title):
     if not title:
         title = "Documentation"
+
     elif title == "starry-ocean":
         title = "Starry Ocean API Documentation"
 
@@ -107,5 +88,10 @@ def doc_view(request, title):
         "docs_nav":"active",
         "title": title,
     }
-    return render(request, "docs.html", context)
+    print(title)
 
+
+    if title == "Documentation":
+        return render(request, "docs.html", context)
+    else:
+        return redirect(reverse('starry_ocean:docs'))

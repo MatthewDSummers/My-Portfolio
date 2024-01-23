@@ -2,6 +2,48 @@ var menu_button = document.getElementById("menu-button");
 var close_button = document.getElementById("close");
 var modal = document.querySelector(".modal-menu");
 
+// for Documentation
+var placeholder_div = $("#placeholder-div");
+var placeholder_div_trigger = $(".placeholder-div-trigger")
+
+
+placeholder_div_trigger.on("click", function(e){   
+    e.preventDefault();
+    var id = $(this).attr("id");
+    var new_url = null;
+    var url = "";
+    var not_docs = true;
+
+    if (id == "star-ocean-docs-trigger"){
+        url = "/starry-ocean/docs?ajax=true";
+        new_url = "/starry-ocean/docs"
+        not_docs = false;
+    }else{
+        url = "/starry-ocean/?ajax=true";
+        new_url = "/starry-ocean"
+    }
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function(data){
+            console.log(data)
+            placeholder_div.html(data)
+            $("#projects-page-container").hide();
+            placeholder_div_trigger.hide();
+
+            if (not_docs){
+                var target_element = document.getElementById("star-ocean-container");
+                target_element.scrollIntoView({behavior: 'smooth'})
+            }
+
+            // // Replace user's current URL
+            history.pushState(null, null, new_url);
+        }
+    });
+})
+// Documentation end
+
 
 menu_button.addEventListener("click", function(){
     modal.style.display = "block";

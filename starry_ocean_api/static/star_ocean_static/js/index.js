@@ -13,6 +13,14 @@ const so_series_div = $("#star-ocean-series-div");
 const so_search_error_div = $("#so-search-error-div");
 const so_search_error_p = $("#so-search-error-p");
 
+
+LEGAL = {
+    "1": "© 1996, 2019 SQUARE ENIX CO., LTD. All Rights Reserved. Original version developed by tri-Ace Inc. STAR OCEAN and FIRST DEPARTURE are registered trademarks or trademarks of Square Enix Co., Ltd. SQUARE ENIX and the SQUARE ENIX logo are registered trademarks or trademarks of Square Enix Holdings Co., Ltd.",
+    "2": "© 1998, 2023 SQUARE ENIX Original version developed by tri-Ace Inc.",
+    "GAME 1": "Star Ocean",
+    "GAME 2": "Star Ocean: The Second Story"
+}
+
 // API CALL 
     // call API 
     function call_star_ocean(series=null, char=null){
@@ -32,20 +40,6 @@ const so_search_error_p = $("#so-search-error-p");
                 url += remainder
             }
 
-            // var url = "/starry-ocean/characters/";
-
-            // var url = "https://www.matthewsummers.dev/starry-ocean/all";
-
-            // url = "/starry-ocean/series/2s"
-            // if (series && char){
-            //     url += `?${series} + & ${char}`;
-            // }
-            // else if (series && !char){
-            //     url += "?" + series;
-            // }
-            // else if(char && !series){
-            //     url += "?" + char;
-            // }
             $.ajax({
                 url: url,
                 method: "GET",
@@ -54,6 +48,17 @@ const so_search_error_p = $("#so-search-error-p");
 
                     console.log("Success", data)
                     resolve(data);
+
+                    if (series){
+                        legal_series_key = `GAME ${series}`;
+                        let legality = `${LEGAL[legal_series_key]} <br> ${LEGAL[series]}`;
+                        
+                        $("#copyright-p").html(legality)
+                        $("#copyright-p").css("color", "white");
+                    }
+                    else{
+                        $("#copyright-p").html("")
+                    }
                 },
                 error: function (xhr, status, error) {
                     console.error("XHR Status:", xhr.status);
@@ -108,7 +113,7 @@ const so_search_error_p = $("#so-search-error-p");
         let character_html_div = null;
 
         if (single_result){
-            character_html_div = $(`<div class="so-char-div col-12 w75-sm-w50-lg mx-auto"></div>`);
+            character_html_div = $(`<div class="so-char-div col-9 w75-sm-w50-lg mx-auto"></div>`);
         }else{
             character_html_div = $(`<div class="so-char-div col-sm-12 col-md-6 col-lg-3"></div>`);
         }
@@ -157,6 +162,7 @@ const so_search_error_p = $("#so-search-error-p");
             }
         }
         so_series_div.append(character_html_div)
+
         StarOceanCarouselControls()
     }
 
@@ -169,16 +175,15 @@ const so_search_error_p = $("#so-search-error-p");
         let single_result = image_details["single_result"]
         let series_number = character["Series"]
 
-        
         let remake_url = null;
         let original_url = null;
 
         if (series_number== "1"){
-            remake_url = "/static/media/images/star_ocean/star_ocean_one/first_departure_r/" + char_name + ".webp";
-            original_url = "/static/media/images/star_ocean/star_ocean_one/snes/" + char_name + ".webp";
+            remake_url = "/static/star_ocean_static/media/images/star_ocean/star_ocean_one/first_departure_r/" + char_name + ".webp";
+            original_url = "/static/star_ocean_static/media/images/star_ocean/star_ocean_one/snes/" + char_name + ".webp";
         }else{
-            remake_url = "/static/media/images/star_ocean/star_ocean_two/R/" + char_name + ".webp";
-            original_url = "/static/media/images/star_ocean/star_ocean_two/PS1/" + char_name + ".webp";
+            remake_url = "/static/star_ocean_static/media/images/star_ocean/star_ocean_two/R/" + char_name + ".webp";
+            original_url = "/static/star_ocean_static/media/images/star_ocean/star_ocean_two/PS1/" + char_name + ".webp";
         }
 
         let remake_img = null;
@@ -224,6 +229,7 @@ const so_search_error_p = $("#so-search-error-p");
 
         // console.log(image_key, "IMAGE KEY")
         if (character.Image[image_key]){
+            console.log(char_name, character.Image[image_key])
             if (single_result){
                 original_image = $(`
                 <div class="carousel-item single-result">
@@ -282,6 +288,7 @@ const so_search_error_p = $("#so-search-error-p");
                     star_ocean_char_data(character, single_result=false);
                 }
             }
+
         })
         .catch(function(error) {
             console.error("Error:", error);
@@ -319,7 +326,6 @@ const so_search_error_p = $("#so-search-error-p");
             ele.addClass('hide-scroll-indicator');
         }
     }
-
 
 
 // function call_the_api(){
