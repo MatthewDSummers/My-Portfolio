@@ -154,6 +154,7 @@
         <div class="line bgr-white"></div>
         <h1 class="resume-section-title">PROJECTS</h1>
 
+    <!-- TICKET EASY -->
         <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-ticket-easy-title"><a href="https://matthewsummers.dev/ticket-easy/" target="_blank">Ticket Easy</a></h4> &nbsp;<span>[Jan - March '22; March - May '23]</span>
             <p class="fs-200 bold-600 resume-project-desc">
@@ -171,19 +172,27 @@
                 <li>Employed <code class="code-style">bcrypt</code> for password security due to its slow hashing of strings and additional salting</li>
             </ul>
         </section>
-        <section class="padding-inline-lg padding-block-sm">
-            <h4 class="resume-project-title resume-concordance-title"><a href="https://matthewsummers.dev/concordance/" target="_blank">KJV Concordance</a></h4> &nbsp;<span>[Jan '23]</span>
-            <p class="fs-200 bold-600 resume-project-desc">
-                A concordance of the King James Bible
-            </p>
-            <ul class="ul-styled">
-                <li>Contains the Bible in JSON format due to JSON's portability, ease of integration and parsing, flexibility, and performance efficiency</li>
-                <li>Utilized Python compiled regex patterns (<code class="code-style">re.compile</code>) for concordance search function to optimize efficiency and due to the general flexibility of pattern matching offered by <code class="code-style">re</code></li>
-                <li>Created a custom paginator for chapters as well as utilized the Django Paginator class for results</li>
-                <li>Search the entire Bible or specific book for specific word or phrase or read the Bible</li>
-                <li>Ability to increase font size for easier reading. To reduce database queries and server load, this setting is saved to the client's local storage</li>
-            </ul>
-        </section>
+
+
+    <!-- STARRY OCEAN -->
+    <section class="padding-inline-lg padding-block-sm">
+        <h4 class="resume-project-title resume-starry-ocean-title"><a href="https://matthewsummers.dev/projects?title=starry-ocean" target="_blank">Starry Ocean</a></h4> &nbsp;<span>[Jan 8th - 10th; Jan 17th '24]</span>
+        &nbsp; - &nbsp; <a href="/docs/starry-ocean" class="yellow" target="_blank">Starry Ocean Documentation</a>
+        <p class="fs-200 bold-600 resume-project-desc">
+            My personal, meticulously crafted public-facing RESTful API. Leveraging the Django REST Framework and designed with a class-based view approach for modular, seamless data retrieval. It serves as a compendium of Star Ocean (© Square Enix) characters.
+        </p>
+        <ul class="ul-styled">
+            <li>Built on REST and Open Source principles for easy user experience and integration, this API is freely available for public consumption</li>
+            <li>JSON-Powered Efficiency: Leveraging Django, the internal API adeptly retrieves and loads the data from the JSON file. This streamlined approach optimizes performance and facilitates seamless integration within the Django project, promoting a modular and interoperable architecture</li>
+            <li>Asynchronous Requests: utilizes AJAX to make asynchronous requests to the backend for efficient data retrieval without refreshing the entire page, enhancing user interactions</li>
+            <li>Dynamic HTML Rendering: dynamically generates HTML elements based on API responses, providing a flexible and scalable frontend structure</li>
+            <li>Responsive Design: designed to be responsive, ensuring a seamless experience across various devices</li>
+            <li>JavaScript Promise-based API Calls: implements JavaScript Promises to handle asynchronous calls to the Starry Ocean API, enhancing code readability and maintainability</li>
+            <li>Search Functionality: enables users to search for characters by name or filter by game title</li>
+        </ul>
+    </section>
+
+    <!-- STREAM BUNNY -->
         <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-stream-bunny-title"><a href="https://matthewsummers.dev/stream-bunny/" target="_blank">Stream Bunny</a></h4> &nbsp;<span>[Jan - Feb '22]</span>
             <p class="fs-200 bold-600 resume-project-desc">
@@ -197,6 +206,23 @@
                 <li>Developed AJAX and <code class="code-style">jQuery</code> solutions for populating instantaneous results of API queries</li>
             </ul>
         </section>
+
+    <!-- KJV CONCORDANCE -->
+        <section class="padding-inline-lg padding-block-sm">
+            <h4 class="resume-project-title resume-concordance-title"><a href="https://matthewsummers.dev/concordance/" target="_blank">KJV Concordance</a></h4> &nbsp;<span>[Jan '23]</span>
+            <p class="fs-200 bold-600 resume-project-desc">
+                A concordance of the King James Bible
+            </p>
+            <ul class="ul-styled">
+                <li>Contains the Bible in JSON format due to JSON's portability, ease of integration and parsing, flexibility, and performance efficiency</li>
+                <li>Utilized Python compiled regex patterns (<code class="code-style">re.compile</code>) for concordance search function to optimize efficiency and due to the general flexibility of pattern matching offered by <code class="code-style">re</code></li>
+                <li>Created a custom paginator for chapters as well as utilized the Django Paginator class for results</li>
+                <li>Search the entire Bible or specific book for specific word or phrase or read the Bible</li>
+                <li>Ability to increase font size for easier reading. To reduce database queries and server load, this setting is saved to the client's local storage</li>
+            </ul>
+        </section>
+
+    <!-- SESSION TRACKER -->
         <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-session-tracker-title"><a href="https://matthewsummers.dev/session-tracker/" target="_blank">Session Tracker</a></h4> &nbsp;<span>[September - November '22]</span>
             <p class="fs-200 bold-600 resume-project-desc">
@@ -209,22 +235,8 @@
                 <li>Utilized <code class="code-style">django-ckeditor</code> to add blogging features to website</li>
             </ul>
         </section>
-        <section class="padding-inline-lg padding-block-sm">
-            <h4 class="resume-project-title resume-starry-ocean-title"><a href="https://matthewsummers.dev/projects?title=starry-ocean" target="_blank">Starry Ocean</a></h4> &nbsp;<span>[Jan 8th - 10th; Jan 17th '24]</span>
-            &nbsp; - &nbsp; <a href="/docs/starry-ocean" class="yellow" target="_blank">Starry Ocean Documentation</a>
-            <p class="fs-200 bold-600 resume-project-desc">
-                My personal, meticulously crafted public-facing RESTful API. Leveraging the Django REST Framework and designed with a class-based view approach for modular, seamless data retrieval. It serves as a compendium of Star Ocean (© Square Enix) characters.
-            </p>
-            <ul class="ul-styled">
-                <li>Built on REST and Open Source principles for easy user experience and integration, this API is freely available for public consumption</li>
-                <li>JSON-Powered Efficiency: Leveraging Django, the internal API adeptly retrieves and loads the data from the JSON file. This streamlined approach optimizes performance and facilitates seamless integration within the Django project, promoting a modular and interoperable architecture</li>
-                <li>Asynchronous Requests: utilizes AJAX to make asynchronous requests to the backend for efficient data retrieval without refreshing the entire page, enhancing user interactions</li>
-                <li>Dynamic HTML Rendering: dynamically generates HTML elements based on API responses, providing a flexible and scalable frontend structure</li>
-                <li>Responsive Design: designed to be responsive, ensuring a seamless experience across various devices</li>
-                <li>JavaScript Promise-based API Calls: implements JavaScript Promises to handle asynchronous calls to the Starry Ocean API, enhancing code readability and maintainability</li>
-                <li>Search Functionality: enables users to search for characters by name or filter by game title</li>
-            </ul>
-        </section>
+
+    <!-- MY MOOGLE -->
         <section class="padding-inline-lg padding-block-sm">
             <h4 class="resume-project-title resume-my-moogle-title"><a href="https://matthewsummers.dev/projects?title=my-moogle" target="_blank">My Moogle</a></h4> &nbsp;<span>[Dec 30th-31st '23]</span>
             <p class="fs-200 bold-600 resume-project-desc">
@@ -239,6 +251,8 @@
                 <li>Provides results from moogleAPI as well as relevant Wikipedia links</li>
             </ul>
         </section>
+    
+    <!-- THIS PORTFOLIO SITE -->
         <section class="padding-inline-lg" style="padding-top: .8em;">
             <h4 class="resume-project-title resume-portfolio-title"><a href="/">This Portfolio Site</a></h4> &nbsp;<span>[2023: Jan; May - June; Dec]</span>
             <ul class="ul-styled">
