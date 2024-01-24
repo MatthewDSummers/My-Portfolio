@@ -514,7 +514,9 @@ nav {
     margin-inline: auto;
     /* border: 1px solid black; */
     padding-top: .5em;
+    padding: .5em 1em 0 .5em;
 }
+
 
 nav a {
     font-family: 'Lato', sans-serif;
@@ -523,18 +525,128 @@ nav a {
     /* color: rgb(35, 35, 35); */
 }
 
-nav a:hover {
-    color: rgb(47, 47, 47);
+
+
+nav a{
+    position:relative;
+    z-index:9;
+    /* padding: 0 .21em 0 .225em; */
+
 }
 
-nav a.projects:not(.active):hover {
-    color: hsl(240, 27%, 60%);
-}
+    nav a:focus{
+        outline: none;
+    }
 
-.home {
-    color: rgb(255, 99, 99);
-    border-bottom: 3px solid rgb(255, 99, 99);
-}
+    nav a:before{
+        content: "";
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        top: -10px;
+        right: -10px;
+        height: calc(100% + 3px);
+        width: 100%;
+        /* padding: 2em; */
+    }
+        nav a:hover:before{
+            opacity: 1;
+            transition: .2s ease;
+            top: -12px;
+            right: 0px;
+            border-radius: 100% 90% / 40% 99%;
+            padding: 1em;
+        }
+
+        nav a.home:hover:before{
+            background-color: rgb(244, 241, 211);
+            border-right: 8px solid gold;
+            border-bottom: 5px solid rgb(213, 7, 42);
+        }
+
+        nav a.projects:hover:before{
+            background-color: rgb(207, 179, 252);
+            border-right: 8px solid rgb(20, 11, 84);
+            border-bottom: 5px solid rgb(156, 123, 129);
+        }
+
+        nav a.resume:hover:before{
+            background-color: rgb(237, 255, 229);
+            border-right: 8px solid rgb(155, 255, 228);
+            border-bottom: 5px solid rgb(255, 185, 197);
+        }
+
+        nav a.have-fun:hover:before{
+            background-color: rgb(225, 238, 255);
+            border-right: 8px solid rgb(119, 111, 201);
+            border-bottom: 5px solid rgb(227, 114, 114);
+        }
+
+        nav a.docs-nav:hover:before{
+            background-color: rgb(255, 251, 169);
+            border-right: 8px solid rgb(193, 188, 255);
+            border-bottom: 5px solid rgb(84, 0, 174);
+        }
+        nav a.contact:hover:before{
+            background-color: rgb(255, 169, 169);
+            border-right: 8px solid rgb(255, 68, 0);
+            border-bottom: 5px solid rgb(11, 5, 101);
+        }
+
+    /* nav a.projects:not(.active):hover {
+        color: hsl(240, 27%, 60%);
+    } */
+
+    nav a.home {
+        color: rgb(255, 99, 99);
+        border-bottom: 3px solid rgb(255, 99, 99);
+    }
+
+
+    /* HOVER NAV TEXT  */
+        nav a.home:hover,
+        nav a.projects:hover,
+        nav a.resume:hover,
+        nav a.have-fun:hover, 
+        nav a.docs-nav:hover,
+        nav a.contact:hover{
+            border-bottom: 0;
+            transition: .3s ease;
+            border-bottom: none;
+            /* padding: 0 .21em 0 .225em; */
+            color: black;
+        }
+        nav a.home:hover{
+            color: black;
+        }
+        nav a.projects:hover{
+            color: white;
+            text-shadow: 1px 1px 1px black, 2px 1px 3px rgb(252, 132, 132);
+        }
+
+        nav a.resume:hover{
+            color: rgb(4, 79, 64);
+            /* text-shadow: -1px -1px 3px rgb(208, 208, 208), 2px 2px 1px rgb(161, 161, 161); */
+        }
+
+        nav a.have-fun:hover{
+            color:rgb(255, 255, 244);
+            text-shadow: -1px -1px 3px rgb(33, 25, 23), 2px 2px 1px rgb(156, 1, 1);
+        }
+        nav a.docs-nav:hover{
+            color:rgb(0, 0, 0);
+            /* text-shadow: 3px 3px 3px rgb(166, 77, 63), 2px 2px 1px rgb(125, 120, 111); */
+        }
+
+        nav a.contact:hover{
+            color:rgb(255, 255, 255);
+            text-shadow: 3px 3px 3px rgb(34, 5, 1), 2px 2px 1px rgb(55, 54, 52);
+        }
+
+
+
+
+
 
 .projects {
     color: black;
@@ -584,7 +696,7 @@ nav a.projects:not(.active):hover {
 }
 
 .active.contact {
-    border-bottom: 5px solid hsl(192, 100%, 39%)7;
+    border-bottom: 5px solid hsl(192, 100%, 39%);
 }
 
 .active.have-fun {
