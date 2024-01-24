@@ -29,15 +29,21 @@
 
             </div>
 
-            <div class="grid-item padding-inline padding-block bgr2 d-width">
-                <div class="txt-white">
-                    <h1 class="bold-600 h1-bigger"><span class="fs-700">KJV</span> <span class="fs-700">C</span>oncordance</h1>
+            <div class="grid-item padding-inline padding-block bgr2 d-width" >
+                <div>
+                    <h1 class="bold-600 text-white h1-bigger"><span class="fs-700">S</span>tarry <span class="fs-700">O</span>cean<span class="fs-700"> API</span></h1>
                     <p>
-                        <p>A concordence of the King James Bible</p>
+                        <p class="txt-white">
+                            My personal, meticulously crafted public-facing RESTful API. Leveraging the Django REST Framework and designed with a class-based view approach for seamless data retrieval. It serves as a compendium of Star Ocean (© Square Enix) characters.
+                        <br>
+                            <a href="/starry-ocean/docs" target="_blank" class="yellow">See docs</a>
+                        </p>
                     </p>
                 </div>
-                <a class="a-logo" href="/concordance">
-                    <img class="grid-image" src="{% static 'media/images/concordance/project-image-main.png' %}">
+
+                <a id="starry-ocean-trigger" class="a-logo placeholder-div-trigger" href="#" style="background-color: white">
+                {% comment %} <a class="a-logo" href="/projects?title=starry-ocean" style="background-color: white"> {% endcomment %}
+                        <img class="grid-image" src="{% static '/star_ocean_static/media/images/star_ocean/star-ocean-project-logo-3.png' %}" >
                 </a>
             </div>
 
@@ -56,6 +62,19 @@
 
             <div class="grid-item padding-inline padding-block bgr1 d-width">
                 <div>
+                    <h1 class="bold-600 h1-bigger"><span class="fs-700">KJV</span> <span class="fs-700">C</span>oncordance</h1>
+                    <p>
+                        <p>A concordence of the King James Bible which utilizes JSON and Python's <code>re</code> module to allow users to search the Bible as well as read.</p>
+                    </p>
+                </div>
+                <a class="a-logo" href="/concordance">
+                    <img class="grid-image" src="{% static 'media/images/concordance/project-image-main.png' %}">
+                </a>
+            </div>
+
+
+            <div class="grid-item padding-inline padding-block bgr2 d-width">
+                <div class="txt-white">
                     <h1 class="bold-600 h1-bigger"><span class="fs-700">S</span>ession <span class="fs-700">T</span>racker</h1>
                     <p>
                         <p>A tool to help businesses list their packages and offers and to help manage the redemption of a package's sessions. Ideal for services such as personal training, therapy, coaching, tutoring, lawn services, and other similar types of services.</p>
@@ -63,24 +82,6 @@
                 </div>
                 <a class="a-logo" href="/projects?title=session-tracker">
                     <img class="grid-image" src="{% static 'media/images/session-tracker.png' %}">
-                </a>
-            </div>
-
-            <div class="grid-item padding-inline padding-block bgr2 d-width" >
-                <div>
-                    <h1 class="bold-600 text-white h1-bigger"><span class="fs-700">S</span>tarry <span class="fs-700">O</span>cean<span class="fs-700"> API</span></h1>
-                    <p>
-                        <p class="txt-white">
-                            My personal, meticulously crafted public-facing RESTful API. Leveraging the Django REST Framework and designed with a class-based view approach for seamless data retrieval. It serves as a compendium of Star Ocean (© Square Enix) characters.
-                        <br>
-                            <a href="/starry-ocean/docs" target="_blank" class="yellow">See docs</a>
-                        </p>
-                    </p>
-                </div>
-
-                <a id="starry-ocean-trigger" class="a-logo placeholder-div-trigger" href="#" style="background-color: white">
-                {% comment %} <a class="a-logo" href="/projects?title=starry-ocean" style="background-color: white"> {% endcomment %}
-                        <img class="grid-image" src="{% static '/star_ocean_static/media/images/star_ocean/star-ocean-project-logo-3.png' %}" >
                 </a>
             </div>
 

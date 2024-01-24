@@ -9,21 +9,7 @@
 
     </section>
 
-    <section class="padding-inline bgr2 text-white">
-        <div class="line bgr-white"></div>
-        <h1 class="resume-section-title resume-section-title-white">TOOLKIT</h1>
-        <div class="padding-inline-lg fs-200 line-height-200">
-            <ul class="inline-block job-skills" aria-label="skills">
-                <li>Python</li><li>JavaScript</li><li>PHP</li><li>Django</li><li>JSON</li><li>APIs</li><li>MySQL</li><li>AWS Cloud Deployment</li><li>AJAX</li><li>jQuery</li><li>WordPress</li><li>nginx</li>
-            </ul>
-            <ul class="inline-block job-skills">
-                <li>Bootstrap</li><li>CSS3</li><li>HTML5</li><li>bcrypt</li><li>Django signals</li><li>bleach</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MAMP</li><li>gunicorn</li><li style="opacity: 0;">f</li>
-            </ul>
-        </div>
-    </section>
-
-
-    <section class="padding-inline bgr">
+    <section class="padding-inline bgr1">
 
         <div class="line"></div>
         <h1 class="resume-section-title">WORK EXPERIENCE</h1>
@@ -42,8 +28,8 @@
                 <p class="bold-600 tenure">January 2022 - Present</p>
                 <ul class="ul-styled">
                     <li>Responsible for creating and implementing new features and maintenance of company’s PHP based website</li>
-                    <li>Created forms and setup the infrastructure to communicate with a third-party API for the scalable processing <br>
-                        and analyzation of data toward the funneling of new customers</li>
+                    <li>Created the infrastructure and forms to communicate with a third-party API 
+                        for the scalable processing and analysis of data toward the funneling of new customers–saving the company $250,000 annually</li>
                     <li>Web developer for one of the largest apartments providers in Denver, CO</li>
                     <li>Works directly with management to solve issues in a timely manner</li>
                     <li>Writes and maintains own technical documentation</li>
@@ -69,7 +55,7 @@
                     <li>Improved work relations between employees during difficult and tense times</li>
                 </ul>
             </section>
-            <section class="padding-block-sm">
+            {% comment %} <section class="padding-block-sm">
                 <p>
                     <span class="fs-300 purple">
                         <strong>The Children’s Place</strong>
@@ -88,20 +74,47 @@
                     <li>Trained ≈ 100 employees on best practices, trouble-shooting, and other various job duties</li>
                     <li>Trusted to work under little-to-no supervision</li>
                 </ul>
-            </section>
+            </section> {% endcomment %}
         </div>
     </section>
-
+<div style="border-bottom: 1px solid silver"></div>
     <section class="padding-inline bgr3">
         <div class="line"></div>
         <h2 class="resume-section-title">EDUCATION</h2>
+        <br>
+        <br>
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
-                <img src="{% static 'media/images/harvard-logo.webp' %}">
+
+                <img src="{% static 'media/images/dojo-logo.jpg' %}">
+                <br>
                 <br>
                 {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
                 <p>
-                    <span class="bold-600 fs-300">Harvard University</span>
+                    <span class="bold-600 fs-300">Coding Dojo</span>
+                        <span class="fs-110 no-bold">- Seattle, Washington, USA (Remote)</span>
+                    <br>
+                    <span class="fs-200">Full-Stack Website & Software Development with Python</span><br>
+                    <span class="fs-110">July 2021 - February 2022</span>
+                </p>
+            </div>
+            <hr>
+            <ul class="ul-styled">
+                <li>Certified Full Stack Web Developer</li>
+                <li>Certified Software Developer for Python programming language</li>
+                <li>Graduated with all honors</li>
+                <li>7 months (1500+ hours) of experience in Full Stack Software Development with Django and Python</li>
+            </ul>
+        </div>
+<br>
+<br>
+        <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+                <img src="{% static 'media/images/harvard-logo.webp' %}" style="border: 1px solid grey">
+                <br>
+                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+                <p>
+                    <span class="bold-600 fs-300">Harvard University Online</span>
                         <span class="fs-110 no-bold">- Cambridge, Massachusetts, USA (Remote: HarvardX)</span>
                     <br>
                     <span class="fs-200">HarvardX: CS50's Introduction to Cybersecurity</span><br>
@@ -135,32 +148,9 @@
                 <li>operating systems, app store</li>
             </ul>
         </div>
-        <div class="padding-inline-lg">
-            <div class="education-inner-heading">
-
-                <img src="{% static 'media/images/dojo-logo.jpg' %}">
-                <br>
-                <br>
-                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
-                <p>
-                    <span class="bold-600 fs-300">Coding Dojo</span>
-                        <span class="fs-110 no-bold">- Seattle, Washington, USA (remote)</span>
-                    <br>
-                    <span class="fs-200">Full-Stack Website & Software Development with Python</span><br>
-                    <span class="fs-110">July 2021 - February 2022</span>
-                </p>
-            </div>
-            <hr>
-            <ul class="ul-styled">
-                <li>Certified Full Stack Web Developer</li>
-                <li>Certified Software Developer for Python programming language</li>
-                <li>Graduated with all honors</li>
-                <li>7 months (1500+ hours) of experience in Full Stack Software Development with Django and Python</li>
-            </ul>
-        </div>
     </section>
 
-    <section class="padding-inline bgr2 text-white">
+    <section class="padding-inline bgr2 txt-white">
         <div class="line bgr-white"></div>
         <h1 class="resume-section-title">PROJECTS</h1>
 
@@ -259,6 +249,20 @@
                 <li>Features Home, Projects, Resume, Have Fun, Docs, and Contact page</li>
             </ul>
         </section>
+    </section>
+<div style="border-bottom: 1px solid silver"></div>
+
+    <section class="padding-inline bgr3 text-white">
+        <div class="line bgr-white"></div>
+        <h1 class="resume-section-title resume-section-title-white">SKILLS</h1>
+        <div class="padding-inline-lg fs-200 line-height-200">
+            <ul class="inline-block job-skills" aria-label="skills">
+                <li>Python</li><li>JavaScript</li><li>PHP</li><li>Django</li><li>JSON</li><li>APIs</li><li>MySQL</li><li>AWS Cloud Deployment</li><li>AJAX</li><li>jQuery</li><li>WordPress</li><li>nginx</li>
+            </ul>
+            <ul class="inline-block job-skills">
+                <li>Bootstrap</li><li>CSS3</li><li>HTML5</li><li>bcrypt</li><li>Django signals</li><li>bleach</li><li>Git</li><li>GitHub</li><li>VS Code</li><li>MAMP</li><li>gunicorn</li><li style="opacity: 0;">f</li>
+            </ul>
+        </div>
     </section>
     {% comment %} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(252, 220, 0, 1);transform: ;msFilter:;"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg> {% endcomment %}
 

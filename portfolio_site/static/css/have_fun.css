@@ -58,9 +58,16 @@ footer{
         width: 10em;
     }
 } */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+/* font-family: 'Schoolbell', cursive; */
+
+/* font-family: 'Libre Baskerville', serif; */
+/* font-family: 'Ubuntu', sans-serif; */
 
 .game-container{
     padding: 1em 1em;
@@ -285,20 +292,16 @@ footer{
 #hangman-h1{
     width: 8em;
     padding: .3em 0;
-    color: rgb(118, 31, 0);
+    color: rgb(30, 30, 166);
     font-size: 4rem;
-    text-decoration: underline;
-    font-family: 'Assistant', sans-serif;
-}
-#get-joke{
-    background-color: rgb(121, 210, 255);
-    color: black;
-    font-size: 4rem;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    /* text-decoration: underline; */
+    /* font-family: 'Assistant', sans-serif; */
+    /* font-family: 'Libre Baskerville', serif; */
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-family: 'Schoolbell', cursive;
 
-    /* border: 1px solid black; */
 }
+
 
 #joke-title{
     width: 8em;
@@ -306,7 +309,9 @@ footer{
     color: rgb(30, 30, 166);
     font-size: 4rem;
     text-decoration: underline;
-    font-family: 'Assistant', sans-serif;
+    /* font-family: 'Assistant', sans-serif; */
+    font-family: 'Libre Baskerville', serif;
+
 }
 #joke-div{
     /* display: none; */
@@ -336,12 +341,52 @@ footer{
         display: block !important;
     }
 
-    .game-button{
-        padding: .2em .5em;
-        /* margin: 1em 0; */
-        background-color: rgb(30, 30, 166);
-        color: yellow;
-        font-size: 1.5rem;
-        border-radius: 11px;
+
+
+/* JOKES  */
+.game-button{
+    padding: .2em .5em;
+    /* margin: 1em 0; */
+    background-color: rgb(30, 30, 166);
+    color: yellow;
+    font-size: 1.5rem;
+    border-radius: 11px;
+}
+
+    #get-joke{
+        position: relative;
+        /* background-color: rgb(83, 241, 35); */
+        background-color: transparent;
+        outline: 1px solid black;
+        /* border: 1px solid black; */
+        /* box-shadow: 1px 2px 8px, 3px 2px 2px; */
+        color: black;
+        font-size: 2rem;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        border: 1px solid black;
+        z-index: 1;
+        border-radius: 0px;
+        /* padding-bottom: 1em; */
     }
 
+    #get-joke::before{
+        position: absolute;
+        top: -10px;
+        right: -7px;
+        content: "";
+        background-color: rgb(157, 255, 167);
+        height: calc(100% + 3px);
+        width: 100%;
+        z-index: -1;
+        padding: .2em .5em;
+    }
+    #get-joke:hover:before{
+        transition: .2s ease-in-out;
+        background-color: rgb(1, 80, 172);
+        top: 0px;
+        right: 0px;
+    }
+    #get-joke:hover{
+        color: white;
+    }

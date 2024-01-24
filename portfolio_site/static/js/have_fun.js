@@ -125,7 +125,7 @@ const GUESS_WORDS = {
         "Furniture":[
             {word: "ARMOIRE", hint: "I am essentially an ellaborate wardrobe"},
             {word: "OTTOMAN", hint: "You can rest your feet on me"},
-            {word: "CHAISE LOUNGE", hint: "I am combine a comfortable seat with an extended area to stretch out"}
+            {word: "CHAISE LOUNGE", hint: "I sofa with a backrest at only one end"}
         ],
         
         "Countries":[
@@ -183,38 +183,89 @@ const hint_button = document.getElementById("hint-button");
 const hint = document.getElementById("hint");
 
 
+function getAnswerObject(answer){
+        var guessedLetters = {};
+        for (var i = 0; i < answer.length; i++) {
+            if (!guessedLetters[answer[i]]){
+                guessedLetters[answer[i]] = 1;
+            }else{
+                guessedLetters[answer[i]] += 1;
+            }
+        }
+        return guessedLetters 
+
+        
+        // // User guesses 'L'
+        
+        // // Check if the guessed letter is in the answer
+        // if (guessedLetters.hasOwnProperty(letter_value)) {
+        //     // Check if the letter has already been letter_valueed at this position
+        //     if (guessedLetters[letter_value].indexOf(i) === -1) {
+        //         // Add the position to the array for the guessed letter
+        //         guessedLetters[letter_value].push(i);
+        //         console.log("Guessed letter '" + letter_value + "' is correct!");
+        //     } else {
+        //         console.log("You already guessed letter '" + letter_value + "' at this position.");
+        //     }
+        // } else {
+        //     console.log("Guessed letter '" + letter_value + "' is incorrect.");
+        // }
+        
+        // console.log("Occurrences of each letter:");
+        // console.log(guessedLetters);
+        
+}
+
+function resetGame(){
+    $("#play-again").addClass("hidden");
+    hint.classList.add("hidden");
+
+    letter_options_inner_1.innerHTML = "";
+    letter_options_inner_2.innerHTML = "";
+    letter_options_inner_3.innerHTML = "";
+    letter_spaces_div.innerHTML = "";
+
+    wrong_answers = 0;
+    right_answers = 0;
+    hangman_body.classList.remove("block");
+    hangman_head.classList.remove("block");
+    left_arm.classList.remove("block");
+    right_arm.classList.remove("block");
+    left_leg.classList.remove("block");
+    right_leg.classList.remove("block");
+    victory_statement.classList.remove("block");
+
+    pole.classList.remove("pole-with-after");
+    pole.classList.remove("pole-with-before");
+}
 function gameFlow(command, win=false){
     if (command=="start"){
-        hint_button.classList.add("show");
-        letter_options_inner_1.innerHTML = "";
-        letter_options_inner_2.innerHTML = "";
-        letter_options_inner_3.innerHTML = "";
-        letter_spaces_div.innerHTML = "";
-
-        wrong_answers = 0;
-        right_answers = 0;
         document.getElementById("game-options").classList.add("hide");
-        hangman_body.classList.remove("block");
-        hangman_head.classList.remove("block");
-        left_arm.classList.remove("block");
-        right_arm.classList.remove("block");
-        left_leg.classList.remove("block");
-        right_leg.classList.remove("block");
-        victory_statement.classList.remove("block");
-
-        pole.classList.remove("pole-with-after");
-        pole.classList.remove("pole-with-before");
+        $("#hint-button").removeClass("hidden");
+        let game_category = CHOICES.value;
+        $("#game-category").html(`Category: ${game_category}`);
+        resetGame()
     }
 
     if (command=="end" && !win){
+        $("#game-category").html("");
+        $("#play-again").removeClass("hidden")
+        $("#hint-button").addClass("hidden")
+
         const answer_p = document.createElement("p");
         answer_p.textContent = "Answer: " + current_answer;
         letter_spaces_div.append(answer_p);
         document.getElementById("game-options").classList.remove("hide");
     }else if(command=="end"){
+        $("#game-category").html("");
+        $("#hint-button").addClass("hidden")
+        $("#play-again").removeClass("hidden")
+
         document.getElementById("game-options").classList.remove("hide");
     }
-
+    else if (command == "reset"){
+        resetGame()
+    }
 }
 
 function appendLetterOptions(i){
@@ -224,6 +275,12 @@ function appendLetterOptions(i){
     letter_option.addEventListener("click", clickLetter);
     return letter_option
 }
+
+// var user_guessed_letters = {}
+// var answer_object = {}
+
+user_guesses = {}
+
 function clickLetter(event) {
     const letter = event.target;
     const letter_value = letter.textContent;
@@ -234,17 +291,32 @@ function clickLetter(event) {
     const answer_letters = document.querySelectorAll(".letter-lines-p");
     
     const pieces = document.querySelectorAll('.piece');
+    let answer_object = getAnswerObject(current_answer)
 
 
     if (answer.includes(letter_value)){
+
+        // WIN CONDITION: this is how i check against user guesses to see if they win 
+        if (answer_object.hasOwnProperty(letter_value)){
+            console.log("We have that latter")
+            if (!user_guesses[letter_value]){
+                user_guesses[letter_value] = answer_object[letter_value];
+                right_answers += answer_object[letter_value];
+            }else{
+                if ( user_guesses[letter_value] <= answer_object[letter_value]){
+                    console.log(`user guess count for letter ${letter_value} : ${user_guesses[letter_value]}`)
+                }
+            }
+        }
+
         letter.classList.add("clicked-letter-right");
         for (const char of answer_letters){
             if (char.textContent == letter_value){
                 char.classList.add("block");
-                right_answers += 1;
-                // console.log(right_answers, "right answer")
-                // console.log(answer.length, "answer lenght")
+                // right_answers += 1;
             }
+
+            // WIN CONDITION: The check
             if (right_answers == answer_no_spaces.length){
                 victory_statement.textContent = "You Win!";
                 gameFlow("end", win=true);
@@ -295,7 +367,6 @@ for (const difficulty of DIFFICULTY){
 }
 var random_word = "pie";
 CHOICES.addEventListener("change", function(){
-    hint.classList.add("hidden");
 
     const selected_option = CHOICES.options[CHOICES.selectedIndex].value;
 
@@ -305,6 +376,7 @@ CHOICES.addEventListener("change", function(){
         }
     }
 
+    
     if (typeof chosen_difficulty == "undefined"){
         document.getElementById("error-difficulty").classList.add("block");
         CHOICES.selectedIndex = 0;
@@ -331,6 +403,7 @@ CHOICES.addEventListener("change", function(){
         var random_word = options[random_index];
         
         current_answer = random_word.word;
+
         // console.log(random_word.hint, "hint")
 
         giveHint(random_word);
@@ -374,7 +447,10 @@ function giveHint(random_word){
 }
 
 
+$("#play-again").on("click", function(){
+    gameFlow("reset");
 
+});
 
 // J O K E S 
 joke_button = document.getElementById("get-joke");

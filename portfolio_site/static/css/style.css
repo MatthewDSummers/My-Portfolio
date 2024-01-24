@@ -780,9 +780,13 @@ nav a.projects:not(.active):hover {
     top: -2px;
     right: 0px;
     z-index: -1;
-    background-image: linear-gradient(217deg, hsla(0, 100%, 69%, 0.9), rgba(255, 0, 0, 0) 70.71%),
+    /* black background font  */
+    /* background-image: linear-gradient(217deg, hsla(0, 100%, 69%, 0.9), rgba(255, 0, 0, 0) 70.71%),
         linear-gradient(127deg, hsla(169, 100%, 70%, 0.9), rgba(41, 202, 140, 0) 70.71%),
-        linear-gradient(336deg, hsla(240, 83%, 79%, 0.9), rgba(25, 25, 163, 0) 70.71%);
+        linear-gradient(336deg, hsla(240, 83%, 79%, 0.9), rgba(25, 25, 163, 0) 70.71%); */
+    background-image: linear-gradient(217deg, hsla(0, 77%, 50%, 0.9), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, hsla(169, 96%, 49%, 0.9), rgba(41, 202, 140, 0) 70.71%),
+        linear-gradient(336deg, hsla(240, 84%, 56%, 0.9), hsla(240, 85%, 70%, 0) 70.71%);
 }
 
 
@@ -1550,11 +1554,11 @@ transition: transform 400ms ease-in;
     min-height: 100vh;
 }
 
-/* #docs-container{
-    min-height: 75vh;
-    background-color: hsl(63, 100%, 97%);
-    background-color: hsl(63, 100%, 97%);
-    border-top: 1px solid rgb(191, 191, 189);
-    padding: 2em;
-    font-family: 'Libre Baskerville', serif;
-} */
+.docs-button{
+    font-size: 1.55rem;
+}
+.docs-button:hover{
+    /* color: blue; */
+    background-color: hsl(0, 0%, 98%);
+    text-shadow: 1px 1px 70px rgb(5, 10, 46), 2px 3px 3px rgb(194, 208, 255);
+}
