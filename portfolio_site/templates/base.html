@@ -15,6 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
+        <link rel='stylesheet' type='text/css' href="{% static 'css/nav.css' %}"%>
         <link rel='stylesheet' type='text/css' href="{% static 'css/style.css' %}"%>
         {% comment %} {% if title == "Have Fun" %}
             <link rel='stylesheet' type='text/css' href="{% static 'css/have_fun.css' %}"%>
@@ -60,7 +61,7 @@
             <div class="menu">
                 <nav>
                     <ul class="flex space-around">
-                        <li><a class="home {{home}} home" href="/">HOME</a></li>
+                        <li><a class="home {{home}}" href="/">HOME</a></li>
                         <li><a class="projects {{projects}}" href="/projects">PROJECTS</a></li>
                         <li><a class="resume {{resume}}" href="/resume">RESUME</a></li>
                         <li><a class="have-fun {{have_fun}}" href="/have-fun">HAVE FUN</a></li>

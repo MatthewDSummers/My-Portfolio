@@ -117,3 +117,58 @@ code {
     color: rgb(176, 0, 0);
     margin-left: 1em;
 }
+
+
+
+.doc-section-header{
+    color: white;
+    padding: 1em;
+    width: 100%;
+    border-radius: 9px 9px 1px 1px;
+    margin-bottom: -2em;
+}
+
+.doc-section-header.doc-title-header{
+    color: rgb(34, 34, 35);
+    z-index: 0;
+    position: relative;
+    background-color: rgb(220, 228, 243);
+    margin-bottom: 0;
+    border-radius: 0;
+}
+    .doc-section-header h1{
+        text-shadow: 1px 1px 1px rgb(149, 148, 148);
+        margin-left: 1em;
+    }
+
+    .doc-section-header.doc-title-header:before,
+    .doc-section-header.doc-title-header:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    .doc-section-header.doc-title-header:before {
+        border-width: 47px 0 47px 47px;
+        border-color: transparent transparent transparent rgb(250, 202, 177);
+        left: 0px;
+    }
+
+    .doc-section-header.doc-title-header:after {
+        border-width: 47px 47px 47px 0;
+        border-color: transparent #feffef transparent transparent;
+        right: 0px;
+    }
+
+
+
+.doc-section-header.endpoints-header{
+    background-color: rgb(0, 123, 37);
+}
+.doc-section-header.error-header{
+    background-color: rgb(123, 0, 0);
+}

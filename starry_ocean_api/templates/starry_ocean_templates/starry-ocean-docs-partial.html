@@ -1,22 +1,23 @@
 {% load static %}
-{% comment %} {% block css_stylesheet %} {% endcomment %}
-<link rel='stylesheet' type='text/css' href="{% static '/star_ocean_static/css/docs.css' %}">
-{% comment %} {% endblock %} {% endcomment %}
+        <link rel='stylesheet' type='text/css' href="{% static '/star_ocean_static/css/docs.css' %}">
+
 
 <div id="docs-container">
-    <h1>Starry Ocean API Documentation</h1>
+    <div class="doc-section-header doc-title-header">
+        <h1 class="z-1">Starry Ocean API Documentation</h1>
+    </div>
     <hr>
-    <h3 id="table-of-contents" class="bold-900">Table of Contents</h3>
+        <h3 id="table-of-contents" class="bold-900">Table of Contents</h3>
     <ol>
         <li class="scroll-to" data-scroll="explanation-point">Explanation</li>
-        <li class="scroll-to" data-scroll="data-type-point">Data Type</li>
         <li class="scroll-to" data-scroll="requirements-point">Setup & Requirements</li>
         <li class="scroll-to" data-scroll="endpoints-point">Endpoints</li>
         <li class="scroll-to" data-scroll="errors-point">Errors</li>
+        <li class="scroll-to" data-scroll="data-type-point">Data Type</li>
     </ol>
     <hr>
     <h3 id="explanation-point" class="bold-900 inline-block">Explanation&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-    <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
+    <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span>
 
     <h5 class="bold-900 margin-bottom-sm">The Starry Ocean API allows you to search for characters from the following Star Ocean games:</h5>
     
@@ -34,11 +35,6 @@
 
     <hr>
 
-    <h3 id="data-type-point" class="bold-900 inline-block">Data Type&nbsp;&nbsp;&nbsp;&nbsp;</h3>
-    <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
-    <p>Returns JSON</p>
-    <hr>
-
     <h3 id="requirements-point" class="bold-900 inline-block">Setup & Requirements&nbsp;&nbsp;&nbsp;&nbsp;</h3>
     <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
 
@@ -49,16 +45,13 @@
         <li>Python (3.6, 3.7, 3.8, 3.9, 3.10, 3.11)</li>
         <li>Django (3.0, 3.1, 3.2, 4.0, 4.1, 4.2)</li>
     </ul>
-<div>
 
 <div class="docs-example-response w-75">
-<pre>
-pip install djangorestframework
-</pre>
+    <pre>pip install djangorestframework</pre>
 </div>
 
 <div class="docs-example-response w-75">
-<pre>
+    <pre>
 ### Project urls.py:
     from django.urls import path, include
 
@@ -68,8 +61,9 @@ pip install djangorestframework
     ]
 </pre>
 </div>
+
 <div class="docs-example-response w-75">
-<pre >
+    <pre>
 ### Project settings.py
     # Application definition
     INSTALLED_APPS = [
@@ -85,7 +79,9 @@ pip install djangorestframework
     ]
 </pre>
 </div>
-            <h3 id="endpoints-point" class="bold-900 inline-block">Endpoints&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+
+<hr>
+            <h3 id="endpoints-point" class="bold-900 inline-block">List of Endpoints&nbsp;&nbsp;&nbsp;&nbsp;</h3>
             <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
 
 
@@ -95,16 +91,27 @@ pip install djangorestframework
                 <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-single-char"><code>starry-ocean/characters/{character_name}</code></li>
                 <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-all-chars"><code>starry-ocean/characters/all</code></li>
             </ul>
+
             <h3 id="errors-point" class="bold-900 inline-block">Errors&nbsp;&nbsp;&nbsp;&nbsp;</h3>
             <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
 
+<hr>
 
             <ul class="endpoints-list">
                 <li class="scroll-to margin-bottom-sm" data-scroll="scroll-to-errors"><code>Errors</code></li>
             </ul>
-
             <hr>
 
+            <h3 id="data-type-point" class="bold-900 inline-block">Data Type&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+            <button class="scroll-to back-to-top  inline-block" data-scroll="table-of-contents"></button><span class="fs-80 scroll-to" data-scroll="table-of-contents">&nbsp;Back to Top</span><br><br>
+
+
+            <p>JSON</p>
+            <hr>
+
+            <div class="doc-section-header endpoints-header">
+                &diams;   &diams;    &nbsp;     &nbsp;     <h3 class="bold-900 inline-block">The Endpoints</h3> &nbsp; &nbsp; &diams;    &diams;             
+            </div>
             <section id="scroll-to-series-chars" class="docs-section">
                 <button class="scroll-to back-to-top" data-scroll="endpoints-point"></button><span class="fs-80 scroll-to" data-scroll="endpoints-point">&nbsp;Back to Endpoints</span><br><br>
                 <h6>
@@ -130,7 +137,6 @@ pip install djangorestframework
                     <li>Expected values: '1' or '2'</li>
                     <li>Example usage: /starry-ocean/series/1</li>
                 </ul>
-
 
 <div class="docs-example-response">
 <pre>
@@ -1004,8 +1010,9 @@ pip install djangorestframework
 </div>
             </section>
 
-
-
+            <div class="doc-section-header error-header">
+                &diams;   &diams;    &nbsp;     &nbsp;     <h3 class="bold-900 inline-block">Example Error</h3> &nbsp; &nbsp; &diams;    &diams;             
+            </div>
 
             <section id="scroll-to-errors" class="docs-section">
                 <button class="scroll-to back-to-top" data-scroll="endpoints-point"></button><span class="fs-80 scroll-to" data-scroll="endpoints-point">&nbsp;Back to Endpoints</span><br><br>
@@ -1063,6 +1070,6 @@ Error data:
 }
 </pre>
 </div>
-            </section>
+</section>
 </div>  <!-- end container  -->
 <script src="{% static '/star_ocean_static/js/docs.js' %}"></script>
