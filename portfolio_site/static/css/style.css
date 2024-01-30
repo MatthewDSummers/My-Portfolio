@@ -219,7 +219,7 @@ ul {
 .grid-item {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 3em;
+    grid-gap: 1em;
 }
 
 .grid-item p {
