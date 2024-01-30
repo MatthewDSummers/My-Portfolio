@@ -37,15 +37,15 @@
 
 .menu-item {
     font-family: 'Montserrat', sans-serif;
-
-    margin-block: 1em;
+    margin-block: .4em;
+    margin-left: -.6em;
     position: relative;
-    border-radius: 20px;
+    border-radius: 12px;
     /* border-radius: 30px 0 0 30px; */
     /* border-radius: 50% 50% 50% 50% / 100% 100% 0% 0%; */
     text-shadow: 1px 2px 3px hsl(0, 0%, 30%);
-    width: 5em;
-    background-color: rgb(255, 247, 192);
+    width: 4.2em;
+    background-color: rgb(255, 247, 204);
     font-size: 2.75rem;
     cursor: pointer;
     list-style: none;
@@ -56,13 +56,14 @@
     /* border-left: 8px solid hsl(0, 0%, 12%);
     border-right: 8px solid hsl(0, 0%, 12%); */
     /* background-color: white; */
-    box-shadow: inset 0px 0px 0px 5px hsl(0, 0%, 12%);
+    box-shadow: inset 0px 0px 0px 3px hsl(0, 0%, 12%);
 }
 
 .menu-item a {
     color: rgb(31, 31, 31);
     text-decoration: none;
-    
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px black;
 }
 
 .menu-item:hover {
@@ -70,7 +71,7 @@
     outline: 1px solid rgb(70, 74, 85);
     box-shadow: 0 0 14px rgb(100, 100, 100);
     /* outline-offset: 1px; */
-    background: rgb(142, 209, 243);
+    background: rgb(216, 242, 255);
 }
 
 @keyframes from-right {

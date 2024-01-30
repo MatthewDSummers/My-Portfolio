@@ -558,7 +558,7 @@ ul {
 
 .job-skills-duplicate {
     position: absolute;
-    top: -2px;
+    top: -1px;
     right: 0px;
     z-index: -1;
     /* black background font  */
@@ -584,13 +584,24 @@ ul {
     display: inline-block;
     background-image: linear-gradient(to right, hsl(272, 93%, 51%), rgb(239, 114, 90));
     text-shadow: 0 0 0px rgba(86, 86, 86, 0.5);
+
 }
 
 .resume-section-title {
-    background-image: linear-gradient(to right, rgb(185, 0, 0), rgb(236, 153, 0), rgb(224, 224, 0), rgb(0, 97, 0), rgb(0, 0, 192), indigo, rgb(189, 103, 189));
-    /* background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); */
+    background-image: linear-gradient(to right,
+        rgb(185, 0, 0),
+        rgb(236, 153, 0),
+        rgb(224, 224, 0),
+        rgb(0, 97, 0),
+        rgb(0, 0, 192),
+        indigo,
+        rgb(189, 103, 189)
+    );
+
+/* background-image: linear-gradient(to right,  rgba(1,111,197,1) 0%, rgba(86,101,179,1) 25%, rgba(171,98,172,1) 50%, rgba(229,77,140,1) 75%, rgba(147,233,8,1) 100%); */
     display: inline-block;
     font-family: 'Assistant', sans-serif;
+
     font-size: 3rem;
     font-weight: 900;
     letter-spacing: 2px;
@@ -878,33 +889,49 @@ transition: transform 400ms ease-in;
     content: "Manage tickets";
 }
 
-.te-overlay-2::before {
-    content: "Interactive table";
-}
+    .te-overlay-2::before {
+        content: "Interactive table";
+    }
 
-.te-overlay-3::before {
-    content: "Create tickets";
-}
+    .te-overlay-3::before {
+        content: "Create tickets";
+    }
 
-.te-overlay-4::before {
-    content: "Automation Maker";
-}
+    .te-overlay-4::before {
+        content: "Automation Maker";
+    }
 
-.te-overlay-5::before {
-    content: "Manage automations";
-}
+    .te-overlay-5::before {
+        content: "Manage automations";
+    }
 
-.te-overlay-6::before {
-    content: "Canned Responses";
-}
+    .te-overlay-6::before {
+        content: "Canned Responses";
+    }
 
-.te-overlay-7::before {
-    content: "E-mail";
-}
+    .te-overlay-7::before {
+        content: "E-mail";
+    }
 
-.te-overlay-8::before {
-    content: "Analytics";
+    .te-overlay-8::before {
+        content: "Analytics";
+    }
+
+
+.te-overlay-bunny-1::before{
+    content: "Search Feature";
 }
+    .te-overlay-bunny-2::before{
+        content: "User Profiles";
+    }
+    .te-overlay-bunny-3::before{
+        content: "User Favorites";
+    }
+    .te-overlay-bunny-4::before{
+        content: "User Discussions";
+    }
+
+
 
 .d-width {
     max-width: 100dvw;
@@ -980,6 +1007,7 @@ transition: transform 400ms ease-in;
 
     .hello-span {
         color: hsl(176, 33%, 31%);
+
     }
 }
 
@@ -1169,6 +1197,9 @@ transition: transform 400ms ease-in;
 
     /* Projects  */
 
+    #starry-ocean-trigger img{
+        background-color: white;
+    }
     .mobile-project-img {
         width: 620px !important;
         height: 400px !important;
