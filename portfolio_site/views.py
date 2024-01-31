@@ -78,10 +78,11 @@ def contact(request):
     return render(request, "contact.html", context)
 
 def have_fun(request):
+    page_description = "Play games; tell jokes. Matthew Summers, Full-Stack Website Developer."
     context = {
         "have_fun":"active",
         "title": "Have Fun",
-        "page_description": "Play games; tell jokes. Matthew Summers, Full-Stack Website Developer."
+        "page_description": page_description
     }
     return render(request, "games.html", context)
 
