@@ -86,7 +86,18 @@ def have_fun(request):
     }
     return render(request, "games.html", context)
 
-
+def cert_page(request, cert_name):
+    if cert_name:
+        if cert_name == "coding-dojo":
+            if request.GET.get("ajax"):
+                return render(request, 'cert-partial.html')
+            else:
+                return render(request, 'cert.html')
+        else:
+            return redirect("/")
+    else:
+        return redirect("/")
+    
 def doc_view(request, title):
     page_description = "Documentation of Matthew Summers, Full-Stack Website Developer."
     if not title:
