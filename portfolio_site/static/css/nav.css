@@ -165,17 +165,20 @@ nav a {
         opacity: 0;
         position: absolute;
         z-index: -1;
-        top: -10px;
-        right: -10px;
+        top: -12px;
+        right: 0px;
         height: calc(100% + 3px);
         width: 100%;
+
+        border-right: 8px solid transparent;
+        border-bottom: 5px solid transparent;
+        transition: all .3s ease;
     }
+
         nav a:hover:before{
             opacity: 1;
-            transition: .3s ease-in-out;  
-            /* change this to .2s */
-            top: -12px;
-            right: 0px;
+
+            /* hmm */
             border-radius: 100% 90% / 40% 99%;
             padding: 1em;
         }
@@ -221,9 +224,7 @@ nav a {
     nav ul li a{
         transition: all .3s ease;
     }
-    nav ul li a::before{
-        transition: all .3s ease;
-    }
+
     nav ul li a:hover{
         border-bottom: 3px solid transparent !important;
         transition: .3s ease-out;
