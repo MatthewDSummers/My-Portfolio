@@ -64,7 +64,9 @@ ul {
 .fs-500 {
     font-size: 2rem;
 }
-
+.fs-600{
+    font-size: 3.5rem;
+}
 .fs-700 {
     font-size: 4rem;
 }
@@ -385,40 +387,48 @@ ul {
     min-width: 100%;
     font-size: 1.2rem;
     color: rgb(34, 34, 34);
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
     position: relative;
 }
 
 #footer-inner {
     margin-bottom: 1em;
+    text-align: center !important;
 }
 
-#footer i {
+#footer p {
+    text-align: center !important;
+    margin-top: 1em;
+}
+#phone svg{
+    fill: hsl(0, 0%, 13%);
     position: absolute;
-    bottom: 1em;
+    top: 2em;
+    left: 15%;
 }
-
 #mail svg {
     fill: hsl(59, 100%, 88%);
     fill: hsl(192, 100%, 39%);
     position: absolute;
     top: 2em;
-    left: 30%;
+    left: 35%;
 }
 
 #linkedin svg {
     fill: hsl(210, 89%, 40%);
     position: absolute;
     top: 2em;
-    left: 50%;
+    left: 55%;
 }
 
-#github svg {
-    fill: black;
+#github img {
+    /* fill: black; */
+    height: 45px;
+    width: 45px;
     position: absolute;
     top: 2em;
-    left: 70%;
+    left: 75%;
 }
 
 
@@ -1295,16 +1305,19 @@ transition: transform 400ms ease-in;
         margin-bottom: 0;
     }
 
+    #phone svg {
+        left: 33%;
+    }
     #mail svg {
-        left: 40%;
+        left: 43%;
     }
 
     #linkedin svg {
-        left: 50%;
+        left: 54%;
     }
 
-    #github svg {
-        left: 60%;
+    #github img {
+        left: 64%;
     }
 
 
