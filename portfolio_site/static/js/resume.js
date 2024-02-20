@@ -36,5 +36,15 @@ if (!isMobile()){
     $(".cert-img-modal-trigger").on("click", function(event){
         event.preventDefault();
         $(".modal-menu-resume").show();
+        let id = $(this).data("cert");
+        let modal_certs_imgs = document.querySelectorAll(".resume-modal-cert-img");
+
+        for (const modal_img of modal_certs_imgs){
+            if (modal_img.dataset.modal == id){
+                modal_img.style.display = "block";
+            }else{
+                modal_img.style.display = "none";
+            }
+        }
     })
 }

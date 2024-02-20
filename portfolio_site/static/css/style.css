@@ -401,27 +401,49 @@ ul {
     text-align: center !important;
     margin-top: 1em;
 }
+
+
+.resume-top a{
+    text-decoration: none;
+}
+.resume-top svg, .resume-top img{
+    width: 35px;
+    height: 35px;
+    margin-left: 1em;
+}
+
 #phone svg{
-    fill: hsl(0, 0%, 13%);
     position: absolute;
     top: 2em;
     left: 15%;
 }
-#mail svg {
-    fill: hsl(59, 100%, 88%);
+    #phone svg, #phone-resume svg{
+        fill: hsl(0, 0%, 13%);
+    }
+
+#mail svg, #mail-resume svg{
     fill: hsl(192, 100%, 39%);
-    position: absolute;
-    top: 2em;
-    left: 35%;
 }
+    #mail svg {
+        position: absolute;
+        top: 2em;
+        left: 35%;
+    }
+
 
 #linkedin svg {
-    fill: hsl(210, 89%, 40%);
     position: absolute;
     top: 2em;
     left: 55%;
 }
+    #linkedin svg, #linkedin-resume svg{
+        fill: hsl(210, 89%, 40%);
+    }
 
+#github-resume img{
+    height: 27px;
+    width: 27px;
+}
 #github img {
     /* fill: black; */
     height: 45px;
@@ -899,6 +921,21 @@ ul {
 
 }
 
+.fade-in {
+    opacity: 0;
+    animation: fadeFromLeftToRight 1.8s ease-in-out forwards;
+}
+
+@keyframes fadeFromLeftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 
 /* 

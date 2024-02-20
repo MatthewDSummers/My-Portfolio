@@ -6,15 +6,26 @@
             <div class="close-resume-modal-div">
                 <p id="close-resume-modal">&times;</p>
             </div>
-            <img class="resume-modal-cert-img" src="{% static 'media/images/cert/coding_dojo.png' %}">
+            <img data-modal="view-coding-dojo" class="resume-modal-cert-img" src="{% static 'media/images/cert/coding_dojo.png' %}">
+            <img data-modal="view-jpmorgan-lite" class="resume-modal-cert-img" src="{% static 'media/images/cert/jpmorgan_lite.jpg' %}">
         </div>
     </div>
     <section class="padding-inline bgr3 border-top resume-top">
         <h1 class="resume-name animate-texts">Matthew Summers</h1>
         <h3 class="resume-job-title animate-texts"><span class="resume-job-title-span">Full-Stack Web and Software Developer</span></h3>
-        {% comment %} <h4 class="animate-texts">(573)-820-1557</h4> {% endcomment %}
+        
         <h4 class="animate-texts phone-num-animate"><a class="anchor-no-style font-assistant" href="tel:+60 19-620-8890">+60 19-620-8890</a></h4>
-
+        <br>
+        <a id="phone-resume" href="tel:+60196208890" class="fade-in">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M20 10.999h2C22 5.869 18.127 2 12.99 2v2C17.052 4 20 6.943 20 10.999z"></path><path d="M13 8c2.103 0 3 .897 3 3h2c0-3.225-1.775-5-5-5v2zm3.422 5.443a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a1 1 0 0 0-.086-1.391l-4.064-3.696z"></path></svg>
+        </a>
+        <a id="linkedin-resume" target="_blank" href="https://www.linkedin.com/in/matthew-d-summers/" class="fade-in"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path></svg></a>
+        <a id="mail-resume" target="_blank" href="mailto:code@matthewsummers.dev" class="fade-in">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><path d="M20 4H6c-1.103 0-2 .897-2 2v5h2V8l6.4 4.8a1.001 1.001 0 0 0 1.2 0L20 8v9h-8v2h8c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm-7 6.75L6.666 6h12.668L13 10.75z"></path><path d="M2 12h7v2H2zm2 3h6v2H4zm3 3h4v2H7z"></path></svg>
+        </a>
+        <a id="github-resume" target="_blank" href="https://github.com/MatthewDSummers" class="fade-in">
+            <img src="{% static 'media/images/github.png' %}">
+        </a>
     </section>
 
     <section class="padding-inline bgr1">
@@ -102,7 +113,7 @@
                     <span class="bold-600 fs-300">Coding Dojo</span>
                         <span class="fs-110 no-bold">- Seattle, Washington, USA (Remote)</span>
                     <br>
-                    <span class="fs-200">Full-Stack Website & Software Development with Python</span><br>
+                    <span class="fs-200 bold-600">Full-Stack Website & Software Development with Python</span><br>
                     <span class="fs-110">July 2021 - February 2022</span>
                     <br>
                     <button id="view-coding-dojo" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-coding-dojo"></span></button>
@@ -133,8 +144,8 @@
                     <span class="bold-600 fs-300">Harvard University Online</span>
                         <span class="fs-110 no-bold">- Cambridge, Massachusetts, USA (Remote: HarvardX)</span>
                     <br>
-                    <span class="fs-200">HarvardX: CS50's Introduction to Cybersecurity</span><br>
-                    <span class="fs-110">January 2023 - Present</span>
+                    <span class="fs-200 bold-600">HarvardX: CS50's Introduction to Cybersecurity</span><br>
+                    <span class="fs-110">February 2023 - Present</span>
                 </p>
             </div>
             <hr>
@@ -163,6 +174,47 @@
                 <li>verification</li>
                 <li>operating systems, app store</li>
             </ul>
+        </div>
+        <br>
+        <br>
+
+
+
+        <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+
+                <img src="{% static 'media/images/logos/forage_logo.jpeg' %}" style="width: 150px;">
+                <br>
+                <br>
+                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+                <p>
+                    <span class="bold-600 fs-300">Forage</span>
+                        <span class="fs-110 no-bold">- San Francisco, California, USA (Remote)</span>
+                    <br>
+                    <span class="fs-200 bold-600">Software Engineering Lite Job Simulation —  JPMorgan Chase & Co. (Java)</span><br>
+                <span class="fs-110">February 2024</span>
+                <br>
+                <button id="view-jpmorgan-lite" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-jpmorgan-lite"></span></button>
+                <br>
+                    <span class="view-cert-span hidden" data-cert-span="view-jpmorgan-lite">Click to expand</span>
+                    <br>
+                    <a class="view-cert-anchor" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/Wb4yEmHvZrC2qxiyX_JPMorgan%20Chase%20&%20Co._8bkwr3uWvWi2EYySm_1708333325181_completion_certificate.pdf" target="_blank">
+                        <img data-cert="view-jpmorgan-lite" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/jpmorgan_lite.jpg' %}">
+                    </a>
+                </p>
+        </div>
+        <hr>
+        <ul class="ul-styled">
+            <li>Simulation of a day in the life of a Software Engineer at JPMorgan Chase & Co</li>
+
+            <li>Completed a simulation focused on the process of completing an engineering ticket for a system in the credit-card rewards department of JPMorgan Chase & Co</li>
+            
+            <li>Created a new class to get an existing system up and running</li>
+            
+            <li>Wrote a test suite for the class added</li>
+            
+            <li>Used version control (Git + GitHub) to manage the development process efficiently. This included forking, cloning, making a new branch, pushing, and pull requests</li>
+        </ul>
         </div>
     </section>
 

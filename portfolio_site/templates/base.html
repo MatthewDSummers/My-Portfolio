@@ -9,8 +9,10 @@
         <meta property="og:url" content="https://www.matthewsummers.dev">
         <meta property="og:image" content="{% static 'media/images/media-bg.jpg' %}">
         <meta property="og:description" content="{{ page_description }}">
+        <link rel="icon" type="image/png" href="{% static 'media/images/favicon/favicon.png' %}">
+        {% comment %} <link rel="icon" type="image/png" href="{% static 'login_app_static/images/favicon.ico' %}"/> {% endcomment %}
 
-
+        
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel='stylesheet' type='text/css' href="{% static '/star_ocean_static/css/style.css' %}"%>
 
@@ -32,6 +34,25 @@
         {% endblock %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
+        <!-- <style>
+                .libutton {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 7px;
+                    text-align: center;
+                    outline: none;
+                    text-decoration: none !important;
+                    color: #ffffff !important;
+                    width: 200px;
+                    height: 32px;
+                    border-radius: 16px;
+                    background-color: #0A66C2;
+                    font-family: "SF Pro Text", Helvetica, sans-serif;
+                }
+                <a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=matthew-d-summers" target="_blank">Follow on LinkedIn</a>
+
+        </style> -->
     </head>
     <body>
         <div id="container">
