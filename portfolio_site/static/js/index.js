@@ -76,6 +76,9 @@ animateText.forEach(function (text) {
             if(text.classList.contains("resume-job-title")){
                 span.style.animationDelay = i / 35 + "s";
             }
+            if (text.classList.contains("fa-download")){
+                span.style.animationDelay = i / 35 + "s";
+            }
         }
 
         if (text.classList.contains("phone-num-animate")){
