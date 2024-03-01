@@ -3,6 +3,9 @@ from django.urls import reverse
 import os
 import json
 import re
+from portfolio.settings import STATIC_ROOT 
+from pathlib import Path
+
 # Create your views here.
 
 def home(request):
@@ -86,18 +89,16 @@ def have_fun(request):
     }
     return render(request, "games.html", context)
 
-def cert_page(request, cert_name):
-    if cert_name:
-        if cert_name == "coding-dojo":
-            if request.GET.get("ajax"):
-                return render(request, 'cert-partial.html')
-            else:
-                return render(request, 'cert.html')
-        else:
-            return redirect("/")
+def cert_page(request, school_name, course_name=None):
+    file_name = f"{school_name}-{course_name}.png" if course_name else f"{school_name}.png"
+    file_path = os.path.join(STATIC_ROOT, 'media', 'images', 'cert', file_name)
+
+    if os.path.exists(file_path):
+        return render(request, 'cert.html', {"file_name": file_name})
     else:
         return redirect("/")
-    
+
+
 def doc_view(request, title):
     page_description = "Documentation of Matthew Summers, Full-Stack Website Developer."
     if not title:

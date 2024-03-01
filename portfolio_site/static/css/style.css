@@ -44,6 +44,12 @@ ul {
 }
 
 /* ===== Typography ===== */
+
+.hr-heavy{
+    background-color: black; 
+    height: 4px;
+    margin: 2.25em 0;
+}
 .font-assistant {
     font-family: 'Assistant', sans-serif;
 }
@@ -194,6 +200,9 @@ ul {
 
 /* Display */
 
+.block{
+    display: block;
+}
 .inline-block {
     display: inline-block;
 }

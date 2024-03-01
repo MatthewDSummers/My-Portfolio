@@ -6,15 +6,16 @@
             <div class="close-resume-modal-div">
                 <p id="close-resume-modal">&times;</p>
             </div>
-            <img data-modal="view-coding-dojo" class="resume-modal-cert-img" src="{% static 'media/images/cert/coding_dojo.png' %}">
-            <img data-modal="view-jpmorgan-lite" class="resume-modal-cert-img" src="{% static 'media/images/cert/jpmorgan_lite.jpg' %}">
+            <img data-modal="view-coding-dojo" class="resume-modal-cert-img" src="{% static 'media/images/cert/coding-dojo.png' %}">
+            <img data-modal="view-jpmorgan-lite" class="resume-modal-cert-img" src="{% static 'media/images/cert/jpmorgan-chase-co-software-engineer-lite.png' %}">
+            <img data-modal="view-alison-agile" class="resume-modal-cert-img" src="{% static 'media/images/cert/alison-agile.png' %}">
         </div>
     </div>
     <section class="padding-inline bgr3 border-top resume-top">
         <h1 class="resume-name animate-texts">Matthew Summers</h1>
         <h3 class="resume-job-title animate-texts"><span class="resume-job-title-span">Full-Stack Web and Software Developer</span></h3>
         {% comment %} <h4 class="animate-texts phone-num-animate"><a class="anchor-no-style font-assistant" href="tel:+60 19-620-8890">+60 19-620-8890</a></h4> {% endcomment %}
-        {% comment %} <button class="btn download-cv"><a class="fa fa-download" target="#" title="Download" download="{% static 'media/images/cert/coding_dojo.png' %}"></a> Download simplified PDF version</button> {% endcomment %}
+        {% comment %} <button class="btn download-cv"><a class="fa fa-download" target="#" title="Download" download="{% static 'media/images/cert/coding-dojo.png' %}"></a> Download simplified PDF version</button> {% endcomment %}
             <a class=" fa download-cv fa-download animate-texts" href="{% static 'media/documents/- Matthew Summers CV.pdf' %}" download>&nbsp;&nbsp;Download simplified PDF version</a>
 
         <br>
@@ -104,6 +105,70 @@
         <h2 class="resume-section-title">EDUCATION</h2>
         <br>
         <br>
+
+        <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+
+                <img src="{% static 'media/images/logos/alison-logo-primary.jpg' %}">
+                <br>
+                <br>
+                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+                <p>
+                    <span class="bold-600 fs-300">Alison</span>
+                        <span class="fs-110 no-bold">- Galway, Ireland (Remote)</span>
+                    <br>
+                    <span class="fs-200 bold-600">Agile Project Management</span><br>
+                <span class="fs-110">March 2024</span>
+                <br>
+                <button id="view-alison-agile" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-alison-agile"></span></button>
+                    <span class="view-cert-span hidden block" data-cert-span="view-alison-agile">Click to expand</span>
+                    <a class="view-cert-anchor block" href="https://alison.com/user/pdf/5661/1" target="_blank">
+                        <img data-cert="view-alison-agile" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/alison-agile.png' %}">
+                    </a>
+                </p>
+            </div>
+            <p class="w-50">Demonstrated a mastery of Agile values and principles, fostered by a deep understanding of the Agile Manifesto; its value in the workplace; and when and where it works best.</p>
+
+        </div>
+<hr class="hr-heavy">
+
+        <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+
+                <img src="{% static 'media/images/logos/forage_logo.jpeg' %}" style="width: 150px;">
+                <br>
+                <br>
+                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+                <p>
+                    <span class="bold-600 fs-300">Forage</span>
+                        <span class="fs-110 no-bold">- San Francisco, California, USA (Remote)</span>
+                    <br>
+                    <span class="fs-200 bold-600">Software Engineering Lite Job Simulation —  JPMorgan Chase & Co. (Java)</span><br>
+                <span class="fs-110">February 2024</span>
+                <br>
+                <button id="view-jpmorgan-lite" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-jpmorgan-lite"></span></button>
+                    <span class="view-cert-span hidden block" data-cert-span="view-jpmorgan-lite">Click to expand</span>
+                    <a class="view-cert-anchor block" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/Wb4yEmHvZrC2qxiyX_JPMorgan%20Chase%20&%20Co._8bkwr3uWvWi2EYySm_1708333325181_completion_certificate.pdf" target="_blank">
+                        <img data-cert="view-jpmorgan-lite" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/jpmorgan-chase-co-software-engineer-lite.png' %}">
+                    </a>
+                </p>
+            </div>
+            
+            <ul class="ul-styled">
+                <li>Simulation of a day in the life of a Software Engineer at JPMorgan Chase & Co</li>
+
+                <li>Completed a simulation focused on the process of completing an engineering ticket for a system in the credit-card rewards department of JPMorgan Chase & Co</li>
+                
+                <li>Created a new class to get an existing system up and running</li>
+                
+                <li>Wrote a test suite for the class added</li>
+                
+                <li>Used version control (Git + GitHub) to manage the development process efficiently. This included forking, cloning, making a new branch, pushing, and pull requests</li>
+            </ul>
+        </div>
+
+        <hr class="hr-heavy">
+
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
 
@@ -119,15 +184,13 @@
                     <span class="fs-110">July 2021 - February 2022</span>
                     <br>
                     <button id="view-coding-dojo" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-coding-dojo"></span></button>
-                    <br>
-                        <span class="view-cert-span hidden" data-cert-span="view-coding-dojo">Click to expand</span>
-                        <br>
-                        <a class="view-cert-anchor" href="/certification/coding-dojo" target="_blank">
-                            <img data-cert="view-coding-dojo" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/coding_dojo.png' %}">
+                        <span class="view-cert-span hidden block" data-cert-span="view-coding-dojo">Click to expand</span>
+                        <a class="view-cert-anchor block" href="/certification/coding-dojo" target="_blank">
+                            <img data-cert="view-coding-dojo" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/coding-dojo.png' %}">
                         </a>
                 </p>
             </div>
-            <hr>
+            
             <ul class="ul-styled">
                 <li>Certified Full Stack Web Developer</li>
                 <li>Certified Software Developer for Python programming language</li>
@@ -135,8 +198,8 @@
                 <li>7 months (1500+ hours) of experience in Full Stack Software Development with Django and Python</li>
             </ul>
         </div>
-<br>
-<br>
+        <hr class="hr-heavy">
+
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
                 <img src="{% static 'media/images/harvard-logo.webp' %}" style="border: 1px solid grey">
@@ -150,7 +213,7 @@
                     <span class="fs-110">February 2023 - Present</span>
                 </p>
             </div>
-            <hr>
+            <br>
             <ul class="ul-styled ul-columns">
                 <li>hacking, cracking</li>
                 <li>social engineering, phishing attacks</li>
@@ -177,47 +240,11 @@
                 <li>operating systems, app store</li>
             </ul>
         </div>
-        <br>
-        <br>
 
 
 
-        <div class="padding-inline-lg">
-            <div class="education-inner-heading">
 
-                <img src="{% static 'media/images/logos/forage_logo.jpeg' %}" style="width: 150px;">
-                <br>
-                <br>
-                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
-                <p>
-                    <span class="bold-600 fs-300">Forage</span>
-                        <span class="fs-110 no-bold">- San Francisco, California, USA (Remote)</span>
-                    <br>
-                    <span class="fs-200 bold-600">Software Engineering Lite Job Simulation —  JPMorgan Chase & Co. (Java)</span><br>
-                <span class="fs-110">February 2024</span>
-                <br>
-                <button id="view-jpmorgan-lite" class="view-cert">View Certification <span class="arrow arrow-down" data-arrow="view-jpmorgan-lite"></span></button>
-                <br>
-                    <span class="view-cert-span hidden" data-cert-span="view-jpmorgan-lite">Click to expand</span>
-                    <br>
-                    <a class="view-cert-anchor" href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/Wb4yEmHvZrC2qxiyX_JPMorgan%20Chase%20&%20Co._8bkwr3uWvWi2EYySm_1708333325181_completion_certificate.pdf" target="_blank">
-                        <img data-cert="view-jpmorgan-lite" class="hidden cert-img-modal-trigger" src="{% static 'media/images/cert/jpmorgan_lite.jpg' %}">
-                    </a>
-                </p>
-        </div>
-        <hr>
-        <ul class="ul-styled">
-            <li>Simulation of a day in the life of a Software Engineer at JPMorgan Chase & Co</li>
 
-            <li>Completed a simulation focused on the process of completing an engineering ticket for a system in the credit-card rewards department of JPMorgan Chase & Co</li>
-            
-            <li>Created a new class to get an existing system up and running</li>
-            
-            <li>Wrote a test suite for the class added</li>
-            
-            <li>Used version control (Git + GitHub) to manage the development process efficiently. This included forking, cloning, making a new branch, pushing, and pull requests</li>
-        </ul>
-        </div>
     </section>
 
     <section class="padding-inline bgr2 txt-white">

@@ -2,6 +2,6 @@
 {% load static %}
 {% block content %}
 <div class="certification-div bgr3">
-    <img src="{% static 'media/images/cert/coding_dojo.png' %}">
+    <img src="{% static 'media/images/cert/'|add:file_name %}">
 </div>
 {% endblock %}
