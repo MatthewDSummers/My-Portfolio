@@ -560,7 +560,11 @@ ul {
         border-top: 1px solid rgb(205, 205, 205);
         box-shadow: 5px 5px 2px rgb(74, 74, 74), 6px 8px 20px rgb(146, 145, 90);
     }
-
+    .cert-logo{
+        background-color: white; 
+        outline: 1px solid black;
+        box-shadow: 1px 1px 3px black;
+    }
     @media (min-width: 1024px) {
     .certification-div{
         width: 100vw;

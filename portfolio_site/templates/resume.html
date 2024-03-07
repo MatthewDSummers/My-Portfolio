@@ -101,15 +101,94 @@
     </section>
 <div style="border-bottom: 1px solid silver"></div>
     <section class="padding-inline bgr3">
+
         <div class="line"></div>
         <h2 class="resume-section-title">EDUCATION</h2>
         <br>
         <br>
 
+
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
 
-                <img src="{% static 'media/images/logos/alison-logo-primary.jpg' %}">
+                    <img class="cert-logo" src="{% static 'media/images/logos/Meta-Logo.png' %}">
+                <br>
+                <br>
+                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
+                <p>
+                    <span class="bold-600 fs-300">Meta</span>
+                        <span class="fs-110 no-bold">- Menlo Park, California, United States (Remote)</span>
+                    <br>
+                    <span class="fs-200 bold-600">Meta Front-End Developer Professional Certificate | Coursera</span><br>
+                <span class="fs-110">March 2024 - <strong>Present</strong></span>
+                <br>
+            </p>
+            </div>
+            <ul class="ul-styled ul-columns">
+                <li>React basics & advanced</li>
+                <li>UI/UX design</li>
+                <li>JavaScript</li>
+                <li> Cascading Style Sheets (CSS)</li>
+                <li> HTML</li>
+                <li>Bootstrap</li>
+                <li> Version Control using Git and GitHub</li>
+                <li>HTTP protocol</li>
+                <li>Web Fundamentals</li>
+            </ul>
+
+        </div>
+<hr class="hr-heavy">
+
+
+        {% comment %} <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+                <img src="{% static 'media/images/harvard-logo.webp' %}" style="border: 1px solid grey">
+                <br>
+                <p>
+                    <span class="bold-600 fs-300">Harvard University Online</span>
+                        <span class="fs-110 no-bold">- Cambridge, Massachusetts, USA (Remote: HarvardX)</span>
+                    <br>
+                    <span class="fs-200 bold-600">HarvardX: CS50's Introduction to Cybersecurity</span><br>
+                    <span class="fs-110">February 2023 - Present</span>
+                </p>
+            </div>
+            <br>
+            <ul class="ul-styled ul-columns">
+                <li>hacking, cracking</li>
+                <li>social engineering, phishing attacks</li>
+                <li>passcodes, passwords, SSO</li>
+                <li>brute-force attacks, dictionary attacks</li>
+                <li>biometrics</li>
+                <li>multi-factor authentication, password managers</li>
+                <li>ethical hacking</li>
+                <li>(distributed) denial-of-service attacks</li>
+                <li>viruses, worms, botnets</li>
+                <li>SQL injection attacks</li>
+                <li>port-scanning</li>
+                <li>proxies, firewalls</li>
+                <li>automatic updates</li>
+                <li>closed-source, open-source software</li>
+                <li>buffer-overflow attacks</li>
+                <li>secure deletion</li>
+                <li>hashing, salting</li>
+                <li>secret-key, public-key encryption, digital signatures</li>
+                <li>full-disk encryption, ransomware</li>
+                <li>cookies, sessions, incognito mode</li>
+                <li>anonymization, de-identification</li>
+                <li>verification</li>
+                <li>operating systems, app store</li>
+            </ul>
+        </div>
+
+        <hr class="hr-heavy"> {% endcomment %}
+
+
+
+
+        <div class="padding-inline-lg">
+            <div class="education-inner-heading">
+
+                <img src="{% static 'media/images/logos/alison-logo-primary.jpg' %}" class="cert-logo">
                 <br>
                 <br>
                 {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
@@ -135,7 +214,7 @@
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
 
-                <img src="{% static 'media/images/logos/forage_logo.jpeg' %}" style="width: 150px;">
+                <img src="{% static 'media/images/logos/forage_logo.jpeg' %}" style="width: 150px;" class="cert-logo">
                 <br>
                 <br>
                 {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
@@ -172,7 +251,7 @@
         <div class="padding-inline-lg">
             <div class="education-inner-heading">
 
-                <img src="{% static 'media/images/dojo-logo.jpg' %}">
+                <img src="{% static 'media/images/dojo-logo.jpg' %}" class="cert-logo">
                 <br>
                 <br>
                 {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
@@ -198,48 +277,7 @@
                 <li>7 months (1500+ hours) of experience in Full Stack Software Development with Django and Python</li>
             </ul>
         </div>
-        <hr class="hr-heavy">
 
-        <div class="padding-inline-lg">
-            <div class="education-inner-heading">
-                <img src="{% static 'media/images/harvard-logo.webp' %}" style="border: 1px solid grey">
-                <br>
-                {% comment %} <p class="fs-200"><strong>Coding Dojo</strong> - Remote</p> {% endcomment %}
-                <p>
-                    <span class="bold-600 fs-300">Harvard University Online</span>
-                        <span class="fs-110 no-bold">- Cambridge, Massachusetts, USA (Remote: HarvardX)</span>
-                    <br>
-                    <span class="fs-200 bold-600">HarvardX: CS50's Introduction to Cybersecurity</span><br>
-                    <span class="fs-110">February 2023 - Present</span>
-                </p>
-            </div>
-            <br>
-            <ul class="ul-styled ul-columns">
-                <li>hacking, cracking</li>
-                <li>social engineering, phishing attacks</li>
-                <li>passcodes, passwords, SSO</li>
-                <li>brute-force attacks, dictionary attacks</li>
-                <li>biometrics</li>
-                <li>multi-factor authentication, password managers</li>
-                <li>ethical hacking</li>
-                <li>(distributed) denial-of-service attacks</li>
-                <li>viruses, worms, botnets</li>
-                <li>SQL injection attacks</li>
-                <li>port-scanning</li>
-                <li>proxies, firewalls</li>
-                <li>automatic updates</li>
-                <li>closed-source, open-source software</li>
-                <li>buffer-overflow attacks</li>
-                <li>secure deletion</li>
-                <li>hashing, salting</li>
-                <li>secret-key, public-key encryption, digital signatures</li>
-                <li>full-disk encryption, ransomware</li>
-                <li>cookies, sessions, incognito mode</li>
-                <li>anonymization, de-identification</li>
-                <li>verification</li>
-                <li>operating systems, app store</li>
-            </ul>
-        </div>
 
 
 
